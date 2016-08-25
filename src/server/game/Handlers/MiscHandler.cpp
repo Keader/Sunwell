@@ -248,12 +248,12 @@ void WorldSession::HandleWhoOpcode(WorldPacket & recv_data)
     data << uint32(matchcount);                           // placeholder, count of players matching criteria
     data << uint32(displaycount);                         // placeholder, count of players displayed
 
-	std::vector<WhoListPlayerInfo> * m = WhoListCacheMgr::GetWhoList();
-	for (std::vector<WhoListPlayerInfo>::const_iterator itr = m->begin(); itr != m->end(); ++itr)
+    std::vector<WhoListPlayerInfo> * m = WhoListCacheMgr::GetWhoList();
+    for (std::vector<WhoListPlayerInfo>::const_iterator itr = m->begin(); itr != m->end(); ++itr)
     {
         if (AccountMgr::IsPlayerAccount(security))
         {
-			if ((*itr).teamId != teamId)
+            if ((*itr).teamId != teamId)
                 continue;
 
             // player can see MODERATOR, GAME MASTER, ADMINISTRATOR only if CONFIG_GM_IN_WHO_LIST
@@ -331,12 +331,12 @@ void WorldSession::HandleWhoOpcode(WorldPacket & recv_data)
         if (!s_show)
             continue;
 
-		// 50 is maximum player count sent to client
-		if (matchcount >= 50)
-		{
-			++matchcount;
-			continue;
-		}
+        // 50 is maximum player count sent to client
+        if (matchcount >= 50)
+        {
+            ++matchcount;
+            continue;
+        }
 
         data << (*itr).pname;                             // player name
         data << (*itr).gname;                             // guild name
@@ -512,17 +512,17 @@ void WorldSession::HandleAddFriendOpcode(WorldPacket & recv_data)
 
     ;//sLog->outDebug(LOG_FILTER_NETWORKIO, "WORLD: %s asked to add friend : '%s'", GetPlayer()->GetName().c_str(), friendName.c_str());
 
-	// xinef: Get Data From global storage
-	uint32 guidLow = sWorld->GetGlobalPlayerGUID(friendName);
-	if (!guidLow)
-		return;
+    // xinef: Get Data From global storage
+    uint32 guidLow = sWorld->GetGlobalPlayerGUID(friendName);
+    if (!guidLow)
+        return;
 
-	GlobalPlayerData const* playerData = sWorld->GetGlobalPlayerData(guidLow);
-	if (!playerData)
-		return;
+    GlobalPlayerData const* playerData = sWorld->GetGlobalPlayerData(guidLow);
+    if (!playerData)
+        return;
 
     uint64 friendGuid = MAKE_NEW_GUID(guidLow, 0, HIGHGUID_PLAYER);
-	uint32 friendAccountId = playerData->accountId;
+    uint32 friendAccountId = playerData->accountId;
     TeamId teamId = Player::TeamIdForRace(playerData->race);
     FriendsResult friendResult = FRIEND_NOT_FOUND;
 
@@ -587,9 +587,9 @@ void WorldSession::HandleAddIgnoreOpcode(WorldPacket & recv_data)
     ;//sLog->outDebug(LOG_FILTER_NETWORKIO, "WORLD: %s asked to Ignore: '%s'",
     //    GetPlayer()->GetName().c_str(), ignoreName.c_str());
 
-	uint32 lowGuid = sWorld->GetGlobalPlayerGUID(ignoreName);
+    uint32 lowGuid = sWorld->GetGlobalPlayerGUID(ignoreName);
     if (!lowGuid)
-		return;
+        return;
 
     uint64 IgnoreGuid = MAKE_NEW_GUID(lowGuid, 0, HIGHGUID_PLAYER);
     FriendsResult ignoreResult = FRIEND_IGNORE_NOT_FOUND;
@@ -628,26 +628,26 @@ void WorldSession::HandleCharacterAuraFrozen(PreparedQueryResult result)
     if (!GetPlayer())
         return;
 
-	ChatHandler handler = ChatHandler(this);
+    ChatHandler handler = ChatHandler(this);
 
-	// Select
-	if (!result)
-	{
-		handler.SendSysMessage(LANG_COMMAND_NO_FROZEN_PLAYERS);
-		return;
-	}
+    // Select
+    if (!result)
+    {
+        handler.SendSysMessage(LANG_COMMAND_NO_FROZEN_PLAYERS);
+        return;
+    }
 
-	// Header of the names
-	handler.PSendSysMessage(LANG_COMMAND_LIST_FREEZE);
+    // Header of the names
+    handler.PSendSysMessage(LANG_COMMAND_LIST_FREEZE);
 
-	// Output of the results
-	do
-	{
-		Field* fields = result->Fetch();
-		std::string player = fields[0].GetString();
-		handler.PSendSysMessage(LANG_COMMAND_FROZEN_PLAYERS, player.c_str());
-	}
-	while (result->NextRow());
+    // Output of the results
+    do
+    {
+        Field* fields = result->Fetch();
+        std::string player = fields[0].GetString();
+        handler.PSendSysMessage(LANG_COMMAND_FROZEN_PLAYERS, player.c_str());
+    }
+    while (result->NextRow());
 }
 
 void WorldSession::HandleDelIgnoreOpcode(WorldPacket & recv_data)
@@ -745,8 +745,8 @@ void WorldSession::HandleResurrectResponseOpcode(WorldPacket & recv_data)
     recv_data >> guid;
     recv_data >> status;
 
-	// Xinef: Prevent resurrect with prevent resurrection aura
-	if (GetPlayer()->IsAlive() || GetPlayer()->HasAuraType(SPELL_AURA_PREVENT_RESURRECTION))
+    // Xinef: Prevent resurrect with prevent resurrection aura
+    if (GetPlayer()->IsAlive() || GetPlayer()->HasAuraType(SPELL_AURA_PREVENT_RESURRECTION))
         return;
 
     if (status == 0)
@@ -1367,7 +1367,7 @@ void WorldSession::HandleResetInstancesOpcode(WorldPacket & /*recv_data*/)
             group->ResetInstances(INSTANCE_RESET_ALL, false, _player);
     }
     else
-		Player::ResetInstances(_player->GetGUIDLow(), INSTANCE_RESET_ALL, false);
+        Player::ResetInstances(_player->GetGUIDLow(), INSTANCE_RESET_ALL, false);
 }
 
 void WorldSession::HandleSetDungeonDifficultyOpcode(WorldPacket & recv_data)
@@ -1394,17 +1394,17 @@ void WorldSession::HandleSetDungeonDifficultyOpcode(WorldPacket & recv_data)
                 if (!groupGuy)
                     continue;
 
-				if (!groupGuy->IsInWorld())
-				{
-					_player->SendDungeonDifficulty(group != NULL);
+                if (!groupGuy->IsInWorld())
+                {
+                    _player->SendDungeonDifficulty(group != NULL);
                     return;
-				}
+                }
 
-				if (groupGuy->GetGUID() == _player->GetGUID() ? groupGuy->GetMap()->IsDungeon() : groupGuy->GetMap()->IsNonRaidDungeon())
-				{
-					_player->SendDungeonDifficulty(group != NULL);
+                if (groupGuy->GetGUID() == _player->GetGUID() ? groupGuy->GetMap()->IsDungeon() : groupGuy->GetMap()->IsNonRaidDungeon())
+                {
+                    _player->SendDungeonDifficulty(group != NULL);
                     return;
-				}
+                }
             }
 
             group->ResetInstances(INSTANCE_RESET_CHANGE_DIFFICULTY, false, _player);
@@ -1413,11 +1413,11 @@ void WorldSession::HandleSetDungeonDifficultyOpcode(WorldPacket & recv_data)
     }
     else
     {
-		if (_player->FindMap() && _player->FindMap()->IsDungeon())
-		{
-			_player->SendDungeonDifficulty(group != NULL);
-			return;
-		}
+        if (_player->FindMap() && _player->FindMap()->IsDungeon())
+        {
+            _player->SendDungeonDifficulty(group != NULL);
+            return;
+        }
         Player::ResetInstances(_player->GetGUIDLow(), INSTANCE_RESET_CHANGE_DIFFICULTY, false);
         _player->SetDungeonDifficulty(Difficulty(mode));
     }
@@ -1441,26 +1441,26 @@ void WorldSession::HandleSetRaidDifficultyOpcode(WorldPacket & recv_data)
     {
         if (group->IsLeader(_player->GetGUID()))
         {
-			std::set<uint32> foundMaps;
-			std::set<Map*> foundMapsPtr;
-			Map* currMap = NULL;
+            std::set<uint32> foundMaps;
+            std::set<Map*> foundMapsPtr;
+            Map* currMap = NULL;
 
-			if (uint32 preventionTime = group->GetDifficultyChangePreventionTime())
-			{
-				switch (group->GetDifficultyChangePreventionReason())
-				{
-					case DIFFICULTY_PREVENTION_CHANGE_BOSS_KILLED:
-						ChatHandler(this).PSendSysMessage("Raid was in combat recently and may not change difficulty again for %u sec.", preventionTime);
-						break;
-					case DIFFICULTY_PREVENTION_CHANGE_RECENTLY_CHANGED:
-					default:
-						ChatHandler(this).PSendSysMessage("Raid difficulty has changed recently, and may not change again for %u sec.", preventionTime);
-						break;
-				}
+            if (uint32 preventionTime = group->GetDifficultyChangePreventionTime())
+            {
+                switch (group->GetDifficultyChangePreventionReason())
+                {
+                    case DIFFICULTY_PREVENTION_CHANGE_BOSS_KILLED:
+                        ChatHandler(this).PSendSysMessage("Raid was in combat recently and may not change difficulty again for %u sec.", preventionTime);
+                        break;
+                    case DIFFICULTY_PREVENTION_CHANGE_RECENTLY_CHANGED:
+                    default:
+                        ChatHandler(this).PSendSysMessage("Raid difficulty has changed recently, and may not change again for %u sec.", preventionTime);
+                        break;
+                }
 
-				_player->SendRaidDifficulty(group != NULL);
-				return;
-			}
+                _player->SendRaidDifficulty(group != NULL);
+                return;
+            }
 
             for (GroupReference* itr = group->GetFirstMember(); itr != NULL; itr = itr->next())
             {
@@ -1468,113 +1468,113 @@ void WorldSession::HandleSetRaidDifficultyOpcode(WorldPacket & recv_data)
                 if (!groupGuy)
                     continue;
 
-				if (!groupGuy->IsInWorld())
-				{
-					_player->SendRaidDifficulty(group != NULL);
+                if (!groupGuy->IsInWorld())
+                {
+                    _player->SendRaidDifficulty(group != NULL);
                     return;
-				}
+                }
 
-				if ((groupGuy->GetMap()->GetId() == 631 || groupGuy->GetMap()->GetId() == 724) && mode%2 == _player->GetRaidDifficulty()%2 && group->isRaidGroup())
-				{
-					if (!currMap)
-						currMap = groupGuy->GetMap();
-					foundMaps.insert(groupGuy->GetMap()->GetId());
-					foundMapsPtr.insert(groupGuy->GetMap());
-					if (foundMaps.size() > 1 || foundMapsPtr.size() > 1)
-					{
-						_player->SendRaidDifficulty(group != NULL);
-						return;
-					}
+                if ((groupGuy->GetMap()->GetId() == 631 || groupGuy->GetMap()->GetId() == 724) && mode%2 == _player->GetRaidDifficulty()%2 && group->isRaidGroup())
+                {
+                    if (!currMap)
+                        currMap = groupGuy->GetMap();
+                    foundMaps.insert(groupGuy->GetMap()->GetId());
+                    foundMapsPtr.insert(groupGuy->GetMap());
+                    if (foundMaps.size() > 1 || foundMapsPtr.size() > 1)
+                    {
+                        _player->SendRaidDifficulty(group != NULL);
+                        return;
+                    }
 
-					if (!groupGuy->IsAlive() || groupGuy->IsInCombat() || groupGuy->GetVictim() || groupGuy->m_mover != groupGuy || groupGuy->IsNonMeleeSpellCast(true) || !groupGuy->GetMotionMaster()->empty() && groupGuy->GetMotionMaster()->GetCurrentMovementGeneratorType() != IDLE_MOTION_TYPE || !groupGuy->movespline->Finalized() || !groupGuy->GetMap()->ToInstanceMap() || !groupGuy->GetMap()->ToInstanceMap()->GetInstanceScript() || groupGuy->GetMap()->ToInstanceMap()->GetInstanceScript()->IsEncounterInProgress() || !groupGuy->Satisfy(sObjectMgr->GetAccessRequirement(groupGuy->GetMap()->GetId(), Difficulty(mode)), groupGuy->GetMap()->GetId(), false))
-					{
-						_player->SendRaidDifficulty(group != NULL);
-						return;
-					}
-				}
-				else if (groupGuy->GetGUID() == _player->GetGUID() ? groupGuy->GetMap()->IsDungeon() : groupGuy->GetMap()->IsRaid())
-				{
-					_player->SendRaidDifficulty(group != NULL);
+                    if (!groupGuy->IsAlive() || groupGuy->IsInCombat() || groupGuy->GetVictim() || groupGuy->m_mover != groupGuy || groupGuy->IsNonMeleeSpellCast(true) || !groupGuy->GetMotionMaster()->empty() && groupGuy->GetMotionMaster()->GetCurrentMovementGeneratorType() != IDLE_MOTION_TYPE || !groupGuy->movespline->Finalized() || !groupGuy->GetMap()->ToInstanceMap() || !groupGuy->GetMap()->ToInstanceMap()->GetInstanceScript() || groupGuy->GetMap()->ToInstanceMap()->GetInstanceScript()->IsEncounterInProgress() || !groupGuy->Satisfy(sObjectMgr->GetAccessRequirement(groupGuy->GetMap()->GetId(), Difficulty(mode)), groupGuy->GetMap()->GetId(), false))
+                    {
+                        _player->SendRaidDifficulty(group != NULL);
+                        return;
+                    }
+                }
+                else if (groupGuy->GetGUID() == _player->GetGUID() ? groupGuy->GetMap()->IsDungeon() : groupGuy->GetMap()->IsRaid())
+                {
+                    _player->SendRaidDifficulty(group != NULL);
                     return;
-				}
+                }
             }
 
-			Map* homeMap571 = sMapMgr->CreateMap(571, NULL);
-			Map* homeMap0 = sMapMgr->CreateMap(0, NULL);
-			ASSERT(homeMap0 && homeMap571);
+            Map* homeMap571 = sMapMgr->CreateMap(571, NULL);
+            Map* homeMap0 = sMapMgr->CreateMap(0, NULL);
+            ASSERT(homeMap0 && homeMap571);
 
-			std::map<Player*, Position> playerTeleport;
-			// handle here all players in the instance that are not in the group
-			if (currMap)
-				for (Map::PlayerList::const_iterator itr = currMap->GetPlayers().begin(); itr != currMap->GetPlayers().end(); ++itr)
-					if (Player* p = itr->GetSource())
-						if (p->GetGroup() != group)
-						{
-							if (!p->IsInWorld() || !p->IsAlive() || p->IsInCombat() || p->GetVictim() || p->m_mover != p || p->IsNonMeleeSpellCast(true) || !p->GetMotionMaster()->empty() && p->GetMotionMaster()->GetCurrentMovementGeneratorType() != IDLE_MOTION_TYPE || !p->movespline->Finalized() || !p->GetMap()->ToInstanceMap() || !p->GetMap()->ToInstanceMap()->GetInstanceScript() || p->GetMap()->ToInstanceMap()->GetInstanceScript()->IsEncounterInProgress())
-							{
-								_player->SendRaidDifficulty(group != NULL);
-								return;
-							}
-							playerTeleport[p];
-						}
-			for (std::map<Player*, Position>::iterator itr = playerTeleport.begin(); itr != playerTeleport.end(); ++itr)
-			{
-				Player* p = itr->first;
-				Map* oldMap = p->GetMap();
-				oldMap->RemovePlayerFromMap(p, false);
-				p->ResetMap();
-				oldMap->AfterPlayerUnlinkFromMap();
-				p->SetMap(homeMap0);
-				p->Relocate(0.0f, 0.0f, 0.0f, 0.0f);
-				if (!p->TeleportTo(571, 5790.20f, 2071.36f, 636.07f, 3.60f))
-					p->GetSession()->KickPlayer();
-			}
+            std::map<Player*, Position> playerTeleport;
+            // handle here all players in the instance that are not in the group
+            if (currMap)
+                for (Map::PlayerList::const_iterator itr = currMap->GetPlayers().begin(); itr != currMap->GetPlayers().end(); ++itr)
+                    if (Player* p = itr->GetSource())
+                        if (p->GetGroup() != group)
+                        {
+                            if (!p->IsInWorld() || !p->IsAlive() || p->IsInCombat() || p->GetVictim() || p->m_mover != p || p->IsNonMeleeSpellCast(true) || !p->GetMotionMaster()->empty() && p->GetMotionMaster()->GetCurrentMovementGeneratorType() != IDLE_MOTION_TYPE || !p->movespline->Finalized() || !p->GetMap()->ToInstanceMap() || !p->GetMap()->ToInstanceMap()->GetInstanceScript() || p->GetMap()->ToInstanceMap()->GetInstanceScript()->IsEncounterInProgress())
+                            {
+                                _player->SendRaidDifficulty(group != NULL);
+                                return;
+                            }
+                            playerTeleport[p];
+                        }
+            for (std::map<Player*, Position>::iterator itr = playerTeleport.begin(); itr != playerTeleport.end(); ++itr)
+            {
+                Player* p = itr->first;
+                Map* oldMap = p->GetMap();
+                oldMap->RemovePlayerFromMap(p, false);
+                p->ResetMap();
+                oldMap->AfterPlayerUnlinkFromMap();
+                p->SetMap(homeMap0);
+                p->Relocate(0.0f, 0.0f, 0.0f, 0.0f);
+                if (!p->TeleportTo(571, 5790.20f, 2071.36f, 636.07f, 3.60f))
+                    p->GetSession()->KickPlayer();
+            }
 
-			bool anyoneInside = false;
-			playerTeleport.clear();
-			for (GroupReference* itr = group->GetFirstMember(); itr != NULL; itr = itr->next())
-			{
-				Player* groupGuy = itr->GetSource();
-				if (!groupGuy)
-					continue;
+            bool anyoneInside = false;
+            playerTeleport.clear();
+            for (GroupReference* itr = group->GetFirstMember(); itr != NULL; itr = itr->next())
+            {
+                Player* groupGuy = itr->GetSource();
+                if (!groupGuy)
+                    continue;
 
-				if (groupGuy->GetMap()->GetId() == 631 || groupGuy->GetMap()->GetId() == 724)
-				{
-					anyoneInside = true;
+                if (groupGuy->GetMap()->GetId() == 631 || groupGuy->GetMap()->GetId() == 724)
+                {
+                    anyoneInside = true;
 
-					float x,y,z,o;
-					groupGuy->GetPosition(x,y,z,o);
-					Map* oldMap = groupGuy->GetMap();
-					oldMap->RemovePlayerFromMap(groupGuy, false);
-					groupGuy->ResetMap();
-					oldMap->AfterPlayerUnlinkFromMap();
-					groupGuy->SetMap(homeMap571);
-					groupGuy->Relocate(5790.20f, 2071.36f, 636.07f, 3.60f);
-					Position dest = {x, y, z+0.1f, o};
-					playerTeleport[groupGuy] = dest;
-				}
-			}
+                    float x,y,z,o;
+                    groupGuy->GetPosition(x,y,z,o);
+                    Map* oldMap = groupGuy->GetMap();
+                    oldMap->RemovePlayerFromMap(groupGuy, false);
+                    groupGuy->ResetMap();
+                    oldMap->AfterPlayerUnlinkFromMap();
+                    groupGuy->SetMap(homeMap571);
+                    groupGuy->Relocate(5790.20f, 2071.36f, 636.07f, 3.60f);
+                    Position dest = {x, y, z+0.1f, o};
+                    playerTeleport[groupGuy] = dest;
+                }
+            }
 
-			if (!anyoneInside) // pussywizard: don't reset if changing ICC/RS difficulty while inside
-				group->ResetInstances(INSTANCE_RESET_CHANGE_DIFFICULTY, true, _player);
+            if (!anyoneInside) // pussywizard: don't reset if changing ICC/RS difficulty while inside
+                group->ResetInstances(INSTANCE_RESET_CHANGE_DIFFICULTY, true, _player);
             group->SetRaidDifficulty(Difficulty(mode));
-			group->SetDifficultyChangePrevention(DIFFICULTY_PREVENTION_CHANGE_RECENTLY_CHANGED);
+            group->SetDifficultyChangePrevention(DIFFICULTY_PREVENTION_CHANGE_RECENTLY_CHANGED);
 
-			for (std::map<Player*, Position>::iterator itr = playerTeleport.begin(); itr != playerTeleport.end(); ++itr)
-			{
-				itr->first->SetRaidDifficulty(Difficulty(mode)); // needed for teleport not to fail
-				if (!itr->first->TeleportTo(*(foundMaps.begin()), itr->second.GetPositionX(), itr->second.GetPositionY(), itr->second.GetPositionZ(), itr->second.GetOrientation()))
-					itr->first->GetSession()->KickPlayer();
-			}
+            for (std::map<Player*, Position>::iterator itr = playerTeleport.begin(); itr != playerTeleport.end(); ++itr)
+            {
+                itr->first->SetRaidDifficulty(Difficulty(mode)); // needed for teleport not to fail
+                if (!itr->first->TeleportTo(*(foundMaps.begin()), itr->second.GetPositionX(), itr->second.GetPositionY(), itr->second.GetPositionZ(), itr->second.GetOrientation()))
+                    itr->first->GetSession()->KickPlayer();
+            }
         }
     }
     else
     {
-		if (_player->FindMap() && _player->FindMap()->IsDungeon())
-		{
-			_player->SendRaidDifficulty(group != NULL);
-			return;
-		}
+        if (_player->FindMap() && _player->FindMap()->IsDungeon())
+        {
+            _player->SendRaidDifficulty(group != NULL);
+            return;
+        }
         Player::ResetInstances(_player->GetGUIDLow(), INSTANCE_RESET_CHANGE_DIFFICULTY, true);
         _player->SetRaidDifficulty(Difficulty(mode));
     }
@@ -1609,12 +1609,12 @@ void WorldSession::HandleMoveSetCanFlyAckOpcode(WorldPacket & recv_data)
     uint64 guid;                                            // guid - unused
     recv_data.readPackGUID(guid);
 
-	// pussywizard: typical check for incomming movement packets
-	if (!_player->m_mover || !_player->m_mover->IsInWorld() || _player->m_mover->IsDuringRemoveFromWorld() || guid != _player->m_mover->GetGUID())
-	{
-		recv_data.rfinish(); // prevent warnings spam
-		return;
-	}
+    // pussywizard: typical check for incomming movement packets
+    if (!_player->m_mover || !_player->m_mover->IsInWorld() || _player->m_mover->IsDuringRemoveFromWorld() || guid != _player->m_mover->GetGUID())
+    {
+        recv_data.rfinish(); // prevent warnings spam
+        return;
+    }
 
     recv_data.read_skip<uint32>();                          // unk
 

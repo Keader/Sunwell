@@ -102,7 +102,7 @@ void WorldSession::HandleArenaTeamInviteOpcode(WorldPacket & recvData)
 
     if (player->getLevel() < sWorld->getIntConfig(CONFIG_MAX_PLAYER_LEVEL))
     {
-		SendArenaTeamCommandResult(ERR_ARENA_TEAM_CREATE_S, "", invitedName, ERR_ARENA_TEAM_TARGET_TOO_LOW_S);
+        SendArenaTeamCommandResult(ERR_ARENA_TEAM_CREATE_S, "", invitedName, ERR_ARENA_TEAM_TARGET_TOO_LOW_S);
         return;
     }
 
@@ -131,7 +131,7 @@ void WorldSession::HandleArenaTeamInviteOpcode(WorldPacket & recvData)
 
     if (player->GetArenaTeamId(arenaTeam->GetSlot()))
     {
-		SendArenaTeamCommandResult(ERR_ARENA_TEAM_INVITE_SS, "", invitedName, ERR_ALREADY_IN_ARENA_TEAM_S);
+        SendArenaTeamCommandResult(ERR_ARENA_TEAM_INVITE_SS, "", invitedName, ERR_ALREADY_IN_ARENA_TEAM_S);
         return;
     }
 
