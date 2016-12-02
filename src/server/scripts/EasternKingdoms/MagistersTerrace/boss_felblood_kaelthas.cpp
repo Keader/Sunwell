@@ -160,7 +160,7 @@ public:
                 }
             }
         }
-        
+
         void LapseAction(uint8 action)
         {
             uint8 counter = 0;

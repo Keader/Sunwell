@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -296,7 +296,7 @@ const Position LightOfDawnPos[] =
     {2270.99f, -5278.00f, 81.89f, 0}            // 15 Tirion Fordring loc4
 };
 
-const Position LightOfDawnFightPos[] = 
+const Position LightOfDawnFightPos[] =
 {
     {2279.68f, -5256.75f, 79.79f, 4.8f},
     {2280.40f, -5276.56f, 82.11f, 4.8f},
@@ -677,7 +677,7 @@ public:
                     summons.DespawnEntry(NPC_ACHERUS_GHOUL);
                     summons.DespawnEntry(NPC_WARRIOR_OF_THE_FROZEN_WASTES);
                     summons.DespawnEntry(NPC_FLESH_BEHEMOTH);
-                    summons.DespawnEntry(NPC_DEFENDER_OF_THE_LIGHT);                    
+                    summons.DespawnEntry(NPC_DEFENDER_OF_THE_LIGHT);
 
                     if (Creature* orbaz = GetEntryFromSummons(NPC_ORBAZ_BLOODBANE))
                     {

@@ -135,15 +135,15 @@ public:
 
             switch (rand()%3)
             {
-                case 0:    
+                case 0:
                     me->MonsterYell("Sleep now, in the cold dark.", LANG_UNIVERSAL,0);
                     me->PlayDirectSound(SOUND_SLAY1);
                     break;
-                case 1: 
+                case 1:
                     me->MonsterYell("For the Lich King!", LANG_UNIVERSAL,0);
                     me->PlayDirectSound(SOUND_SLAY2);
                     break;
-                case 2: 
+                case 2:
                     me->MonsterYell("Perhaps we will be allies soon.", LANG_UNIVERSAL,0);
                     me->PlayDirectSound(SOUND_SLAY3);
                     break;
@@ -154,7 +154,7 @@ public:
         {
             events.Reset();
             summons.DespawnAll();
-            
+
             me->MonsterYell("Master, is my service complete?", LANG_UNIVERSAL, 0);
              me->PlayDirectSound(SOUND_DEATH);
             if (pInstance)
@@ -169,17 +169,17 @@ public:
                 {
                     switch (rand()%2)
                     {
-                        case 0: 
+                        case 0:
                             me->MonsterYell("The young must not grow hungry...", LANG_UNIVERSAL, 0);
                             me->PlayDirectSound(SOUND_SUMMON1);
                             break;
-                        case 1: 
+                        case 1:
                             me->MonsterYell("Shhhad ak kereeesshh chak-k-k!", LANG_UNIVERSAL, 0);
                             me->PlayDirectSound(SOUND_SUMMON2);
                             break;
                     }
                 }
-                
+
                 summons.Summon(cr);
             }
         }
@@ -216,7 +216,7 @@ public:
                 {
                     if (Creature *pSwarmer = me->FindNearestCreature(NPC_AHNKAHAR_SWARMER, 40, true))
                         me->CastSpell(pSwarmer, SPELL_BROOD_RAGE_H, true);
-                    
+
                     events.RepeatEvent(10000);
                     break;
                 }
@@ -268,7 +268,7 @@ public:
     {
         npc_ahnkahar_nerubianAI(Creature *c) : ScriptedAI(c) { }
 
-        
+
         uint32 uiSprintTimer;
         void Reset()
         {
@@ -276,7 +276,7 @@ public:
                 me->CastSpell(me, SPELL_GUARDIAN_AURA, true);
             else // Swarmers
                 me->CastSpell(me, SPELL_SWARMER_AURA, true);
-            
+
             if (me->GetEntry() == NPC_AHNKAHAR_SWARMER || me->GetEntry() == NPC_AHNKAHAR_GUARDIAN_ENTRY)
                 me->SetInCombatWithZone();
 
@@ -287,7 +287,7 @@ public:
         {
             if (me->GetEntry() == NPC_AHNKAHAR_GUARDIAN_ENTRY)
             {
-                if (InstanceScript *pInstance = me->GetInstanceScript()) 
+                if (InstanceScript *pInstance = me->GetInstanceScript())
                     if (Creature *nadox = ObjectAccessor::GetCreature(*me, pInstance->GetData64(DATA_ELDER_NADOX)))
                         nadox->AI()->DoAction(ACTION_GUARDIAN_DIED);
 
@@ -305,7 +305,7 @@ public:
                 me->CastSpell(me, SPELL_SPRINT, false);
                 uiSprintTimer = 15000;
             }
-            else 
+            else
                 uiSprintTimer -= diff;
 
             DoMeleeAttackIfReady();

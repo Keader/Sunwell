@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -216,7 +216,7 @@ void WorldSession::HandlePetitionBuyOpcode(WorldPacket & recvData)
     ;//sLog->outDebug(LOG_FILTER_NETWORKIO, "Invalid petition GUIDs: %s", ssInvalidPetitionGUIDs.str().c_str());
     CharacterDatabase.EscapeString(name);
     SQLTransaction trans = CharacterDatabase.BeginTransaction();
-    
+
     if (petition)
     {
         trans->PAppend("DELETE FROM petition WHERE petitionguid = %u", petition->petitionGuid);
@@ -482,14 +482,14 @@ void WorldSession::HandlePetitionSignOpcode(WorldPacket & recvData)
         }
     }
 
-    
+
     uint32 signs = signatures->signatureMap.size();
     if (++signs > type)                                        // client signs maximum
         return;
 
     // Client doesn't allow to sign petition two times by one character, but not check sign by another character from same account
     // not allow sign another player from already sign player account
- 
+
     bool found = false;
     for (SignatureMap::const_iterator itr = signatures->signatureMap.begin(); itr != signatures->signatureMap.end(); ++itr)
         if (itr->second == GetAccountId())

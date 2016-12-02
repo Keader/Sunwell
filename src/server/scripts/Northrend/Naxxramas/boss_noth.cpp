@@ -246,7 +246,7 @@ public:
             if (me->HasReactState(REACT_AGGRESSIVE))
                 DoMeleeAttackIfReady();
         }
-    };    
+    };
 };
 
 void AddSC_boss_noth()

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -1001,7 +1001,7 @@ class spell_item_fetch_ball : public SpellScriptLoader
                 for (std::list<WorldObject*>::const_iterator itr = targets.begin(); itr != targets.end(); ++itr)
                     if (Creature* creature = (*itr)->ToCreature())
                     {
-                        if (creature->GetOwnerGUID() == GetCaster()->GetOwnerGUID() && !creature->IsNonMeleeSpellCast(false) && 
+                        if (creature->GetOwnerGUID() == GetCaster()->GetOwnerGUID() && !creature->IsNonMeleeSpellCast(false) &&
                             creature->GetMotionMaster()->GetCurrentMovementGeneratorType() != POINT_MOTION_TYPE)
                         {
                             target = creature;

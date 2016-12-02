@@ -1540,7 +1540,7 @@ class spell_putricide_mutated_transformation : public SpellScriptLoader
                 caster->CastSpell(summon, SPELL_MUTATED_TRANSFORMATION_NAME, true);
 
                 //EnterVehicle(summon, 0);    // VEHICLE_SPELL_RIDE_HARDCODED is used according to sniff, this is ok
-                caster->CastCustomSpell(VEHICLE_SPELL_RIDE_HARDCODED, SPELLVALUE_BASE_POINT0, 1, summon, TRIGGERED_FULL_MASK); 
+                caster->CastCustomSpell(VEHICLE_SPELL_RIDE_HARDCODED, SPELLVALUE_BASE_POINT0, 1, summon, TRIGGERED_FULL_MASK);
                 summon->SetCreatorGUID(caster->GetGUID());
                 putricide->AI()->JustSummoned(summon);
 

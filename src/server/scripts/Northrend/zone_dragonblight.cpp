@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -350,7 +350,7 @@ public:
         {
             return NPC_INFINITE_ASSAILANT+urand(0,2);
         }
-        
+
         void UpdateAI(uint32 diff)
         {
             events.Update(diff);
@@ -469,15 +469,15 @@ public:
     struct npc_future_youAI : public ScriptedAI
     {
         npc_future_youAI(Creature* c) : ScriptedAI(c) {}
-        
-        void EnterEvadeMode() 
+
+        void EnterEvadeMode()
         {
             me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IN_COMBAT);
             me->ClearUnitState(UNIT_STATE_EVADE);
         }
 
-        void Reset() 
-        { 
+        void Reset()
+        {
             if (me->ToTempSummon() && me->ToTempSummon()->GetSummoner())
                 me->setFaction(me->ToTempSummon()->GetSummoner()->getFaction());
         }

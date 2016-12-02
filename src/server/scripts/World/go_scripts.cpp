@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -94,7 +94,7 @@ public:
                 cr->MonsterYell("My treasure! You no steal from Tartek, dumb big-tongue traitor thing. Tartek and nasty dragon going to kill you! You so dumb.", LANG_UNIVERSAL, 0);
                 cr->AI()->AttackStart(pPlayer);
             }
-        }        
+        }
         return false;
     }
 };
@@ -143,7 +143,7 @@ public:
     {
         if (Battleground* bg = player->GetBattleground())
             bg->ReadyMarkerClicked(player);
-        
+
         return false;
     }
 };

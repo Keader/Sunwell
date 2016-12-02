@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -207,7 +207,7 @@ LfgCompatibility LFGQueue::FindNewGroups(const uint64& newGuid)
         if (it->hasGuid(newGuid))
         {
             // unset roles here so they are not copied, restore after insertion
-            LfgRolesMap* r = it->roles; 
+            LfgRolesMap* r = it->roles;
             it->roles = NULL;
             currentCompatibles.insert(*it);
             it->roles = r;

@@ -167,7 +167,7 @@ class spell_mother_shahraz_random_periodic : public SpellScriptLoader
             PrepareAuraScript(spell_mother_shahraz_random_periodic_AuraScript);
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 if (effect->GetTickNumber()%5 == 1)
                     GetUnitOwner()->CastSpell(GetUnitOwner(), RAND(SPELL_SINFUL_PERIODIC, SPELL_SINISTER_PERIODIC, SPELL_VILE_PERIODIC, SPELL_WICKED_PERIODIC), true);
@@ -195,7 +195,7 @@ class spell_mother_shahraz_beam_periodic : public SpellScriptLoader
             PrepareAuraScript(spell_mother_shahraz_beam_periodic_AuraScript);
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 if (Unit* target = GetUnitOwner()->GetAI()->SelectTarget(SELECT_TARGET_RANDOM, 0))
                     GetUnitOwner()->CastSpell(target, GetSpellInfo()->Effects[effect->GetEffIndex()].TriggerSpell, true);
@@ -228,7 +228,7 @@ class spell_mother_shahraz_saber_lash : public SpellScriptLoader
             }
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 if (Unit* target = GetUnitOwner()->GetVictim())
                     GetUnitOwner()->CastSpell(target, GetSpellInfo()->Effects[effect->GetEffIndex()].TriggerSpell, true);
@@ -336,7 +336,7 @@ class spell_mother_shahraz_fatal_attraction_aura : public SpellScriptLoader
             PrepareAuraScript(spell_mother_shahraz_fatal_attraction_aura_AuraScript);
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 if (effect->GetTickNumber() > uint32(effect->GetAmount()+1))
                 {
                     PreventDefaultAction();

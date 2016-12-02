@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -199,7 +199,7 @@ class ObjectAccessor
         // ACCESS LIKE THAT IS NOT THREAD SAFE
         static Pet* FindPet(uint64);
         static Player* FindPlayer(uint64);
-        static Player* FindPlayerInOrOutOfWorld(uint64 m_guid); 
+        static Player* FindPlayerInOrOutOfWorld(uint64 m_guid);
         static Unit* FindUnit(uint64);
         static Player* FindPlayerByName(std::string const& name, bool checkInWorld = true);
         static std::map<std::string, Player*> playerNameToPlayerPointer; // pussywizard: optimization

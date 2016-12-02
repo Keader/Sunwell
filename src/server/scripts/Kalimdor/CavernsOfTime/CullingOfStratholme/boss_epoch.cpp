@@ -53,8 +53,8 @@ public:
 
         EventMap events;
         uint8 warps;
-        void Reset() 
-        { 
+        void Reset()
+        {
             events.Reset();
             warps = 0;
         }
@@ -86,7 +86,7 @@ public:
                 warps++;
                 me->CastSpell(target, DUNGEON_MODE(SPELL_TIME_STEP_N, SPELL_TIME_STEP_H), true);
             }
-        }                
+        }
 
         void UpdateAI(uint32 diff)
         {

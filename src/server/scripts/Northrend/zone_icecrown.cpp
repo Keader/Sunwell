@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -133,8 +133,8 @@ public:
             me->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_QUESTGIVER);
         }
 
-        void JustSummoned(Creature* creature) 
-        { 
+        void JustSummoned(Creature* creature)
+        {
             summons.Summon(creature);
             if (creature->GetEntry() != NPC_PRINCE)
                 if (Player* player = ObjectAccessor::GetPlayer(*me, playerGUID))
@@ -201,7 +201,7 @@ public:
                             me->MonsterYell("Khit'rix the Dark Master has been defeated by $N and his band of companions. Let the next challenge be issued!", LANG_UNIVERSAL, ObjectAccessor::GetPlayer(*me, playerGUID));
                             break;
                         case QUEST_BFV_SIGRID:
-                            me->MonsterYell("$N has defeated Sigrid Iceborn for a second time. Well, this time he did it with the help of his friends, but a win is a win!", LANG_UNIVERSAL, ObjectAccessor::GetPlayer(*me, playerGUID)); 
+                            me->MonsterYell("$N has defeated Sigrid Iceborn for a second time. Well, this time he did it with the help of his friends, but a win is a win!", LANG_UNIVERSAL, ObjectAccessor::GetPlayer(*me, playerGUID));
                             break;
                         case QUEST_BFV_CARNAGE:
                             me->MonsterYell("The horror known as Carnage is no more. Could it be that $N is truly worthy of battle in Valhalas? We shall see.", LANG_UNIVERSAL, ObjectAccessor::GetPlayer(*me, playerGUID));
@@ -378,7 +378,7 @@ public:
             CombatAI::Reset();
         }
 
-        void UpdateAI(uint32 diff) 
+        void UpdateAI(uint32 diff)
         {
             attackTimer += diff;
             if (attackTimer >= 1500)
@@ -469,7 +469,7 @@ class npc_lord_arete : public CreatureScript
             {
                 _landgrenGUID = 0;
                 _landgrenSoulGUID = 0;
-                
+
                 events.Reset();
                 events.RescheduleEvent(EVENT_START, 1000);
                 me->SetUInt32Value(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_NONE);
@@ -627,7 +627,7 @@ class npc_boneguard_footman : public CreatureScript
                         }
                     }
                 }
-                
+
                 ScriptedAI::UpdateAI(diff);
             }
         };
@@ -1133,7 +1133,7 @@ class spell_charge_shield_bomber : public SpellScriptLoader
                 Aura* aura = ship->GetAura(SPELL_INFRA_GREEN_SHIELD);
                 if (!aura)
                     return;
-                
+
                 aura->ModStackAmount(GetEffectValue() - 1);
             }
 
@@ -1314,7 +1314,7 @@ class npc_infra_green_bomber_generic : public CreatureScript
                         me->MonsterTextEmote("Your Vehicle is burning!", GetSummoner(), true);
                         passenger->AddAura(SPELL_BURNING, passenger);
                     }
-                    
+
                 for (uint8 seat = 3; seat <= 5; ++seat)
                     if (Unit* banner = kit->GetPassenger(seat))
                         if (!banner->HasAura(SPELL_COSMETIC_FIRE))
@@ -1383,7 +1383,7 @@ class npc_infra_green_bomber_generic : public CreatureScript
                                 if (Unit* banner = kit->GetPassenger(seat))
                                     if (banner->HasAura(SPELL_COSMETIC_FIRE))
                                         fireCount++;
-                        
+
                         if (fireCount)
                             Unit::DealDamage(me, me, 3000*fireCount, NULL, DIRECT_DAMAGE, SPELL_SCHOOL_MASK_FIRE);
                         else // Heal

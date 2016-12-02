@@ -200,7 +200,7 @@ public:
                     me->CastSpell(target, SPELL_CONFLAGRATION, false);
                     events.ScheduleEvent(EVENT_SPELL_CONFLAGRATION, urand(30000, 35000));
                     break;
-                }    
+                }
             }
 
             DoMeleeAttackIfReady();
@@ -338,7 +338,7 @@ public:
                     me->CastSpell(target, SPELL_CONFLAGRATION, false);
                     events.ScheduleEvent(EVENT_SPELL_CONFLAGRATION, urand(30000, 35000));
                     break;
-                }    
+                }
             }
 
             DoMeleeAttackIfReady();

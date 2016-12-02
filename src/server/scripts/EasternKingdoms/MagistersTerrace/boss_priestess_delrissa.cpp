@@ -299,7 +299,7 @@ struct boss_priestess_lackey_commonAI : public ScriptedAI
         summons.DespawnAll();
         actualEventId = 0;
     }
-    
+
     void JustSummoned(Creature* summon)
     {
         summons.Summon(summon);

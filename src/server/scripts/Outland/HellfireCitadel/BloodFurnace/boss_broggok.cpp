@@ -88,7 +88,7 @@ class boss_broggok : public CreatureScript
                         me->CastSpell(me, SPELL_POISON_CLOUD, false);
                         events.RepeatEvent(20000);
                         break;
-                    
+
                 }
 
                 DoMeleeAttackIfReady();

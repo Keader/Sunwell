@@ -209,7 +209,7 @@ public:
             counter = 0;
             bShattered = false;
             lastShatterMSTime = 0;
-            
+
             if( InstanceScript* m_pInstance = me->GetInstanceScript() )
             {
                 m_pInstance->SetData(TYPE_IGNIS, NOT_STARTED);

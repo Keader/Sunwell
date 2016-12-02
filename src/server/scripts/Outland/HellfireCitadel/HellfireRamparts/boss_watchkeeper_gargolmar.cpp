@@ -127,7 +127,7 @@ class boss_watchkeeper_gargolmar : public CreatureScript
                             std::list<Creature*> clist;
                             me->GetCreaturesWithEntryInRange(clist, 100.0f, NPC_HELLFIRE_WATCHER);
                             for (std::list<Creature*>::const_iterator itr = clist.begin(); itr != clist.end(); ++itr)
-                                (*itr)->AI()->SetData(NPC_HELLFIRE_WATCHER, 0);                            
+                                (*itr)->AI()->SetData(NPC_HELLFIRE_WATCHER, 0);
                             break;
                         }
                         events.ScheduleEvent(EVENT_CHECK_HEALTH, 500);

@@ -360,7 +360,7 @@ class spell_serpentshrine_cavern_coilfang_water : public SpellScriptLoader
                 isPeriodic = true;
                 amplitude = 8*IN_MILLISECONDS;
             }
-            
+
 
             void HandlePeriodic(AuraEffect const* aurEff)
             {

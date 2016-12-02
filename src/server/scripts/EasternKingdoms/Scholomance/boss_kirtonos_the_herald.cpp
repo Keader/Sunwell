@@ -44,7 +44,7 @@ enum Misc
     WEAPON_KIRTONOS_STAFF             = 11365,
     POINT_KIRTONOS_LAND               = 13,
     KIRTONOS_PATH                     = 105061,
-    
+
     EMOTE_SUMMONED                    = 0
 };
 
@@ -200,7 +200,7 @@ class boss_kirtonos_the_herald : public CreatureScript
                             me->SetUInt32Value(UNIT_VIRTUAL_ITEM_SLOT_ID + 0, uint32(0));
                             break;
                         }
-                        
+
                         events.ScheduleEvent(EVENT_KIRTONOS_TRANSFORM, 2000);
                         break;
                 }

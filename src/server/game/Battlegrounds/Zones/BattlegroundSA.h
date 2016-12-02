@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -459,7 +459,7 @@ class BattlegroundSA : public Battleground
         void EventPlayerClickedOnFlag(Player* Source, GameObject* gameObject);
         /// Called when a player use a gamobject (relic)
         void EventPlayerUsedGO(Player* Source, GameObject* object);
-       
+
         /// Return worldstate id, according to door id
         uint32 GetWorldStateFromGateID(uint32 id)
         {

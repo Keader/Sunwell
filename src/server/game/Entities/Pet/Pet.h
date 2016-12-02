@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -37,10 +37,10 @@ struct PetSpell
 class AsynchPetSummon
 {
     public:
-        AsynchPetSummon(uint32 entry, Position position, PetType petType, uint32 duration, uint32 createdBySpell, uint64 casterGUID) : 
+        AsynchPetSummon(uint32 entry, Position position, PetType petType, uint32 duration, uint32 createdBySpell, uint64 casterGUID) :
             m_entry(entry), pos(position), m_petType(petType),
             m_duration(duration), m_createdBySpell(createdBySpell), m_casterGUID(casterGUID) { }
-    
+
         Position pos;
         uint32 m_entry, m_createdBySpell, m_duration;
         PetType m_petType;

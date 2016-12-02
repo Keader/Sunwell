@@ -217,7 +217,7 @@ class spell_karazhan_brittle_bones : public SpellScriptLoader
             }
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 if (roll_chance_i(35))
                     GetUnitOwner()->CastSpell(GetUnitOwner(), SPELL_RATTLED, true);
@@ -246,7 +246,7 @@ class spell_karazhan_overload : public SpellScriptLoader
             PrepareAuraScript(spell_karazhan_overload_AuraScript);
 
             void PeriodicTick(AuraEffect const* auraEffect)
-            {                
+            {
                 PreventDefaultAction();
                 GetUnitOwner()->CastCustomSpell(SPELL_OVERLOAD, SPELLVALUE_BASE_POINT0, int32(auraEffect->GetAmount() * (2.0, auraEffect->GetTickNumber())), GetUnitOwner(), true);
             }

@@ -108,7 +108,7 @@ class boss_hydross_the_unstable : public CreatureScript
             {
                 events.CancelEventGroup(GROUP_ABILITIES);
                 DoResetThreat();
-                
+
                 if (corrupt)
                 {
                     me->SetMeleeDamageSchool(SPELL_SCHOOL_NATURE);

@@ -167,7 +167,7 @@ class spell_moorabi_mojo_frenzy : public SpellScriptLoader
             void HandlePeriodic(AuraEffect const* aurEff)
             {
                 PreventDefaultAction();
-                
+
                 if (GetUnitOwner()->GetMap()->IsHeroic())
                     GetUnitOwner()->SetFloatValue(UNIT_MOD_CAST_SPEED, 1.0f * (GetUnitOwner()->GetHealthPct()*GetUnitOwner()->GetHealthPct()/10000.0f));
                 else

@@ -104,7 +104,7 @@ public:
             if (summon->GetEntry() == NPC_ENTROPIUS)
                 summon->AI()->SetData(DATA_ENRAGE_TIMER, events.GetNextEventTime(EVENT_SPELL_ENRAGE));
             else
-            {    
+            {
                 if (!summon->IsTrigger())
                     summon->SetInCombatWithZone();
                 summons.Summon(summon);
@@ -170,7 +170,7 @@ public:
                     if (!muru->IsInEvadeMode())
                         muru->AI()->EnterEvadeMode();
 
-            me->DespawnOrUnsummon();            
+            me->DespawnOrUnsummon();
         }
 
         void EnterCombat(Unit* /*who*/)

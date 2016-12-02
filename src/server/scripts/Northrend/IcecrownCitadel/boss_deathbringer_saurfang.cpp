@@ -551,7 +551,7 @@ class npc_high_overlord_saurfang_icc : public CreatureScript
                             _events.ScheduleEvent(EVENT_INTRO_HORDE_2, 5000, 0, PHASE_INTRO_H);
                             _events.ScheduleEvent(EVENT_INTRO_HORDE_3, 18500, 0, PHASE_INTRO_H);
                             _instance->HandleGameObject(_instance->GetData64(GO_SAURFANG_S_DOOR), true);
-                            
+
                             if (GameObject* teleporter = ObjectAccessor::GetGameObject(*me, _instance->GetData64(GO_SCOURGE_TRANSPORTER_SAURFANG)))
                             {
                                 _instance->HandleGameObject(0, false, teleporter);
@@ -575,7 +575,7 @@ class npc_high_overlord_saurfang_icc : public CreatureScript
                             _events.ScheduleEvent(EVENT_OUTRO_HORDE_1, 10000);
                             _events.ScheduleEvent(EVENT_OUTRO_HORDE_2, 18000);
                             _events.ScheduleEvent(EVENT_OUTRO_HORDE_3, 24000);*/
-                            
+
                         }
                         break;
                     case ACTION_EVADE:

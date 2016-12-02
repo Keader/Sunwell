@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -36,7 +36,7 @@ public:
     ChatCommand* GetCommands() const
     {
         static ChatCommand castCommandTable[] =
-        {   
+        {
             { "back",           SEC_ADMINISTRATOR,  false, &HandleCastBackCommand,              "", NULL },
             { "dist",           SEC_ADMINISTRATOR,  false, &HandleCastDistCommand,              "", NULL },
             { "self",           SEC_ADMINISTRATOR,  false, &HandleCastSelfCommand,              "", NULL },

@@ -203,7 +203,7 @@ public:
 
             if( me->HasUnitState(UNIT_STATE_CASTING) )
                 return;
-            
+
             switch( events.GetEvent() )
             {
                 case 0:
@@ -462,7 +462,7 @@ public:
         void UpdateAI(uint32 diff)
         {
             UpdateVictim();
-            
+
             timer += diff;
             if (timer >= 2000)
             {

@@ -596,7 +596,7 @@ public:
 
             // open main gate
             HandleGameObject(GO_MainGateGUID, true);
-            
+
             if (m_auiEncounter[MAX_ENCOUNTER-1] != DONE) // instance not finished
             {
                 // close all cells

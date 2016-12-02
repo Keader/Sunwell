@@ -324,7 +324,7 @@ class spell_pilgrims_bounty_pass_generic : public SpellScriptLoader
                 {
                     switch (passSpell)
                     {
-                        
+
                         case SPELL_PASS_TURKEY: return SPELL_VISUAL_BOUNCE_TURKEY;
                         case SPELL_PASS_STUFFING: return SPELL_VISUAL_BOUNCE_STUFFING;
                         case SPELL_PASS_PIE: return SPELL_VISUAL_BOUNCE_PIE;
@@ -336,7 +336,7 @@ class spell_pilgrims_bounty_pass_generic : public SpellScriptLoader
                 {
                     switch (passSpell)
                     {
-                        
+
                         case SPELL_PASS_TURKEY: return SPELL_VISUAL_THROW_TURKEY;
                         case SPELL_PASS_STUFFING: return SPELL_VISUAL_THROW_STUFFING;
                         case SPELL_PASS_PIE: return SPELL_VISUAL_THROW_PIE;
@@ -693,7 +693,7 @@ void AddSC_event_pilgrims_end_scripts()
     new spell_pilgrims_bounty_turkey_tracker();
     new spell_pilgrims_bounty_serve_generic();
     new spell_pilgrims_bounty_food();
-    
+
     // Npcs
     new npc_pilgrims_bounty_chair();
     new npc_pilgrims_bounty_plate();

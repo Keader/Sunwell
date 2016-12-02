@@ -392,7 +392,7 @@ public:
                         --me->loot.unlootedCount;
                     }
         }
-        
+
         void KilledUnit(Unit* who)
         {
             if( who->GetTypeId() == TYPEID_PLAYER )
@@ -407,7 +407,7 @@ public:
             if( pInstance )
                 pInstance->SetData(TYPE_FAILED, 1);
         }
-        
+
         void MoveInLineOfSight(Unit* who)
         {
             if (who->GetTypeId() != TYPEID_PLAYER || me->GetExactDistSq(who) > 6400.0f) // 80yd*80yd

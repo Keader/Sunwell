@@ -166,7 +166,7 @@ public:
             summons.DespawnAll();
             me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE|UNIT_FLAG_DISABLE_MOVE);
             me->SetReactState(REACT_AGGRESSIVE);
-            
+
             if (pInstance)
             {
                 pInstance->SetData(EVENT_KELTHUZAD, NOT_STARTED);
@@ -330,7 +330,7 @@ public:
                 case EVENT_SPELL_FROST_BLAST:
                     if (Unit *target = SelectTarget(SELECT_TARGET_RANDOM, RAID_MODE(1,0), 0, true))
                         me->CastSpell(target, SPELL_FROST_BLAST, false);
-                    
+
                     if (!urand(0,2))
                         Talk(SAY_FROST_BLAST);
                     events.RepeatEvent(45000);

@@ -86,9 +86,9 @@ enum Spells
     SPELL_SUMMON_SHADOW_DEMON            = 41117,
     SPELL_CONSUME_SOUL                    = 41080,
     SPELL_FIND_TARGET                    = 41081,
-    
+
     // Phase 5
-    SPELL_FRENZY                        = 40683,    
+    SPELL_FRENZY                        = 40683,
     SPELL_TELEPORT_MAIEV                = 41221,
     SPELL_SHADOW_STRIKE                    = 40685,
     SPELL_THROW_DAGGER                    = 41152,
@@ -173,7 +173,7 @@ enum Events
     GROUP_PHASE_2_ABILITY                = 1
 };
 
-const Position eyeBeamPos[MAX_EYE_BEAM_POS*2] = 
+const Position eyeBeamPos[MAX_EYE_BEAM_POS*2] =
 {
     {639.97f, 301.63f, 354.0f, 0.0f},
     {658.83f, 265.10f, 354.0f, 0.0f},
@@ -186,7 +186,7 @@ const Position eyeBeamPos[MAX_EYE_BEAM_POS*2] =
     {705.92f, 337.14f, 354.0f, 0.0f}
 };
 
-const Position airHoverPos[MAX_EYE_BEAM_POS] = 
+const Position airHoverPos[MAX_EYE_BEAM_POS] =
 {
     {658.83f, 265.10f, 356.0f, 0.0f},
     {706.22f, 273.26f, 356.0f, 0.0f},
@@ -431,7 +431,7 @@ class boss_illidan_stormrage : public CreatureScript
                             maiev->AI()->DoAction(ACTION_MAIEV_OUTRO);
                             maiev->AI()->Talk(SAY_MAIEV_SHADOWSONG_ILLIDAN3);
                         }
-                        
+
                         if (Creature* akama = ObjectAccessor::GetCreature(*me, instance->GetData64(NPC_AKAMA)))
                         {
                             akama->AI()->DoAction(ACTION_ILLIDAN_DEAD);
@@ -449,7 +449,7 @@ class boss_illidan_stormrage : public CreatureScript
                         break;
                 }
 
-                
+
                 EnterEvadeIfOutOfCombatArea();
 
                 if (!UpdateVictim())
@@ -688,7 +688,7 @@ class boss_illidan_stormrage : public CreatureScript
                 if (!me->HasFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE))
                     DoMeleeAttackIfReady();
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetHomePosition().GetExactDist(me) > 90.0f || !SelectTargetFromPlayerList(80.0f);

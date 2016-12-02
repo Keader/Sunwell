@@ -72,7 +72,7 @@ class boss_kelidan_the_breaker : public CreatureScript
             uint64 channelers[5];
             uint32 checkTimer;
             bool addYell;
-            
+
             void Reset()
             {
                 addYell = false;
@@ -114,7 +114,7 @@ class boss_kelidan_the_breaker : public CreatureScript
                     {
                         addYell = true;
                         Talk(SAY_ADD_AGGRO);
-                    
+
                         for (uint8 i = 0; i < 5; ++i)
                         {
                             Creature* channeler = ObjectAccessor::GetCreature(*me, channelers[i]);
@@ -223,7 +223,7 @@ class boss_kelidan_the_breaker : public CreatureScript
                         CheckChannelers();
                         if (!me->HasUnitState(UNIT_STATE_CASTING))
                             me->CastSpell(me, SPELL_EVOCATION, false);
-                        
+
                     }
                     return;
                 }
@@ -244,7 +244,7 @@ class boss_kelidan_the_breaker : public CreatureScript
                         break;
                     case EVENT_SPELL_BURNING_NOVA:
                         Talk(SAY_NOVA);
-                        
+
                         ApplyImmunities(false);
                         me->AddAura(SPELL_BURNING_NOVA, me);
                         ApplyImmunities(true);

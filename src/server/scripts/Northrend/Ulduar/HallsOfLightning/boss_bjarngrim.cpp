@@ -22,7 +22,7 @@ enum BjarngrimSpells
     SPELL_BERSERKER_AURA                = 41107,
     SPELL_MORTAL_STRIKE                    = 16856,
     SPELL_WHIRLWIND                        = 52027,
-    
+
     // BATTLE STANCE
     SPELL_BATTLE_STANCE                    = 53792,
     SPELL_BATTLE_AURA                    = 41106,
@@ -124,7 +124,7 @@ public:
             AddWaypoint(12, 1311.3f, -26.9f, 40.03f, 0);
             AddWaypoint(13, 1281.2f, -26.8f, 33.5f, 0);
             AddWaypoint(14, 1262, -26.9f, 33.5f, 0);
-            
+
             Start(true, false, 0, NULL, false, true);
         }
 
@@ -226,7 +226,7 @@ public:
 
             if (force)
                 stance = force;
-            
+
             switch (stance)
             {
                 case STANCE_DEFENSIVE:
@@ -332,7 +332,7 @@ public:
                     me->CastSpell(me, SPELL_WHIRLWIND, true);
                     events.RepeatEvent(25000);
                     break;
-                    
+
                 ///////////////////////////////////////////////////////
                 ///// BATTLE STANCE
                 ///////////////////////////////////////////////////////

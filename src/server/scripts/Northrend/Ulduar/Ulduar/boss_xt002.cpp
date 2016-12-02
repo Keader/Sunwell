@@ -41,7 +41,7 @@ enum XT002Spells
     SPELL_VOID_ZONE_SUMMON_25    = 64235,
     //SPELL_VOID_ZONE_SUMMON        = RAID_MODE(SPELL_VOID_ZONE_SUMMON_10, SPELL_VOID_ZONE_SUMMON_25, SPELL_VOID_ZONE_SUMMON_10, SPELL_VOID_ZONE_SUMMON_25),
     SPELL_VOID_ZONE_DAMAGE        = 46262,
-    
+
     // SPARK
     SPELL_SPARK_SUMMON            = 64210,
     SPELL_SPARK_DAMAGE_10        = 64227,
@@ -253,7 +253,7 @@ public:
                 _gravityAchievement = false;
                 return;
             }
-            
+
             if (!me->IsAlive() || _hardMode)
                 return;
 
@@ -267,7 +267,7 @@ public:
                 me->SetByteValue(UNIT_FIELD_BYTES_1, 0, UNIT_STAND_STATE_STAND); // emerge
 
                 me->CastSpell(me, SPELL_HEARTBREAK, true);
-                
+
                 me->MonsterTextEmote("XT-002 Deconstructor's heart is severed from his body.", 0, true);
                 events.ScheduleEvent(EVENT_REMOVE_EMOTE, 4000);
                 return;
@@ -315,7 +315,7 @@ public:
 
                     if (me->HealthBelowPct(_healthCheck))
                     {
-                        _healthCheck -= 25;                    
+                        _healthCheck -= 25;
                         me->SetControlled(true, UNIT_STATE_STUNNED);
                         me->SetByteValue(UNIT_FIELD_BYTES_1, 0, UNIT_STAND_STATE_SUBMERGED); // submerge with animation
 
@@ -366,7 +366,7 @@ public:
                     me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE | UNIT_FLAG_NOT_SELECTABLE);
                     if (Unit* heart = me->GetVehicleKit() ? me->GetVehicleKit()->GetPassenger(HEART_VEHICLE_SEAT) : NULL)
                         heart->GetAI()->DoAction(ACTION_AWAKEN_HEART);
-                    
+
                     events.ScheduleEvent(EVENT_RESTORE,    30000);
                     events.PopEvent();
                     return;
@@ -380,7 +380,7 @@ public:
 
                     me->MonsterYell("I'm ready to play!", LANG_UNIVERSAL, 0);
                     me->PlayDirectSound(XT_SOUND_HEART_CLOSED);
-                    
+
                     me->SetByteValue(UNIT_FIELD_BYTES_1, 0, UNIT_STAND_STATE_STAND); // emerge
                     // Hide heart
                     if (Unit* heart = me->GetVehicleKit() ? me->GetVehicleKit()->GetPassenger(HEART_VEHICLE_SEAT) : NULL)
@@ -397,7 +397,7 @@ public:
                     events.PopEvent();
                     return;
             }
-            
+
             // Disabled by stunned state
             DoMeleeAttackIfReady();
         }
@@ -425,7 +425,7 @@ public:
         SummonList summons;
         uint32 _damageDone;
         uint32 _timerSpawn;
-        
+
         uint8 _spawnSelection;
         uint8 _pummelerCount;
 
@@ -519,7 +519,7 @@ public:
                     case 3:
                         if(_pummelerCount < 2)
                             me->SummonCreature(NPC_XM024_PUMMELLER, target->GetPositionX(), target->GetPositionY(), target->GetPositionZ()+2, 0, TEMPSUMMON_CORPSE_TIMED_DESPAWN, 5000);
-                        
+
                         _pummelerCount++;
                         _spawnSelection++;
                         break;
@@ -618,7 +618,7 @@ public:
 
                     if (!urand(0,2))
                         me->MonsterTextEmote("XT-002 Deconstructor consumes scrap bot to repair himself.", 0, true);
-                    
+
                     me->DespawnOrUnsummon(1);
                 }
         }
@@ -952,7 +952,7 @@ class spell_xt002_gravity_bomb_aura : public SpellScriptLoader
             void SelectTarget(std::list<WorldObject*>& targets)
             {
                 if (Unit* victim = GetCaster()->GetVictim())
-                    targets.remove_if(Trinity::ObjectGUIDCheck(victim->GetGUID(), true)); 
+                    targets.remove_if(Trinity::ObjectGUIDCheck(victim->GetGUID(), true));
             }
 
             void Register()
@@ -1034,7 +1034,7 @@ class spell_xt002_searing_light_spawn_life_spark : public SpellScriptLoader
             void SelectTarget(std::list<WorldObject*>& targets)
             {
                 if (Unit* victim = GetCaster()->GetVictim())
-                    targets.remove_if(Trinity::ObjectGUIDCheck(victim->GetGUID(), true)); 
+                    targets.remove_if(Trinity::ObjectGUIDCheck(victim->GetGUID(), true));
             }
 
             void Register()
@@ -1060,7 +1060,7 @@ class achievement_xt002_nerf_engineering : public AchievementCriteriaScript
                 if (InstanceScript* instance = target->GetInstanceScript())
                     if (Creature* cr = ObjectAccessor::GetCreature(*target, instance->GetData64(TYPE_XT002)))
                         return cr->AI()->GetData(DATA_XT002_NERF_ENGINEERING);
-                        
+
             return false;
         }
 };
@@ -1076,7 +1076,7 @@ class achievement_xt002_nerf_gravity_bombs : public AchievementCriteriaScript
                 if (InstanceScript* instance = target->GetInstanceScript())
                     if (Creature* cr = ObjectAccessor::GetCreature(*target, instance->GetData64(TYPE_XT002)))
                         return cr->AI()->GetData(DATA_XT002_GRAVITY_ACHIEV);
-                        
+
             return false;
         }
 };

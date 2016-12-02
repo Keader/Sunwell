@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -196,7 +196,7 @@ void BattlegroundIC::PostUpdateImpl(uint32 diff)
                     // we need to confirm this, i am not sure if this every 3 minutes
                     for (uint8 u = 0; u < MAX_DEMOLISHERS_SPAWNS_PER_FACTION; ++u)
                     {
-                        
+
                         uint8 type = (nodePoint[i].faction == TEAM_ALLIANCE ? BG_IC_NPC_DEMOLISHER_1_A : BG_IC_NPC_DEMOLISHER_1_H)+u;
                         if (Creature* demolisher = GetBGCreature(type))
                             if (!demolisher->IsAlive())
@@ -528,9 +528,9 @@ void BattlegroundIC::HandleKillUnit(Creature* unit, Player* killer)
     if (unit->IsVehicle())
     {
         killer->CastSpell(killer, SPELL_DESTROYED_VEHICLE_ACHIEVEMENT, true);
-        
+
         // Xinef: Add to respawn list
-        if (entry == NPC_DEMOLISHER || entry == NPC_SIEGE_ENGINE_H || entry == NPC_SIEGE_ENGINE_A || 
+        if (entry == NPC_DEMOLISHER || entry == NPC_SIEGE_ENGINE_H || entry == NPC_SIEGE_ENGINE_A ||
             entry == NPC_GLAIVE_THROWER_A || entry == NPC_GLAIVE_THROWER_H || entry == NPC_CATAPULT)
             respawnMap[unit->GetGUIDLow()] = time(NULL) + VEHICLE_RESPAWN_TIME;
     }
@@ -575,15 +575,15 @@ void BattlegroundIC::EventPlayerClickedOnFlag(Player* player, GameObject* gameOb
             // Prevent capturing of keep if none of gates was destroyed
             if (nodePoint[i].gameobject_entry == GO_ALLIANCE_BANNER)
             {
-                if (GateStatus[BG_IC_A_FRONT] != BG_IC_GATE_DESTROYED && 
-                    GateStatus[BG_IC_A_WEST] != BG_IC_GATE_DESTROYED && 
+                if (GateStatus[BG_IC_A_FRONT] != BG_IC_GATE_DESTROYED &&
+                    GateStatus[BG_IC_A_WEST] != BG_IC_GATE_DESTROYED &&
                     GateStatus[BG_IC_A_EAST] != BG_IC_GATE_DESTROYED)
                     return;
             }
             else if (nodePoint[i].gameobject_entry == GO_HORDE_BANNER)
             {
-                if (GateStatus[BG_IC_H_FRONT] != BG_IC_GATE_DESTROYED && 
-                    GateStatus[BG_IC_H_WEST] != BG_IC_GATE_DESTROYED && 
+                if (GateStatus[BG_IC_H_FRONT] != BG_IC_GATE_DESTROYED &&
+                    GateStatus[BG_IC_H_WEST] != BG_IC_GATE_DESTROYED &&
                     GateStatus[BG_IC_H_EAST] != BG_IC_GATE_DESTROYED)
                     return;
             }

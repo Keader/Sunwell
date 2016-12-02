@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -120,7 +120,7 @@ bool GameObjectModel::initialize(const GameObject& go, const GameObjectDisplayIn
     //ID = 0;
     iPos = Vector3(go.GetPositionX(), go.GetPositionY(), go.GetPositionZ());
 
-    // pussywizard: 
+    // pussywizard:
     phasemask = (go.GetGoState() == GO_STATE_READY || go.IsTransport()) ? go.GetPhaseMask() : 0;
 
     iScale = go.GetFloatValue(OBJECT_FIELD_SCALE_X);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -316,7 +316,7 @@ public:
     class spell_q11322_q11317_the_cleansing_AuraScript : public AuraScript
     {
         PrepareAuraScript(spell_q11322_q11317_the_cleansing_AuraScript)
-        
+
         void HandleEffectApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
         {
             Unit* ar = GetCaster();
@@ -324,7 +324,7 @@ public:
             {
                 if (ar->ToPlayer()->GetQuestStatus(11317) == QUEST_STATUS_INCOMPLETE || ar->ToPlayer()->GetQuestStatus(11322) == QUEST_STATUS_INCOMPLETE)
                     ar->SummonCreature(27959, 3032.0f, -5095.0f, 723.0f, 0.0f, TEMPSUMMON_TIMED_DESPAWN_OUT_OF_COMBAT, 60000);
-                
+
                 ar->SetStandState(UNIT_STAND_STATE_SIT);
             }
         }
@@ -504,7 +504,7 @@ public:
     class spell_q10769_dissension_amongst_the_ranks_AuraScript : public AuraScript
     {
         PrepareAuraScript(spell_q10769_dissension_amongst_the_ranks_AuraScript)
-        
+
         void HandleEffectApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
         {
             Unit* ar = GetTarget();
@@ -615,7 +615,7 @@ class spell_quest_dragonmaw_race_generic : public SpellScriptLoader
         class spell_quest_dragonmaw_race_generic_SpellScript : public SpellScript
         {
             PrepareSpellScript(spell_quest_dragonmaw_race_generic_SpellScript);
-            
+
             bool Load()
             {
                 _x = _y = _z = 0.0f;
@@ -850,14 +850,14 @@ public:
         }
 
         void HandleScript(SpellEffIndex  /*effIndex*/)
-        {            
+        {
             if(Unit* target = GetHitUnit())
             {
                 if(Player* p = target->ToPlayer())
                 {
                     p->CastSpell(p, p->getGender() == GENDER_FEMALE ? SPELL_SCARLET_RAVEN_PRIEST_IMAGE_FEMALE : SPELL_SCARLET_RAVEN_PRIEST_IMAGE_MALE, false);
                 }
-            }     
+            }
         }
 
         void Register()
@@ -884,7 +884,7 @@ public:
         void HandleScript(SpellEffIndex effIndex)
         {
             PreventHitDefaultEffect(effIndex);
-            GetCaster()->CastSpell(GetCaster(), GetEffectValue(), true);   
+            GetCaster()->CastSpell(GetCaster(), GetEffectValue(), true);
         }
 
         SpellCastResult CheckRequirement()
@@ -924,7 +924,7 @@ public:
             if (Unit* unit = GetHitUnit())
                 if (unit->HasFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IMMUNE_TO_PC))
                     return;
-            GetCaster()->CastCustomSpell(42576 /*SPELL_CANNON_BLAST*/, SPELLVALUE_BASE_POINT0, GetEffectValue(), GetCaster(), true);   
+            GetCaster()->CastCustomSpell(42576 /*SPELL_CANNON_BLAST*/, SPELLVALUE_BASE_POINT0, GetEffectValue(), GetCaster(), true);
         }
 
         void Register()

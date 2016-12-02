@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -283,7 +283,7 @@ public:
                 }
                 else
                     me->GetMotionMaster()->MovePoint(MovePhase, IntroWay[MovePhase][0], IntroWay[MovePhase][1], IntroWay[MovePhase][2]);
-                    
+
                 MovePhase = 0;
             }
 
@@ -422,7 +422,7 @@ public:
             if (pInstance->GetData(TYPE_NIGHTBANE) != DONE && !pGo->FindNearestCreature(17225, 40.0f))
                 if (Creature *cr = ObjectAccessor::GetCreature(*pPlayer, pInstance->GetData64(DATA_NIGHTBANE)))
                     cr->GetMotionMaster()->MovePoint(0, IntroWay[0][0], IntroWay[0][1], IntroWay[0][2]);
-        }        
+        }
         return false;
     }
 };

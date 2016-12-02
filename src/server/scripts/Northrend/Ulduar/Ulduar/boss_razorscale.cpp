@@ -457,7 +457,7 @@ public:
                         me->RemoveAura(SPELL_CHAIN_4);
                     }
                     me->CastSpell(me, SPELL_WINGBUFFET, true);
-                    
+
                     if( (me->GetHealth()*100) / me->GetMaxHealth() < 50 ) // start phase 3
                     {
                         me->SetControlled(false, UNIT_STATE_ROOT);
@@ -687,7 +687,7 @@ public:
 
         InstanceScript* pInstance;
         uint8 repairPoints;
-        
+
         void Reset()
         {
             repairPoints = 0;
@@ -877,9 +877,9 @@ public:
 };
 
 class go_ulduar_working_harpoon : public GameObjectScript
-{ 
-public: 
-    go_ulduar_working_harpoon() : GameObjectScript("go_ulduar_working_harpoon") { } 
+{
+public:
+    go_ulduar_working_harpoon() : GameObjectScript("go_ulduar_working_harpoon") { }
 
     bool OnGossipHello(Player* user, GameObject* go)
     {
@@ -926,7 +926,7 @@ public:
         if( uint64 g = pInstance->GetData64(npc) )
             if( Creature* hfs = ObjectAccessor::GetCreature(*go, g) )
                 hfs->AI()->SetData(3, spell);
-        
+
         go->SetLootState(GO_JUST_DEACTIVATED);
         return true;
     }

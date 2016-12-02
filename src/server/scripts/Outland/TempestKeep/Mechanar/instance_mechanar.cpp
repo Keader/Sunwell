@@ -113,7 +113,7 @@ class instance_mechanar : public InstanceMapScript
                             }
                         }
                     }
-                    
+
                     if (!_passageGUIDs.empty())
                         return;
 

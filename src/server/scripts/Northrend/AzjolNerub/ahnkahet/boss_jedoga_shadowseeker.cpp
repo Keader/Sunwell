@@ -264,10 +264,10 @@ public:
             me->SetDisableGravity(true);
             me->CastSpell(me, SPELL_FREEZE_ANIM, true);
         }
-        
+
         void MovementInform(uint32 Type, uint32 PointId)
         {
-            if (Type != POINT_MOTION_TYPE) 
+            if (Type != POINT_MOTION_TYPE)
                 return;
 
             if (PointId == POINT_DOWN)
@@ -423,7 +423,7 @@ public:
                 ScriptedAI::AttackStart(who);
         }
 
-        void MoveInLineOfSight(Unit *who) 
+        void MoveInLineOfSight(Unit *who)
         {
             if (!Timer)
                 ScriptedAI::MoveInLineOfSight(who);

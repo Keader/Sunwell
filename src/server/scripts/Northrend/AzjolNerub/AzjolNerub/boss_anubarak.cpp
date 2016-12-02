@@ -160,7 +160,7 @@ class boss_anub_arak : public CreatureScript
                         break;
                     case EVENT_POUND:
                         if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 10.0f))
-                        {                    
+                        {
                             me->CastSpell(me, SPELL_SELF_ROOT, true);
                             me->DisableRotate(true);
                             me->SendMovementFlagUpdate();

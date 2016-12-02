@@ -89,7 +89,7 @@ public:
         {
             pInstance = c->GetInstanceScript();
         }
-        
+
         InstanceScript* pInstance;
         EventMap events;
         bool lock;
@@ -238,7 +238,7 @@ public:
                     me->SetCanFly(true);
                     me->SetDisableGravity(true);
                     me->NearTeleportTo(1103.69f, 1048.76f, 512.279f, 1.16f);
-                    
+
                     Talk(SAY_ARCANE_EXPLOSION);
                     Talk(EMOTE_ARCANE_EXPLOSION);
 

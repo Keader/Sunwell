@@ -70,7 +70,7 @@ class boss_krik_thir : public CreatureScript
 
                 me->SummonCreature(NPC_WATCHER_NARJIL, 511.8f, 666.493f, 776.278f, 0.977f, TEMPSUMMON_CORPSE_TIMED_DESPAWN, 30000);
                 me->SummonCreature(NPC_SHADOWCASTER, 518.13f, 667.0f, 775.74f, 1.0f, TEMPSUMMON_CORPSE_TIMED_DESPAWN, 30000);
-                me->SummonCreature(NPC_WARRIOR, 506.75f, 670.7f, 776.24f, 0.92f, TEMPSUMMON_CORPSE_TIMED_DESPAWN, 30000);    
+                me->SummonCreature(NPC_WARRIOR, 506.75f, 670.7f, 776.24f, 0.92f, TEMPSUMMON_CORPSE_TIMED_DESPAWN, 30000);
                 me->SummonCreature(NPC_WATCHER_GASHRA, 526.66f, 663.605f, 775.805f, 1.23f, TEMPSUMMON_CORPSE_TIMED_DESPAWN, 30000);
                 me->SummonCreature(NPC_SKIRMISHER, 522.23f, 668.97f, 775.66f, 1.18f, TEMPSUMMON_CORPSE_TIMED_DESPAWN, 30000);
                 me->SummonCreature(NPC_WARRIOR, 532.4f, 666.47f, 775.67f, 1.45f, TEMPSUMMON_CORPSE_TIMED_DESPAWN, 30000);

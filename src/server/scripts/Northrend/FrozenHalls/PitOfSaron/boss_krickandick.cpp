@@ -110,7 +110,7 @@ public:
 
                 ChatHandler::BuildChatPacket(data, CHAT_MSG_RAID_BOSS_EMOTE, LANG_UNIVERSAL, me, NULL, EMOTE_ICK_CHASING);
                 target->ToPlayer()->GetSession()->SendPacket(&data);
-                
+
                 AttackStart(target);
                 me->SetReactState(REACT_PASSIVE);
                 events.RescheduleEvent(EVENT_SET_REACT_AGGRESSIVE, 12000);

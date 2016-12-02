@@ -638,7 +638,7 @@ class boss_sindragosa : public CreatureScript
                             if (ok)
                                 break;
                         } while (--triesLeft);
-                                
+
                         me->CastSpell(destX, destY, destZ, SPELL_FROST_BOMB_TRIGGER, false);
                         if (_bombCount >= 4)
                             events.ScheduleEvent(EVENT_LAND, 5500);
@@ -1276,7 +1276,7 @@ class MysticBuffetTargetFilter
         explicit MysticBuffetTargetFilter(Unit* caster) : _caster(caster) { }
 
         bool operator()(WorldObject* unit) const
-        {    
+        {
             if (!unit->IsInMap(_caster))
                 return true;
 

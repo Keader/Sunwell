@@ -227,7 +227,7 @@ public:
         {
             if (pInstance)
                 pInstance->SetData(TYPE_ASSEMBLY, IN_PROGRESS);
-            
+
             me->setActive(true);
             me->SetInCombatWithZone();
             me->CastSpell(me, SPELL_HIGH_VOLTAGE, true);
@@ -299,7 +299,7 @@ public:
                 RestoreAssemblyHealth(pInstance->GetData64(DATA_BRUNDIR), pInstance->GetData64(DATA_MOLGEIM), me);
                 me->CastSpell(me, SPELL_SUPERCHARGE, true);
             }
-            
+
             if (urand(0,1))
             {
                 me->MonsterYell("My death only serves to hasten your demise.", LANG_UNIVERSAL, 0);
@@ -430,7 +430,7 @@ public:
             _phase = 0;
             events.Reset();
             summons.DespawnAll();
-            
+
             if (pInstance)
                 pInstance->SetData(TYPE_ASSEMBLY, NOT_STARTED);
 
@@ -671,7 +671,7 @@ public:
             _stunnedAchievement = true;
 
             events.Reset();
-            
+
             me->SetDisableGravity(false);
             me->SetRegeneratingHealth(true);
             me->SetReactState(REACT_AGGRESSIVE);
@@ -815,7 +815,7 @@ public:
 
             if (!UpdateVictim())
                 return;
-            
+
             if (_flyPhase)
             {
                 if (_flyTarget && me->GetDistance2d(_flyTarget) >= 6 )
@@ -861,7 +861,7 @@ public:
                     events.DelayEvents(18000);
                     me->MonsterYell("Let the storm clouds rise and rain down death from above!", LANG_UNIVERSAL, 0);
                     me->PlayDirectSound(SOUND_BRUNDIR_FLIGHT);
-                    
+
                     _flyPhase = true;
                     _flyTarget = me->GetVictim();
                     me->SetRegeneratingHealth(false);
@@ -873,11 +873,11 @@ public:
                     me->SetUInt64Value(UNIT_FIELD_TARGET, 0);
                     me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_STUNNED);
                     me->SendMonsterMove(_flyTarget->GetPositionX(), _flyTarget->GetPositionY(), _flyTarget->GetPositionZ()+15, 1500, SPLINEFLAG_FLYING);
-                    
+
                     me->CastSpell(me, SPELL_LIGHTNING_TENDRILS, true);
                     me->CastSpell(me, 61883, true);
                     events.ScheduleEvent(EVENT_LIGHTNING_LAND, 16000);
-                    
+
                     me->ApplySpellImmune(0, IMMUNITY_EFFECT, SPELL_EFFECT_INTERRUPT_CAST, true);
                     break;
                 }
@@ -1015,7 +1015,7 @@ class achievement_assembly_of_iron : public AchievementCriteriaScript
         {
             return target && target->GetAuraCount(SPELL_SUPERCHARGE) >= 2 && (!_targetEntry || target->GetEntry() == _targetEntry);
         }
-        
+
     private:
         uint32 const _targetEntry;
 };
@@ -1030,11 +1030,11 @@ class achievement_cant_do_that_while_stunned : public AchievementCriteriaScript
             bool allow = target && target->GetAuraCount(SPELL_SUPERCHARGE) >= 2;
             if (!allow)
                 return false;
-            
+
             if (InstanceScript* instance = target->GetInstanceScript())
                 if (Creature* cr = ObjectAccessor::GetCreature(*target, instance->GetData64(DATA_BRUNDIR)))
                     return cr->AI()->GetData(DATA_BRUNDIR);
-                        
+
             return false;
         }
 };

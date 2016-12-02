@@ -760,7 +760,7 @@ public:
                 if (unit->GetEntry() == NPC_WAVE_MERCENARY || unit->GetEntry() == NPC_WAVE_FOOTMAN || unit->GetEntry() == NPC_WAVE_RIFLEMAN || unit->GetEntry() == NPC_WAVE_PRIEST || unit->GetEntry() == NPC_WAVE_MAGE)
                     if ((--reqKillCount) == 0 && WaveNumber%5 && NextWaveTimer > 5000)
                         NextWaveTimer = 5000;
-            
+
             if (unit->GetEntry() == NPC_QUEL_DELAR)
                 if (Creature* c = instance->GetCreature(NPC_UtherGUID))
                 {

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -33,12 +33,12 @@ m_timer(0), m_lifetime(0)
 }
 
 Unit* TempSummon::GetSummoner() const
-{ 
+{
     return m_summonerGUID ? ObjectAccessor::GetUnit(*this, m_summonerGUID) : NULL;
 }
 
 void TempSummon::Update(uint32 diff)
-{ 
+{
     Creature::Update(diff);
 
     if (m_deathState == DEAD)
@@ -168,7 +168,7 @@ void TempSummon::Update(uint32 diff)
 }
 
 void TempSummon::InitStats(uint32 duration)
-{ 
+{
     ASSERT(!IsPet());
 
     m_timer = duration;
@@ -216,7 +216,7 @@ void TempSummon::InitStats(uint32 duration)
 }
 
 void TempSummon::InitSummon()
-{ 
+{
     Unit* owner = GetSummoner();
     if (owner)
     {
@@ -230,12 +230,12 @@ void TempSummon::InitSummon()
 }
 
 void TempSummon::SetTempSummonType(TempSummonType type)
-{ 
+{
     m_type = type;
 }
 
 void TempSummon::UnSummon(uint32 msTime)
-{ 
+{
     if (msTime)
     {
         ForcedUnsummonDelayEvent* pEvent = new ForcedUnsummonDelayEvent(*this);
@@ -271,7 +271,7 @@ bool ForcedUnsummonDelayEvent::Execute(uint64 /*e_time*/, uint32 /*p_time*/)
 }
 
 void TempSummon::RemoveFromWorld()
-{ 
+{
     if (!IsInWorld())
         return;
 
@@ -296,7 +296,7 @@ Minion::Minion(SummonPropertiesEntry const* properties, uint64 owner, bool isWor
 }
 
 void Minion::InitStats(uint32 duration)
-{ 
+{
     TempSummon::InitStats(duration);
 
     SetReactState(REACT_PASSIVE);
@@ -309,7 +309,7 @@ void Minion::InitStats(uint32 duration)
 }
 
 void Minion::RemoveFromWorld()
-{ 
+{
     if (!IsInWorld())
         return;
 
@@ -325,12 +325,12 @@ Unit* Minion::GetOwner() const
 }
 
 bool Minion::IsGuardianPet() const
-{ 
+{
     return IsPet() || (m_Properties && m_Properties->Category == SUMMON_CATEGORY_PET);
 }
 
 void Minion::setDeathState(DeathState s, bool despawn)
-{ 
+{
     Creature::setDeathState(s, despawn);
     if (s == JUST_DIED && IsGuardianPet())
         if (Unit* owner = GetOwner())
@@ -355,7 +355,7 @@ Guardian::Guardian(SummonPropertiesEntry const* properties, uint64 owner, bool i
 }
 
 void Guardian::InitStats(uint32 duration)
-{ 
+{
     Minion::InitStats(duration);
 
     Unit *m_owner = GetOwner();
@@ -368,7 +368,7 @@ void Guardian::InitStats(uint32 duration)
 }
 
 void Guardian::InitSummon()
-{ 
+{
     TempSummon::InitSummon();
 
     Unit *m_owner = GetOwner();
@@ -385,14 +385,14 @@ Puppet::Puppet(SummonPropertiesEntry const* properties, uint64 owner) : Minion(p
 }
 
 void Puppet::InitStats(uint32 duration)
-{ 
+{
     Minion::InitStats(duration);
     SetLevel(GetOwner()->getLevel());
     SetReactState(REACT_PASSIVE);
 }
 
 void Puppet::InitSummon()
-{ 
+{
     Minion::InitSummon();
     if (!SetCharmedBy(GetOwner(), CHARM_TYPE_POSSESS))
     {
@@ -407,7 +407,7 @@ void Puppet::InitSummon()
 }
 
 void Puppet::Update(uint32 time)
-{ 
+{
     Minion::Update(time);
     //check if caster is channelling?
     if (IsInWorld())
@@ -421,7 +421,7 @@ void Puppet::Update(uint32 time)
 }
 
 void Puppet::RemoveFromWorld()
-{ 
+{
     if (!IsInWorld())
         return;
 

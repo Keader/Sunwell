@@ -77,7 +77,7 @@ public:
         {
             pInstance = c->GetInstanceScript();
         }
-        
+
         InstanceScript* pInstance;
         EventMap events;
         float ZapAngle;

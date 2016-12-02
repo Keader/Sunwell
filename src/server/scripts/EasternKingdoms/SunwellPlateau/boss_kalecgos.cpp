@@ -628,8 +628,8 @@ public:
         {
             targets.remove_if(SpectralBlastCheck(GetCaster()->GetVictim()));
             Trinity::Containers::RandomResizeList(targets, 1);
-        }            
-        
+        }
+
         void HandleDummy(SpellEffIndex effIndex)
         {
             PreventHitDefaultEffect(effIndex);

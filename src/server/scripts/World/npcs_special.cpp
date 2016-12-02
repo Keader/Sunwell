@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -83,7 +83,7 @@ public:
 
     struct npc_elder_clearwaterAI : public ScriptedAI
     {
-        npc_elder_clearwaterAI(Creature *c) : ScriptedAI(c) 
+        npc_elder_clearwaterAI(Creature *c) : ScriptedAI(c)
         {
             events.Reset();
             events.ScheduleEvent(EVENT_CLEARWATER_ANNOUNCE, 1000, 1, 0);
@@ -230,7 +230,7 @@ public:
 
     struct npc_riggle_bassbaitAI : public ScriptedAI
     {
-        npc_riggle_bassbaitAI(Creature *c) : ScriptedAI(c) 
+        npc_riggle_bassbaitAI(Creature *c) : ScriptedAI(c)
         {
             events.Reset();
             events.ScheduleEvent(EVENT_RIGGLE_ANNOUNCE, 1000, 1, 0);
@@ -338,7 +338,7 @@ public:
 
     struct npc_short_john_mirthilAI : public NullCreatureAI
     {
-        npc_short_john_mirthilAI(Creature *c) : NullCreatureAI(c) 
+        npc_short_john_mirthilAI(Creature *c) : NullCreatureAI(c)
         {
             pathPoint = 0;
             startWarning = false;

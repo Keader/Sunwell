@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -51,7 +51,7 @@
 /***            BATTLEGROUND MANAGER                   ***/
 /*********************************************************/
 
-BattlegroundMgr::BattlegroundMgr() : m_ArenaTesting(false), m_Testing(false), 
+BattlegroundMgr::BattlegroundMgr() : m_ArenaTesting(false), m_Testing(false),
     m_lastClientVisibleInstanceId(0), m_NextAutoDistributionTime(0), m_NextPeriodicQueueUpdateTime(5*IN_MILLISECONDS), randomBgDifficultyEntry(999, 0, 80, 80, 0)
 {
     for (uint32 qtype = BATTLEGROUND_QUEUE_NONE; qtype < MAX_BATTLEGROUND_QUEUE_TYPES; ++qtype)

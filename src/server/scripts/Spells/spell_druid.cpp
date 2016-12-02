@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -644,7 +644,7 @@ class spell_dru_lifebloom : public SpellScriptLoader
                             // healing with bonus
                             healAmount = caster->SpellHealingBonusDone(target, finalHeal, healAmount, HEAL, 0.0f, dispelInfo->GetRemovedCharges());
                             healAmount = target->SpellHealingBonusTaken(caster, finalHeal, healAmount, HEAL, dispelInfo->GetRemovedCharges());
-                            
+
                             // mana amount
                             int32 mana = CalculatePct(caster->GetCreateMana(), GetSpellInfo()->ManaCostPercentage) * dispelInfo->GetRemovedCharges() / 2;
                             caster->CastCustomSpell(caster, SPELL_DRUID_LIFEBLOOM_ENERGIZE, &mana, NULL, NULL, true, NULL, NULL, GetCasterGUID());

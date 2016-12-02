@@ -95,7 +95,7 @@ public:
             if( pInstance )
                 pInstance->SetData(BOSS_ARGENT_CHALLENGE, NOT_STARTED);
         }
-        
+
         void MovementInform(uint32 type, uint32 id)
         {
             if( type == POINT_MOTION_TYPE && id == 1 )
@@ -226,7 +226,7 @@ public:
             if( pInstance )
                 pInstance->SetData(BOSS_ARGENT_CHALLENGE, NOT_STARTED);
         }
-        
+
         void MovementInform(uint32 type, uint32 id)
         {
             if( type == POINT_MOTION_TYPE && id == 1 )
@@ -471,7 +471,7 @@ enum ArgentSoldierSpells
     // monk
     SPELL_FLURRY_OF_BLOWS                = 67233,
     SPELL_PUMMEL                        = 67235,
-    SPELL_DIVINE_SHIELD_H                = 67251, 
+    SPELL_DIVINE_SHIELD_H                = 67251,
     SPELL_FINAL_MEDITATION_H            = 67255,
 
     // priestess
@@ -640,7 +640,7 @@ public:
                     if( IsHeroic() )
                         events.RescheduleEvent(EVENT_LIGHTWIELDER_SPELL_UNBALANCING_STRIKE_H, urand(8000,12000));
                     break;
-            }                
+            }
         }
 
         void UpdateAI(uint32 diff)

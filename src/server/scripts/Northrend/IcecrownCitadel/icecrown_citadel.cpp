@@ -2569,7 +2569,7 @@ public:
                 return;
 
             events.Update(diff);
-            
+
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
 
@@ -2634,7 +2634,7 @@ public:
                 return;
 
             events.Update(diff);
-            
+
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
 
@@ -2689,7 +2689,7 @@ public:
                 return;
 
             events.Update(diff);
-            
+
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
 
@@ -2751,7 +2751,7 @@ public:
                 return;
 
             events.Update(diff);
-            
+
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
 
@@ -2870,7 +2870,7 @@ public:
                 return;
 
             events.Update(diff);
-            
+
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
 
@@ -2916,7 +2916,7 @@ public:
 SeveredEssenceSpellInfo sesi_spells[] =
 {
     {CLASS_SHAMAN, 71938, 5000, 1, 0.0f},
-    {CLASS_PALADIN, 57767, 8000, 2, 30.0f}, 
+    {CLASS_PALADIN, 57767, 8000, 2, 30.0f},
     {CLASS_WARLOCK, 71937, 10000, 1, 0.0f},
     {CLASS_DEATH_KNIGHT, 49576, 15000, 1, 30.0f},
     {CLASS_ROGUE, 71933, 8000, 1, 0.0f},
@@ -2993,7 +2993,7 @@ public:
                 return;
 
             events.Update(diff);
-            
+
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
 
@@ -3092,7 +3092,7 @@ public:
                 return;
 
             events.Update(diff);
-            
+
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
 
@@ -3241,7 +3241,7 @@ public:
                 return;
 
             events.Update(diff);
-            
+
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
 
@@ -3382,7 +3382,7 @@ public:
                 return;
 
             events.Update(diff);
-            
+
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
 
@@ -3571,7 +3571,7 @@ class npc_icc_gauntlet_controller : public CreatureScript
                         {
                             if (me->GetDistance(itr->GetSource()) > 100.0f || !itr->GetSource()->IsAlive() || itr->GetSource()->IsGameMaster())
                                 continue;
-                            
+
                             events.ScheduleEvent(EVENT_CHECK_FIGHT, 1000);
                             return;
                         }
@@ -3673,7 +3673,7 @@ class npc_icc_putricades_trap : public CreatureScript
                         {
                             if (me->GetDistance(itr->GetSource()) > 100.0f || !itr->GetSource()->IsAlive() || itr->GetSource()->IsGameMaster())
                                 continue;
-                            
+
                             events.ScheduleEvent(EVENT_CHECK_FIGHT, 1000);
                             return;
                         }
@@ -3726,7 +3726,7 @@ class at_icc_putricide_trap : public AreaTriggerScript
         at_icc_putricide_trap() : AreaTriggerScript("at_icc_putricide_trap") { }
 
         bool OnTrigger(Player* player, AreaTriggerEntry const* /*areaTrigger*/)
-        {           
+        {
             if (InstanceScript* instance = player->GetInstanceScript())
                 if (instance->GetData(DATA_PUTRICIDE_TRAP_STATE) == NOT_STARTED && !player->IsGameMaster())
                     if (Creature* trap = ObjectAccessor::GetCreature(*player, instance->GetData64(NPC_PUTRICADES_TRAP)))

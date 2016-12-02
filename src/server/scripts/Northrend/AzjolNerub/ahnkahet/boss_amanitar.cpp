@@ -146,7 +146,7 @@ public:
                 {
                     if (Unit *pTarget = SelectTarget(SELECT_TARGET_RANDOM, 0, 100, true))
                         me->CastSpell(pTarget, SPELL_VENOM_BOLT_VOLLEY, false);
-                    
+
                     events.RepeatEvent(urand(15000, 20000));
                     break;
                 }

@@ -348,7 +348,7 @@ class npc_warden_mellichar : public CreatureScript
             {
                 me->setActive(false);
             }
- 
+
             void Reset()
             {
                 _Reset();
@@ -544,7 +544,7 @@ class npc_warden_mellichar : public CreatureScript
                             creature->CastSpell((Unit*)NULL, SPELL_MIND_REND, false);
                         events.ScheduleEvent(EVENT_WARDEN_INTRO29, 4000);
                         break;
-                    
+
                     case EVENT_WARDEN_INTRO29:
                         events.Reset();
                         me->SetFlag(UNIT_DYNAMIC_FLAGS, UNIT_DYNFLAG_DEAD);
@@ -574,7 +574,7 @@ public:
     class spell_arcatraz_soul_steal_AuraScript : public AuraScript
     {
         PrepareAuraScript(spell_arcatraz_soul_steal_AuraScript)
-        
+
         void HandleEffectApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
         {
             if (Unit* caster = GetCaster())

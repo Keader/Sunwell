@@ -127,7 +127,7 @@ public:
 
             for (uint8 i = 0; i < RAID_MODE(2,4); ++i)
                 me->SummonCreature(NPC_SANCTUM_SENTRY, me->GetPositionX()+urand(4,12), me->GetPositionY()+urand(4,12), me->GetPositionZ());
-                
+
             me->ApplySpellImmune(0, IMMUNITY_EFFECT, SPELL_EFFECT_INTERRUPT_CAST, false);
         }
 
@@ -470,7 +470,7 @@ class achievement_auriaya_crazy_cat_lady : public AchievementCriteriaScript
                 if (InstanceScript* instance = target->GetInstanceScript())
                     if (Creature* cr = ObjectAccessor::GetCreature(*target, instance->GetData64(TYPE_AURIAYA)))
                         return cr->AI()->GetData(DATA_CRAZY_CAT);
-                        
+
             return false;
         }
 };
@@ -486,7 +486,7 @@ class achievement_auriaya_nine_lives : public AchievementCriteriaScript
                 if (InstanceScript* instance = target->GetInstanceScript())
                     if (Creature* cr = ObjectAccessor::GetCreature(*target, instance->GetData64(TYPE_AURIAYA)))
                         return cr->AI()->GetData(DATA_NINE_LIVES);
-                        
+
             return false;
         }
 };

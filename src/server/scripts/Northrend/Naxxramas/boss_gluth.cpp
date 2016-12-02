@@ -63,7 +63,7 @@ public:
         SummonList summons;
         InstanceScript* pInstance;
         uint64 gazeTarget;
-        
+
         void Reset()
         {
             me->ApplySpellImmune(29306, IMMUNITY_ID, 29306, true);

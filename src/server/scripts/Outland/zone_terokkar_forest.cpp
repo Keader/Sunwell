@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -83,7 +83,7 @@ class spell_q10930_big_bone_worm : public SpellScriptLoader
             PrepareAuraScript(spell_q10930_big_bone_worm_AuraScript);
 
             void HandleEffectRemove(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
-            {               
+            {
                 if (GetTargetApplication()->GetRemoveMode() != AURA_REMOVE_BY_EXPIRE)
                     return;
 

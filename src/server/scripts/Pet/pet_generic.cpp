@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -109,7 +109,7 @@ public:
     {
         uint64 ownerGUID;
         EventMap events;
-        npc_pet_gen_soul_trader_beaconAI(Creature *c) : ScriptedAI(c) 
+        npc_pet_gen_soul_trader_beaconAI(Creature *c) : ScriptedAI(c)
         {
             events.Reset();
             events.ScheduleEvent(EVENT_INITIAL_TALK, 0);
@@ -171,7 +171,7 @@ enum eArgentPony
     SPELL_AURA_SHOP_S                = 67377,
     SPELL_AURA_BANK_S                = 67368,
     SPELL_AURA_TIRED_S                = 67401,
-    
+
     SPELL_AURA_BANK_G                = 68849,
     SPELL_AURA_POSTMAN_G            = 68850,
     SPELL_AURA_SHOP_G                = 68851,
@@ -221,7 +221,7 @@ public:
 
     struct npc_pet_gen_argent_pony_bridleAI : public ScriptedAI
     {
-        npc_pet_gen_argent_pony_bridleAI(Creature *c) : ScriptedAI(c) 
+        npc_pet_gen_argent_pony_bridleAI(Creature *c) : ScriptedAI(c)
         {
             _state = ARGENT_PONY_STATE_NONE;
             _init = false;
@@ -321,7 +321,7 @@ public:
         {
             if (param == 0)
                 return _state;
-            
+
             return _banners[param];
         }
 
@@ -337,7 +337,7 @@ public:
 
             _state = param;
         }
-        
+
         private:
             bool _init;
             uint8 _state;
@@ -365,7 +365,7 @@ public:
         for (uint8 i = RACE_HUMAN; i < MAX_RACES; ++i)
             if (creature->AI()->GetData(i) == uint32(true))
                 player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, argentBanners[i].text, GOSSIP_SENDER_MAIN, argentBanners[i].spell);
-        
+
         player->SEND_GOSSIP_MENU(player->GetGossipTextId(creature), creature->GetGUID());
         return true;
     }
@@ -440,7 +440,7 @@ public:
 
     struct npc_pet_gen_target_following_bombAI : public NullCreatureAI
     {
-        npc_pet_gen_target_following_bombAI(Creature *c) : NullCreatureAI(c) 
+        npc_pet_gen_target_following_bombAI(Creature *c) : NullCreatureAI(c)
         {
             checkTimer = 0;
             bombSpellId = 0;
@@ -495,7 +495,7 @@ public:
 
     struct npc_pet_gen_gnomish_flame_turretAI : public ScriptedAI
     {
-        npc_pet_gen_gnomish_flame_turretAI(Creature *c) : ScriptedAI(c) 
+        npc_pet_gen_gnomish_flame_turretAI(Creature *c) : ScriptedAI(c)
         {
             checkTimer = 0;
         }

@@ -108,7 +108,7 @@ public:
 
                 // phase mask
                 pTarget->CastSpell(pTarget, SPELL_INSANITY_TARGET+insanityHandled, true);
-                
+
                 // summon twisted party members for this target
                 Map::PlayerList const &players = me->GetMap()->GetPlayers();
                 for (Map::PlayerList::const_iterator i = players.begin(); i != players.end(); ++i)

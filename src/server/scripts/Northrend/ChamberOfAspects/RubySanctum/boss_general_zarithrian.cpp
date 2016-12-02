@@ -166,7 +166,7 @@ class boss_general_zarithrian : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetPositionX() > 3060.0f;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -164,7 +164,7 @@ public:
             events.RescheduleEvent(EVENT_ARTRUIS_HP_CHECK, 1000);
             events.RescheduleEvent(EVENT_ARTRUIS_TALK1, 6000);
         }
-        
+
         void JustDied(Unit* /*killer*/)
         {
             if (GameObject* go = me->SummonGameObject(GO_ARTRUIS_PHYLACTERY, me->GetPositionX(), me->GetPositionY(), me->GetPositionZ(), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 600000))
@@ -321,7 +321,7 @@ public:
         uint8 playeraction;
 
         npc_still_at_it_triggerAI(Creature* pCreature) : NullCreatureAI(pCreature) {}
-        
+
         void Reset()
         {
             running = false;
@@ -366,7 +366,7 @@ public:
             {
                 currentstep++;
                 uint8 s = urand(0,2);
-                
+
                 if (Creature* th = ObjectAccessor::GetCreature(*me, thunderbrewGUID))
                     th->HandleEmoteCommand(EMOTE_ONESHOT_CHEER_NO_SHEATHE);
 

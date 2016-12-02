@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -175,7 +175,7 @@ Player* ObjectAccessor::FindPlayer(uint64 guid)
 
 Player* ObjectAccessor::FindPlayerInOrOutOfWorld(uint64 guid)
 {
-    return GetObjectInOrOutOfWorld(guid, (Player*)NULL); 
+    return GetObjectInOrOutOfWorld(guid, (Player*)NULL);
 }
 
 Unit* ObjectAccessor::FindUnit(uint64 guid)
@@ -490,7 +490,7 @@ void ObjectAccessor::Update(uint32 /*diff*/)
 }
 
 void Map::BuildAndSendUpdateForObjects()
-{ 
+{
     UpdateDataMapType update_players;
     UpdatePlayerSet player_set;
 

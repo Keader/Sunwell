@@ -29,14 +29,14 @@ class instance_blackfathom_deeps : public InstanceMapScript
 
             void OnCreatureCreate(Creature* creature)
             {
-                if (creature->IsSummon() && (creature->GetEntry() == NPC_BARBED_CRUSTACEAN || creature->GetEntry() == NPC_AKU_MAI_SERVANT || 
+                if (creature->IsSummon() && (creature->GetEntry() == NPC_BARBED_CRUSTACEAN || creature->GetEntry() == NPC_AKU_MAI_SERVANT ||
                     creature->GetEntry() == NPC_MURKSHALLOW_SOFTSHELL || creature->GetEntry() == NPC_AKU_MAI_SNAPJAW))
                     ++_requiredDeaths;
             }
 
             void OnUnitDeath(Unit* unit)
             {
-                if (unit->IsSummon() && (unit->GetEntry() == NPC_BARBED_CRUSTACEAN || unit->GetEntry() == NPC_AKU_MAI_SERVANT || 
+                if (unit->IsSummon() && (unit->GetEntry() == NPC_BARBED_CRUSTACEAN || unit->GetEntry() == NPC_AKU_MAI_SERVANT ||
                     unit->GetEntry() == NPC_MURKSHALLOW_SOFTSHELL || unit->GetEntry() == NPC_AKU_MAI_SNAPJAW))
                 {
                     if (--_requiredDeaths == 0)

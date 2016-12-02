@@ -265,7 +265,7 @@ public:
                         cr = me->SummonCreature(NPC_BLIZZARD, *target, TEMPSUMMON_TIMED_DESPAWN, 16000);
                     else
                         cr = me->SummonCreature(NPC_BLIZZARD, *me, TEMPSUMMON_TIMED_DESPAWN, 16000);
-                        
+
                     if (cr)
                         cr->GetMotionMaster()->MoveRandom(40);
                     events.RepeatEvent(RAID_MODE(8000, 6500));
@@ -301,7 +301,7 @@ public:
                     if (currentTarget)
                         if (Unit* target = ObjectAccessor::GetUnit(*me, currentTarget))
                             me->SummonGameObject(GO_ICE_BLOCK, target->GetPositionX(), target->GetPositionY(), target->GetPositionZ(), target->GetOrientation(), 0.0f, 0.0f, 0.0f, 0.0f, 0);
-            
+
                     std::vector<Unit*> targets;
                     ThreatContainer::StorageType::const_iterator i = me->getThreatManager().getThreatList().begin();
                     for (; i != me->getThreatManager().getThreatList().end(); ++i)
@@ -315,7 +315,7 @@ public:
                                         inList = true;
                                         break;
                                     }
-                            
+
                             if (!inList)
                                 targets.push_back((*i)->getTarget());
                         }

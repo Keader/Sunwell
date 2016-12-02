@@ -11,7 +11,7 @@ enum Spells
     // Main
     SPELL_ICE_NOVA                    = 47772,
     SPELL_FIREBOMB                    = 47773,
-    
+
     SPELL_GRAVITY_WELL                = 47756,
     SPELL_TELESTRA_BACK                = 47714,
     SPELL_BURNING_WINDS                = 46308,

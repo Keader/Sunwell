@@ -59,8 +59,8 @@ public:
 
         EventMap events;
         SummonList summons;
-        void Reset() 
-        { 
+        void Reset()
+        {
             events.Reset();
             summons.DespawnAll();
         }

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -859,11 +859,11 @@ class spell_infected_worgen_bite : public SpellScriptLoader
 {
     public:
         spell_infected_worgen_bite() : SpellScriptLoader("spell_infected_worgen_bite") { }
-        
+
         class spell_infected_worgen_bite_AuraScript : public AuraScript
         {
             PrepareAuraScript(spell_infected_worgen_bite_AuraScript);
-            
+
             void HandleAfterEffectApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
             {
                 Unit* target = GetTarget();
@@ -874,7 +874,7 @@ class spell_infected_worgen_bite : public SpellScriptLoader
                         target->CastSpell(target, SPELL_WORGENS_CALL, true);
                     }
             }
-            
+
             void Register()
             {
                 AfterEffectApply += AuraEffectApplyFn(spell_infected_worgen_bite_AuraScript::HandleAfterEffectApply, EFFECT_1, SPELL_AURA_PERIODIC_DAMAGE, AURA_EFFECT_HANDLE_REAPPLY);

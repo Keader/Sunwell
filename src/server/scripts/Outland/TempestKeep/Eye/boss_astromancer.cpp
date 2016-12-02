@@ -220,7 +220,7 @@ class boss_high_astromancer_solarian : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetDistance2d(432.59f, -371.93f) > 105.0f;

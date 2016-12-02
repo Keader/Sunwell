@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -195,7 +195,7 @@ class InstanceScript : public ZoneScript
         virtual bool SetBossState(uint32 id, EncounterState state);
         EncounterState GetBossState(uint32 id) const { return id < bosses.size() ? bosses[id].state : TO_BE_DECIDED; }
         BossBoundaryMap const* GetBossBoundary(uint32 id) const { return id < bosses.size() ? &bosses[id].boundary : NULL; }
-        BossInfo const* GetBossInfo(uint32 id) const { return &bosses[id]; } 
+        BossInfo const* GetBossInfo(uint32 id) const { return &bosses[id]; }
 
         // Achievement criteria additional requirements check
         // NOTE: not use this if same can be checked existed requirement types from AchievementCriteriaRequirementType

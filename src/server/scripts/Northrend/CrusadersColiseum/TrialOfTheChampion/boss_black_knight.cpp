@@ -184,7 +184,7 @@ public:
                     me->SetHealth(me->GetMaxHealth());
                     me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
                     me->SetControlled(false, UNIT_STATE_STUNNED);
-                    
+
                     me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_UNK_29);
                     me->RemoveFlag(UNIT_FIELD_FLAGS_2, UNIT_FLAG2_FEIGN_DEATH);
                     me->RemoveFlag(UNIT_DYNAMIC_FLAGS, UNIT_DYNFLAG_DEAD);

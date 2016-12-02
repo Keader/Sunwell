@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -555,7 +555,7 @@ void WorldSession::HandlePetActionHelper(Unit* pet, uint64 guid1, uint16 spellid
                             return;
 
                     // Not let attack through obstructions
-                    bool checkLos = !MMAP::MMapFactory::IsPathfindingEnabled(pet->GetMap()) || 
+                    bool checkLos = !MMAP::MMapFactory::IsPathfindingEnabled(pet->GetMap()) ||
                                     (TargetUnit->GetTypeId() == TYPEID_UNIT && (TargetUnit->ToCreature()->isWorldBoss() || TargetUnit->ToCreature()->IsDungeonBoss()));
 
                     if (checkLos && !pet->IsWithinLOSInMap(TargetUnit))

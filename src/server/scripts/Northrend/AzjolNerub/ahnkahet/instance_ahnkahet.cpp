@@ -82,11 +82,11 @@ public:
         {
             switch(pGo->GetEntry())
             {
-                case 193564:     
+                case 193564:
                     Prince_TaldaramPlatform = pGo->GetGUID();
-                    if (m_auiEncounter[1] == DONE) 
-                        HandleGameObject(0,true,pGo); 
-                    
+                    if (m_auiEncounter[1] == DONE)
+                        HandleGameObject(0,true,pGo);
+
                     break;
                 case 193093:
                     if (spheres == DONE)
@@ -94,9 +94,9 @@ public:
                         pGo->SetGoState(GO_STATE_ACTIVE);
                         pGo->SetFlag(GAMEOBJECT_FLAGS, GO_FLAG_NOT_SELECTABLE);
                     }
-                    else 
+                    else
                         pGo->RemoveFlag(GAMEOBJECT_FLAGS, GO_FLAG_NOT_SELECTABLE);
-                    
+
                     break;
                 case 193094:
                     if (spheres == DONE)
@@ -104,15 +104,15 @@ public:
                         pGo->SetGoState(GO_STATE_ACTIVE);
                         pGo->SetFlag(GAMEOBJECT_FLAGS, GO_FLAG_NOT_SELECTABLE);
                     }
-                    else 
+                    else
                         pGo->RemoveFlag(GAMEOBJECT_FLAGS, GO_FLAG_NOT_SELECTABLE);
-                    
+
                     break;
-                case 192236:    
+                case 192236:
                     Prince_TaldaramGate = pGo->GetGUID(); // Web gate past Prince Taldaram
                     if (m_auiEncounter[1] == DONE)
                         HandleGameObject(0,true,pGo);
-                    
+
                     break;
             }
         }
@@ -150,14 +150,14 @@ public:
             {
                 case DATA_HERALD_VOLAZJ_EVENT:
                 case DATA_AMANITAR_EVENT:
-                case DATA_ELDER_NADOX_EVENT: 
+                case DATA_ELDER_NADOX_EVENT:
                 case DATA_JEDOGA_SHADOWSEEKER_EVENT:
                     m_auiEncounter[type] = data;
                     break;
                 case DATA_PRINCE_TALDARAM_EVENT:
                     if (data == DONE)
                         HandleGameObject(Prince_TaldaramGate, true);
-                    
+
                     m_auiEncounter[type] = data;
                     break;
                 case DATA_SPHERE_EVENT:
@@ -186,7 +186,7 @@ public:
                 case DATA_AMANITAR_EVENT:
                     return m_auiEncounter[type];
 
-                case DATA_SPHERE_EVENT:                 
+                case DATA_SPHERE_EVENT:
                     return spheres;
             }
 

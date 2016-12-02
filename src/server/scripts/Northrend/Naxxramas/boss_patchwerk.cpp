@@ -49,7 +49,7 @@ public:
 
     struct boss_patchwerkAI : public ScriptedAI
     {
-        boss_patchwerkAI(Creature *c) : ScriptedAI(c) 
+        boss_patchwerkAI(Creature *c) : ScriptedAI(c)
         {
             pInstance = me->GetInstanceScript();
         }
@@ -86,7 +86,7 @@ public:
         void EnterCombat(Unit *who)
         {
             Talk(SAY_AGGRO);
-            
+
             me->SetInCombatWithZone();
             events.ScheduleEvent(EVENT_SPELL_HATEFUL_STRIKE, 1200);
             events.ScheduleEvent(EVENT_SPELL_BERSERK, 360000);
@@ -117,7 +117,7 @@ public:
                     std::list<Unit*> meleeRangeTargets;
                     Unit* finalTarget = NULL;
                     uint8 counter = 0;
-                    
+
                     ThreatContainer::StorageType::const_iterator i = me->getThreatManager().getThreatList().begin();
                     for (; i != me->getThreatManager().getThreatList().end(); ++i, ++counter)
                     {

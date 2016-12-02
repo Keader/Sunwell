@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -632,7 +632,7 @@ void LFGMgr::JoinLfg(Player* player, uint8 roles, LfgDungeonSet& dungeons, const
     {
         if (grp)
             roles = PLAYER_ROLE_LEADER;
-        else 
+        else
             roles &= (PLAYER_ROLE_TANK | PLAYER_ROLE_HEALER | PLAYER_ROLE_DAMAGE);
         if (!roles)
             return;
@@ -959,7 +959,7 @@ void LFGMgr::UpdateRaidBrowser(uint32 diff)
                     maxPower = (p->getPowerType() == POWER_RAGE || p->getPowerType() == POWER_RUNIC_POWER) ? p->GetMaxPower(p->getPowerType())/10 : p->GetMaxPower(p->getPowerType());
 
                 currInternalInfoMap[sitr->first] = RBInternalInfo(guid, sitr->second.comment, groupGuid != 0, groupGuid, sitr->second.roles, encounterMask, instanceGuid,
-                    1, p->getLevel(), p->getClass(), p->getRace(), p->GetAverageItemLevel(), 
+                    1, p->getLevel(), p->getClass(), p->getRace(), p->GetAverageItemLevel(),
                     talents, p->m_last_area_id, p->GetArmor(), (uint32)std::max<int32>(0, spellDamage), (uint32)std::max<int32>(0, spellHeal),
                     p->GetUInt32Value(PLAYER_FIELD_COMBAT_RATING_1 + CR_CRIT_MELEE), p->GetUInt32Value(PLAYER_FIELD_COMBAT_RATING_1 + CR_CRIT_RANGED), p->GetUInt32Value(PLAYER_FIELD_COMBAT_RATING_1 + CR_CRIT_SPELL), std::max<float>(0.0f, mp5), std::max<float>(0.0f, mp5combat),
                     std::max<uint32>(baseAP, rangedAP), (uint32)p->GetStat(STAT_AGILITY), p->GetMaxHealth(), maxPower, p->GetDefenseSkillValue(),
@@ -992,7 +992,7 @@ void LFGMgr::UpdateRaidBrowser(uint32 diff)
                         mplr->GetTalentTreePoints(talents);
                     }
                     currInternalInfoMap[mitr->guid] = RBInternalInfo(guid, emptyComment, false, groupGuid, 0, 0, 0,
-                        (mplr ? 1 : 0), level, Class, race,    iLevel, 
+                        (mplr ? 1 : 0), level, Class, race,    iLevel,
                         talents, 0, 0, 0, 0,
                         0, 0, 0, 0, 0,
                         0, 0, 0, 0, 0,
@@ -1706,7 +1706,7 @@ void LFGMgr::RemoveProposal(LfgProposalContainer::iterator itProposal, LfgUpdate
     for (LfgProposalPlayerContainer::iterator it = proposal.players.begin(); it != proposal.players.end(); ++it)
         if (it->second.accept == LFG_ANSWER_DENY)
             if (Player* plr = sObjectAccessor->FindPlayer(it->first))
-                if (Aura* aura = plr->AddAura(LFG_SPELL_DUNGEON_COOLDOWN, plr)) 
+                if (Aura* aura = plr->AddAura(LFG_SPELL_DUNGEON_COOLDOWN, plr))
                     aura->SetDuration(150*IN_MILLISECONDS);
 
     // Mark players/groups to be removed

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -263,7 +263,7 @@ void WorldSession::HandleOpenWrappedItemCallback(PreparedQueryResult result, uin
     if (item->GetGUIDLow() != itemLowGUID || !item->HasFlag(ITEM_FIELD_FLAGS, ITEM_FLAG_WRAPPED)) // during getting result, gift was swapped with another item
         return;
 
-    
+
     if (!result)
     {
         sLog->outError("Wrapped item %u don't have record in character_gifts table and will deleted", item->GetGUIDLow());

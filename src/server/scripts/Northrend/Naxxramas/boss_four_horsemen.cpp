@@ -291,7 +291,7 @@ public:
 
             if (movementPhase < MOVE_PHASE_FINISHED || !UpdateVictim())
                 return;
-            
+
             events.Update(diff);
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;

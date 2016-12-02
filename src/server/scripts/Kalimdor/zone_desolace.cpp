@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -190,7 +190,7 @@ class npc_cork_gizelton : public CreatureScript
                 {
                     if (Creature* summon = ObjectAccessor::GetCreature(*me, summons[i]))
                         summon->DespawnOrUnsummon();
-                    
+
                     summons[i] = 0;
                 }
             }
@@ -210,7 +210,7 @@ class npc_cork_gizelton : public CreatureScript
                     summons[1] = cr->GetGUID();
                 if (cr = me->SummonCreature(NPC_CARAVAN_KODO, *me))
                     summons[2] = cr->GetGUID();
-                
+
                 SummonsFollow();
             }
 

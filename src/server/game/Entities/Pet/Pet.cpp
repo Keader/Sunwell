@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -61,7 +61,7 @@ Pet::~Pet()
 }
 
 void Pet::AddToWorld()
-{ 
+{
     ///- Register the pet for guid lookup
     if (!IsInWorld())
     {
@@ -99,7 +99,7 @@ void Pet::AddToWorld()
 }
 
 void Pet::RemoveFromWorld()
-{ 
+{
     ///- Remove the pet from the accessor
     if (IsInWorld())
     {
@@ -110,7 +110,7 @@ void Pet::RemoveFromWorld()
 }
 
 bool Pet::LoadPetFromDB(Player* owner, uint8 asynchLoadType, uint32 petentry, uint32 petnumber, bool current, AsynchPetSummon* info)
-{ 
+{
     // we are loading pet at that moment
     if (owner->IsSpectator() || owner->GetPet() || !owner->IsInWorld() || !owner->FindMap())
         return false;
@@ -296,7 +296,7 @@ void Pet::DeleteFromDB(uint32 guidlow)
 }
 
 void Pet::setDeathState(DeathState s, bool /*despawn = false*/)                       // overwrite virtual Creature::setDeathState and Unit::setDeathState
-{ 
+{
     Creature::setDeathState(s);
     if (getDeathState() == CORPSE)
     {
@@ -322,7 +322,7 @@ void Pet::setDeathState(DeathState s, bool /*despawn = false*/)                 
 }
 
 void Pet::Update(uint32 diff)
-{ 
+{
     if (m_removed)                                           // pet already removed, just wait in remove queue, no updates
         return;
 
@@ -402,7 +402,7 @@ void Pet::Update(uint32 diff)
 }
 
 void Pet::LoseHappiness()
-{ 
+{
     uint32 curValue = GetPower(POWER_HAPPINESS);
     if (curValue <= 0)
         return;
@@ -413,7 +413,7 @@ void Pet::LoseHappiness()
 }
 
 HappinessState Pet::GetHappinessState()
-{ 
+{
     if (GetPower(POWER_HAPPINESS) < HAPPINESS_LEVEL_SIZE)
         return UNHAPPY;
     else if (GetPower(POWER_HAPPINESS) >= HAPPINESS_LEVEL_SIZE * 2)
@@ -423,12 +423,12 @@ HappinessState Pet::GetHappinessState()
 }
 
 void Pet::Remove(PetSaveMode mode, bool returnreagent)
-{ 
+{
     m_owner->RemovePet(this, mode, returnreagent);
 }
 
 void Pet::GivePetXP(uint32 xp)
-{ 
+{
     if (getPetType() != HUNTER_PET)
         return;
 
@@ -465,7 +465,7 @@ void Pet::GivePetXP(uint32 xp)
 }
 
 void Pet::GivePetLevel(uint8 level)
-{ 
+{
     if (!level || level == getLevel())
         return;
 
@@ -481,7 +481,7 @@ void Pet::GivePetLevel(uint8 level)
 }
 
 bool Pet::CreateBaseAtCreature(Creature* creature)
-{ 
+{
     ASSERT(creature);
 
     if (!CreateBaseAtTamed(creature->GetCreatureTemplate(), creature->GetMap(), creature->GetPhaseMask()))
@@ -514,7 +514,7 @@ bool Pet::CreateBaseAtCreature(Creature* creature)
 }
 
 bool Pet::CreateBaseAtCreatureInfo(CreatureTemplate const* cinfo, Unit* owner)
-{ 
+{
     if (!CreateBaseAtTamed(cinfo, owner->GetMap(), owner->GetPhaseMask()))
         return false;
 
@@ -527,7 +527,7 @@ bool Pet::CreateBaseAtCreatureInfo(CreatureTemplate const* cinfo, Unit* owner)
 }
 
 bool Pet::CreateBaseAtTamed(CreatureTemplate const* cinfo, Map* map, uint32 phaseMask)
-{ 
+{
     ;//sLog->outDebug(LOG_FILTER_PETS, "Pet::CreateBaseForTamed");
     uint32 guid=sObjectMgr->GenerateLowGuid(HIGHGUID_PET);
     uint32 pet_number = sObjectMgr->GeneratePetNumber();
@@ -554,7 +554,7 @@ bool Pet::CreateBaseAtTamed(CreatureTemplate const* cinfo, Map* map, uint32 phas
 
 // TODO: Move stat mods code to pet passive auras
 bool Guardian::InitStatsForLevel(uint8 petlevel)
-{ 
+{
     CreatureTemplate const* cinfo = GetCreatureTemplate();
     ASSERT(cinfo);
 
@@ -841,7 +841,7 @@ bool Guardian::InitStatsForLevel(uint8 petlevel)
                         SetCreateMana(28 + 10*petlevel);
                         SetCreateHealth(28 + 30*petlevel);
                     }
-                    
+
                     AddAura(SPELL_HUNTER_PET_SCALING_04, this);
                     AddAura(SPELL_DK_PET_SCALING_01, this);
                     AddAura(SPELL_DK_PET_SCALING_02, this);
@@ -867,10 +867,10 @@ bool Guardian::InitStatsForLevel(uint8 petlevel)
                 }
                 case NPC_GENERIC_IMP:
                 case NPC_GENERIC_VOIDWALKER:
-                { 
-                    SetBaseWeaponDamage(BASE_ATTACK, MINDAMAGE, float(petlevel - (petlevel / 4))); 
-                    SetBaseWeaponDamage(BASE_ATTACK, MAXDAMAGE, float(petlevel + (petlevel / 4))); 
-                    break; 
+                {
+                    SetBaseWeaponDamage(BASE_ATTACK, MINDAMAGE, float(petlevel - (petlevel / 4)));
+                    SetBaseWeaponDamage(BASE_ATTACK, MAXDAMAGE, float(petlevel + (petlevel / 4)));
+                    break;
                 }
             }
             break;
@@ -907,7 +907,7 @@ bool Guardian::InitStatsForLevel(uint8 petlevel)
 }
 
 bool Pet::HaveInDiet(ItemTemplate const* item) const
-{ 
+{
     if (!item->FoodType)
         return false;
 
@@ -925,7 +925,7 @@ bool Pet::HaveInDiet(ItemTemplate const* item) const
 }
 
 uint32 Pet::GetCurrentFoodBenefitLevel(uint32 itemlevel) const
-{ 
+{
     // -5 or greater food level
     if (getLevel() <= itemlevel + 5)                         //possible to feed level 60 pet with level 55 level food for full effect
         return 35000;
@@ -941,7 +941,7 @@ uint32 Pet::GetCurrentFoodBenefitLevel(uint32 itemlevel) const
 }
 
 void Pet::_LoadSpellCooldowns(PreparedQueryResult result)
-{ 
+{
     m_CreatureSpellCooldowns.clear();
 
     if (result)
@@ -985,7 +985,7 @@ void Pet::_LoadSpellCooldowns(PreparedQueryResult result)
 }
 
 void Pet::_SaveSpellCooldowns(SQLTransaction& trans, bool logout)
-{ 
+{
     PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_DEL_PET_SPELL_COOLDOWNS);
     stmt->setUInt32(0, m_charmInfo->GetPetNumber());
     trans->Append(stmt);
@@ -1015,7 +1015,7 @@ void Pet::_SaveSpellCooldowns(SQLTransaction& trans, bool logout)
 }
 
 void Pet::_LoadSpells(PreparedQueryResult result)
-{ 
+{
     if (result)
     {
         do
@@ -1029,7 +1029,7 @@ void Pet::_LoadSpells(PreparedQueryResult result)
 }
 
 void Pet::_SaveSpells(SQLTransaction& trans)
-{ 
+{
     for (PetSpellMap::iterator itr = m_spells.begin(), next = m_spells.begin(); itr != m_spells.end(); itr = next)
     {
         ++next;
@@ -1078,7 +1078,7 @@ void Pet::_SaveSpells(SQLTransaction& trans)
 }
 
 void Pet::_LoadAuras(PreparedQueryResult result, uint32 timediff)
-{ 
+{
     ;//sLog->outDebug(LOG_FILTER_PETS, "Loading auras for pet %u", GetGUIDLow());
 
     if (result)
@@ -1148,7 +1148,7 @@ void Pet::_LoadAuras(PreparedQueryResult result, uint32 timediff)
 }
 
 void Pet::_SaveAuras(SQLTransaction& trans, bool logout)
-{ 
+{
     PreparedStatement* stmt = CharacterDatabase.GetPreparedStatement(CHAR_DEL_PET_AURAS);
     stmt->setUInt32(0, m_charmInfo->GetPetNumber());
     trans->Append(stmt);
@@ -1231,7 +1231,7 @@ void Pet::_SaveAuras(SQLTransaction& trans, bool logout)
 }
 
 bool Pet::addSpell(uint32 spellId, ActiveStates active /*= ACT_DECIDE*/, PetSpellState state /*= PETSPELL_NEW*/, PetSpellType type /*= PETSPELL_NORMAL*/)
-{ 
+{
     SpellInfo const* spellInfo = sSpellMgr->GetSpellInfo(spellId);
     if (!spellInfo)
     {
@@ -1371,7 +1371,7 @@ bool Pet::addSpell(uint32 spellId, ActiveStates active /*= ACT_DECIDE*/, PetSpel
 }
 
 bool Pet::learnSpell(uint32 spell_id)
-{ 
+{
     // prevent duplicated entires in spell book
     if (!addSpell(spell_id))
         return false;
@@ -1387,7 +1387,7 @@ bool Pet::learnSpell(uint32 spell_id)
 }
 
 void Pet::InitLevelupSpellsForLevel()
-{ 
+{
     uint8 level = getLevel();
 
     if (PetLevelupSpellSet const* levelupSpells = GetCreatureTemplate()->family ? sSpellMgr->GetPetLevelupSpellList(GetCreatureTemplate()->family) : NULL)
@@ -1426,7 +1426,7 @@ void Pet::InitLevelupSpellsForLevel()
 }
 
 bool Pet::unlearnSpell(uint32 spell_id, bool learn_prev, bool clear_ab)
-{ 
+{
     if (removeSpell(spell_id, learn_prev, clear_ab))
     {
         if (!m_loading)
@@ -1441,7 +1441,7 @@ bool Pet::unlearnSpell(uint32 spell_id, bool learn_prev, bool clear_ab)
 }
 
 bool Pet::removeSpell(uint32 spell_id, bool learn_prev, bool clear_ab)
-{ 
+{
     PetSpellMap::iterator itr = m_spells.find(spell_id);
     if (itr == m_spells.end())
         return false;
@@ -1492,7 +1492,7 @@ bool Pet::removeSpell(uint32 spell_id, bool learn_prev, bool clear_ab)
 }
 
 void Pet::CleanupActionBar()
-{ 
+{
     for (uint8 i = 0; i < MAX_UNIT_ACTION_BAR_INDEX; ++i)
         if (UnitActionBarEntry const* ab = m_charmInfo->GetActionBarEntry(i))
             if (ab->GetAction() && ab->IsActionBarForSpell())
@@ -1505,7 +1505,7 @@ void Pet::CleanupActionBar()
 }
 
 void Pet::InitPetCreateSpells()
-{ 
+{
     m_charmInfo->InitPetActionBar();
     m_spells.clear();
 
@@ -1516,7 +1516,7 @@ void Pet::InitPetCreateSpells()
 }
 
 bool Pet::resetTalents()
-{ 
+{
     Unit* owner = GetOwner();
     if (!owner || owner->GetTypeId() != TYPEID_PLAYER)
         return false;
@@ -1672,7 +1672,7 @@ void Pet::resetTalentsForAllPetsOf(Player* owner, Pet* online_pet /*= NULL*/)
 }
 
 void Pet::InitTalentForLevel()
-{ 
+{
     uint8 level = getLevel();
     uint32 talentPointsForLevel = GetMaxTalentPointsForLevel(level);
     // Reset talents in case low level (on level down) or wrong points for level (hunter can unlearn TP increase talent)
@@ -1690,7 +1690,7 @@ void Pet::InitTalentForLevel()
 }
 
 uint8 Pet::GetMaxTalentPointsForLevel(uint8 level)
-{ 
+{
     uint8 points = (level >= 20) ? ((level - 16) / 4) : 0;
     // Mod points from owner SPELL_AURA_MOD_PET_TALENT_POINTS
     if (Unit* owner = GetOwner())
@@ -1699,7 +1699,7 @@ uint8 Pet::GetMaxTalentPointsForLevel(uint8 level)
 }
 
 void Pet::ToggleAutocast(SpellInfo const* spellInfo, bool apply)
-{ 
+{
     if (!spellInfo->IsAutocastable())
         return;
 
@@ -1748,7 +1748,7 @@ void Pet::ToggleAutocast(SpellInfo const* spellInfo, bool apply)
 }
 
 bool Pet::IsPermanentPetFor(Player* owner) const
-{ 
+{
     switch (getPetType())
     {
         case SUMMON_PET:
@@ -1771,7 +1771,7 @@ bool Pet::IsPermanentPetFor(Player* owner) const
 }
 
 bool Pet::Create(uint32 guidlow, Map* map, uint32 phaseMask, uint32 Entry, uint32 pet_number)
-{ 
+{
     ASSERT(map);
     SetMap(map);
 
@@ -1790,14 +1790,14 @@ bool Pet::Create(uint32 guidlow, Map* map, uint32 phaseMask, uint32 Entry, uint3
 }
 
 bool Pet::HasSpell(uint32 spell) const
-{ 
+{
     PetSpellMap::const_iterator itr = m_spells.find(spell);
     return itr != m_spells.end() && itr->second.state != PETSPELL_REMOVED;
 }
 
 // Get all passive spells in our skill line
 void Pet::LearnPetPassives()
-{ 
+{
     CreatureTemplate const* cInfo = GetCreatureTemplate();
     if (!cInfo)
         return;
@@ -1818,7 +1818,7 @@ void Pet::LearnPetPassives()
 }
 
 void Pet::CastPetAuras(bool current)
-{ 
+{
     Unit* owner = GetOwner();
     if (!owner || owner->GetTypeId() != TYPEID_PLAYER)
         return;
@@ -1839,7 +1839,7 @@ void Pet::CastPetAuras(bool current)
 }
 
 void Pet::learnSpellHighRank(uint32 spellid)
-{ 
+{
     learnSpell(spellid);
 
     if (uint32 next = sSpellMgr->GetNextSpellInChain(spellid))
@@ -1847,7 +1847,7 @@ void Pet::learnSpellHighRank(uint32 spellid)
 }
 
 void Pet::SynchronizeLevelWithOwner()
-{ 
+{
     Unit* owner = GetOwner();
     if (!owner || owner->GetTypeId() != TYPEID_PLAYER)
         return;
@@ -1871,7 +1871,7 @@ void Pet::SynchronizeLevelWithOwner()
 }
 
 void Pet::HandleAsynchLoadSucceed()
-{ 
+{
     Player* owner = GetOwner();
     if (!owner)
         return;
@@ -1938,7 +1938,7 @@ void Pet::HandleAsynchLoadSucceed()
         SetFlag(UNIT_FIELD_AURASTATE, 1<<(AURA_STATE_HEALTHLESS_35_PERCENT-1));
     if (HealthAbovePct(75))
         SetFlag(UNIT_FIELD_AURASTATE, 1<<(AURA_STATE_HEALTH_ABOVE_75_PERCENT-1));
-    
+
     // unapply aura stats if dont meet requirements
      AuraApplicationMap const& Auras = GetAppliedAuras();
     for (AuraApplicationMap::const_iterator itr = Auras.begin(); itr != Auras.end(); ++itr)
@@ -2092,7 +2092,7 @@ void Pet::HandleAsynchLoadFailed(AsynchPetSummon* info, Player* player, uint8 as
 }
 
 void Pet::SetDisplayId(uint32 modelId)
-{ 
+{
     Guardian::SetDisplayId(modelId);
 
     if (!isControlled())

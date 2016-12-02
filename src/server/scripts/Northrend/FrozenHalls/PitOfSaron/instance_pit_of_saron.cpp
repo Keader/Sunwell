@@ -164,7 +164,7 @@ public:
                                 break;
                         }
                         NPC_TyrannusEventGUID = creature->GetGUID();
-                        
+
                     }
                     break;
                 case NPC_LORALEN:

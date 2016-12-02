@@ -23,13 +23,13 @@ enum Sounds
 enum Spells
 {
     SPELL_UNBALANCING_STRIKE        = 26613,
-    SPELL_DISRUPTING_SHOUT_10        = 29107, 
+    SPELL_DISRUPTING_SHOUT_10        = 29107,
     SPELL_DISRUPTING_SHOUT_25        = 55543,
     SPELL_JAGGED_KNIFE                = 55550,
     SPELL_HOPELESS                    = 29125,
 
     SPELL_BONE_BARRIER                = 29061,
-    SPELL_BLOOD_STRIKE                = 61696, 
+    SPELL_BLOOD_STRIKE                = 61696,
 };
 
 
@@ -119,7 +119,7 @@ public:
         {
             DoPlaySoundToSet(me, SOUND_DEATH);
             me->MonsterYell("An honorable... death...", LANG_UNIVERSAL, 0);
-            
+
             me->CastSpell(me, SPELL_HOPELESS, true);
             if (pInstance)
                 pInstance->SetData(EVENT_RAZUVIOUS, DONE);

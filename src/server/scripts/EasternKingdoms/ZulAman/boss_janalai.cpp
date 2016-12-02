@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -435,7 +435,7 @@ class boss_janalai : public CreatureScript
                     FireBreathTimer = 8000;
                 } else FireBreathTimer -= diff;
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetPositionZ() <= 12.0f;

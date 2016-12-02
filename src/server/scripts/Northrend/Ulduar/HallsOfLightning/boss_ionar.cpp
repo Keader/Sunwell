@@ -153,7 +153,7 @@ public:
                         spark->GetMotionMaster()->MoveFollow(tgt, 0.0f, 0.0f, MOTION_SLOT_CONTROLLED);
                 }
             }
-            
+
             me->SetVisible(false);
             me->SetControlled(true, UNIT_STATE_STUNNED);
 
@@ -176,7 +176,7 @@ public:
                 case EVENT_BALL_LIGHTNING:
                     if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM))
                         me->CastSpell(target, me->GetMap()->IsHeroic() ? SPELL_BALL_LIGHTNING_H : SPELL_BALL_LIGHTNING_N, false);
-                    
+
                     events.RepeatEvent(10000 + rand()%1000);
                     break;
                 case EVENT_STATIC_OVERLOAD:

@@ -53,7 +53,7 @@ public:
             GO_PlatformGUID = 0;
             bPokeAchiev = false;
         }
-        
+
         bool IsEncounterInProgress() const
         {
             return EncounterStatus == IN_PROGRESS;

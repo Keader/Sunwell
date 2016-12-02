@@ -148,7 +148,7 @@ public:
                     events.PopEvent();
                     break;
             }
-            
+
             DoMeleeAttackIfReady();
         }
     };

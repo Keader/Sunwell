@@ -130,7 +130,7 @@ class boss_warchief_kargath_bladefist : public CreatureScript
                     case EVENT_SUMMON_ADDS:
                         for (uint8 i = 0; i < 2; ++i)
                             me->SummonCreature(NPC_HEARTHEN_GUARD+urand(0,2), AddsEntrance[0], AddsEntrance[1], AddsEntrance[2], 0, TEMPSUMMON_TIMED_DESPAWN_OUT_OF_COMBAT, 30000);
-      
+
                         events.ScheduleEvent(EVENT_SUMMON_ADDS, 30000);
                         break;
                     case EVENT_BLADE_DANCE:

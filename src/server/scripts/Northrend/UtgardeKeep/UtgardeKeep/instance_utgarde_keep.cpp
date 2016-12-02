@@ -199,7 +199,7 @@ public:
                             c->DespawnOrUnsummon();
                         NPC_SkarvaldGhostGUID = 0;
                     }
-                    
+
                     m_auiEncounter[1] = data;
                     break;
                 case DATA_UNLOCK_SKARVALD_LOOT:

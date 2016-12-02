@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -217,7 +217,7 @@ void LFGGroupScript::OnRemoveMember(Group* group, uint64 guid, RemoveMethod meth
     if (Player* player = ObjectAccessor::FindPlayerInOrOutOfWorld(guid))
     {
         // xinef: fixed dungeon deserter
-        if (method != GROUP_REMOVEMETHOD_KICK_LFG && state != LFG_STATE_FINISHED_DUNGEON && 
+        if (method != GROUP_REMOVEMETHOD_KICK_LFG && state != LFG_STATE_FINISHED_DUNGEON &&
             player->HasAura(LFG_SPELL_DUNGEON_COOLDOWN) && players >= LFG_GROUP_KICK_VOTES_NEEDED)
         {
             player->AddAura(LFG_SPELL_DUNGEON_DESERTER, player);

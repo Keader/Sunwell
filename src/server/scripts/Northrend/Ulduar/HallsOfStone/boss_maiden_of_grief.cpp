@@ -44,15 +44,15 @@ public:
 
     struct boss_maiden_of_griefAI : public ScriptedAI
     {
-        boss_maiden_of_griefAI(Creature *c) : ScriptedAI(c) 
-        {    
+        boss_maiden_of_griefAI(Creature *c) : ScriptedAI(c)
+        {
             pInstance = me->GetInstanceScript();
         }
 
         InstanceScript* pInstance;
         EventMap events;
 
-        void Reset() 
+        void Reset()
         {
             events.Reset();
             if (pInstance)
@@ -107,7 +107,7 @@ public:
                 {
                     if (Unit *target = SelectTarget(SELECT_TARGET_RANDOM, 0, 50.0f, true, 0))
                         me->CastSpell(target, DUNGEON_MODE(PILLAR_OF_WOE, PILLAR_OF_WOE_H), false);
-                        
+
                     events.RepeatEvent(12000+rand()%8000);
                     break;
                 }
@@ -115,7 +115,7 @@ public:
                 {
                     if (Unit *target = SelectTarget(SELECT_TARGET_RANDOM, 0, 50.0f, true, 0))
                         me->CastSpell(target, PARTING_SORROW, false);
-                        
+
                     events.RepeatEvent(6000+rand()%10000);
                     break;
                 }
@@ -127,7 +127,7 @@ public:
         void JustDied(Unit* killer)
         {
             Talk(SAY_DEATH);
-            
+
             if (pInstance)
                 pInstance->SetData(BOSS_MAIDEN_OF_GRIEF, DONE);
         }

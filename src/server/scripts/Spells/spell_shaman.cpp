@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -274,7 +274,7 @@ class spell_sha_feral_spirit_scaling : public SpellScriptLoader
                 isPeriodic = true;
                 amplitude = 1*IN_MILLISECONDS;
             }
-            
+
             void HandlePeriodic(AuraEffect const* aurEff)
             {
                 PreventDefaultAction();

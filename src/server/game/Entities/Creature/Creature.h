@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -757,7 +757,7 @@ class Creature : public Unit, public GridObject<Creature>, public MovableMapObje
 
         SpellSchoolMask m_meleeDamageSchoolMask;
         uint32 m_originalEntry;
-        
+
         bool m_moveInLineOfSightDisabled;
         bool m_moveInLineOfSightStrictlyDisabled;
 

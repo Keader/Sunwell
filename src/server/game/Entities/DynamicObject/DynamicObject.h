@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -40,7 +40,7 @@ class DynamicObject : public WorldObject, public GridObject<DynamicObject>, publ
 
         void AddToWorld();
         void RemoveFromWorld();
-  
+
         void CleanupsBeforeDelete(bool finalCleanup = true);
 
         bool CreateDynamicObject(uint32 guidlow, Unit* caster, uint32 spellId, Position const& pos, float radius, DynamicObjectType type);

@@ -91,7 +91,7 @@ public:
                             cr->AI()->DoAction(1);
                     }
                     break;
-                
+
                 case DATA_BLACKHEARTTHEINCITEREVENT:
                     if (uiData == DONE)
                         DoUseDoorOrButton(m_uiRefectoryDoorGUID);

@@ -20,7 +20,7 @@ enum Spells
 {
     SPELL_BURNING_FURY                          = 68168,
     SPELL_BURNING_BREATH                        = 66665, // handled by spell_difficulty
-    
+
     SPELL_FLAMING_CINDER                        = 66681,
     SPELL_FLAMING_CINDER_DUMMY                    = 66690,
     SPELL_FLAMING_CINDER_MISSILE                = 66682, // trigger of missile handled by spell_difficulty

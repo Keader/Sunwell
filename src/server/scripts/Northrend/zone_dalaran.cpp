@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -90,7 +90,7 @@ enum DisguiseEvent
     ACTION_SHIRTS                = 2,
     ACTION_PANTS                = 3,
     ACTION_UNMENTIONABLES        = 4,
-    
+
     EVENT_INTRO_DH1                = 1,
     EVENT_INTRO_DH2                = 2,
     EVENT_INTRO_DH3                = 3,
@@ -131,8 +131,8 @@ public:
         {
             _events.Reset();
             _aquanosGUID = 0;
-        }  
-        
+        }
+
         void SetData(uint32 type, uint32 data)
         {
             switch(type)
@@ -171,7 +171,7 @@ public:
             Talk(SAY_SHANDY_WATER + _lSource - 1);
             _canWash = true;
         }
-        
+
         void UpdateAI(uint32 diff)
         {
             _events.Update(diff);
@@ -187,7 +187,7 @@ public:
                         _events.ScheduleEvent(EVENT_INTRO_DH3, 6000);
                     else
                         RollTask();
-                    
+
                     _events.PopEvent();
                     break;
                 case EVENT_INTRO_DH3:
@@ -196,7 +196,7 @@ public:
                     _events.PopEvent();
                     break;
                 case EVENT_INTRO_DH4:
-                    Talk(SAY_SHANDY5);             
+                    Talk(SAY_SHANDY5);
                     _events.ScheduleEvent(EVENT_INTRO_DH5, 3000);
                     _events.PopEvent();
                     break;
@@ -225,16 +225,16 @@ public:
             uint8 _lCount;
             uint32 _lSource;
             uint32 _resetTime;
-            
+
             bool _canWash;
     };
-    
+
     bool OnGossipHello(Player* player, Creature* creature)
     {
         if (creature->IsQuestGiver())
             player->PrepareQuestMenu(creature->GetGUID());
 
-        if (player->GetQuestStatus(QUEST_SUITABLE_DISGUISE_A) == QUEST_STATUS_INCOMPLETE || 
+        if (player->GetQuestStatus(QUEST_SUITABLE_DISGUISE_A) == QUEST_STATUS_INCOMPLETE ||
             player->GetQuestStatus(QUEST_SUITABLE_DISGUISE_H) == QUEST_STATUS_INCOMPLETE)
         {
             if(player->GetTeamId() == TEAM_ALLIANCE)
@@ -246,13 +246,13 @@ public:
         player->SEND_GOSSIP_MENU(player->GetGossipTextId(creature), creature->GetGUID());
         return true;
     }
-    
+
     bool OnGossipSelect(Player* player, Creature* creature, uint32 /*sender*/, uint32 action)
     {
         switch (action)
         {
             case GOSSIP_ACTION_INFO_DEF:
-                player->CLOSE_GOSSIP_MENU(); 
+                player->CLOSE_GOSSIP_MENU();
                 creature->SetUInt32Value(UNIT_NPC_FLAGS, 0);
                 creature->AI()->SetData(ACTION_SHANDY_INTRO, 0);
                 break;

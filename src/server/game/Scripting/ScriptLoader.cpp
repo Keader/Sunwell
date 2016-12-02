@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -237,7 +237,7 @@ void AddSC_western_plaguelands();
 void AddSC_westfall();
 void AddSC_wetlands();
 
-//kalimdor     
+//kalimdor
 void AddSC_instance_blackfathom_deeps();     //Blackfathom Depths
 void AddSC_hyjal();                          //CoT Battle for Mt. Hyjal
 void AddSC_boss_archimonde();

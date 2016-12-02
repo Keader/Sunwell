@@ -261,7 +261,7 @@ class npc_crystalline_frayer : public CreatureScript
 
                 abilityTimer1 += diff;
                 abilityTimer2 += diff;
-                
+
                 if (abilityTimer1 >= 5000)
                 {
                     me->CastSpell(me->GetVictim(), SPELL_ENSNARE, false);

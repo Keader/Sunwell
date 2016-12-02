@@ -416,7 +416,7 @@ class boss_high_nethermancer_zerevor : public CreatureScript
                         if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0, 10.0f))
                             me->CastSpell(me, SPELL_ARCANE_EXPLOSION, false);
                         events.ScheduleEvent(EVENT_SPELL_ARCANE_EXPLOSION, 10000);
-                        break;                        
+                        break;
                 }
 
                 DoMeleeAttackIfReady();
@@ -482,7 +482,7 @@ class boss_lady_malande : public CreatureScript
                     case EVENT_SPELL_EMPOWERED_SMITE:
                         me->CastSpell(me->GetVictim(), SPELL_EMPOWERED_SMITE, false);
                         events.ScheduleEvent(EVENT_SPELL_EMPOWERED_SMITE, 3000);
-                        break;                    
+                        break;
                 }
             }
         };
@@ -717,7 +717,7 @@ class spell_illidari_council_deadly_strike : public SpellScriptLoader
             PrepareAuraScript(spell_illidari_council_deadly_strike_AuraScript);
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 if (Unit* target = GetUnitOwner()->GetAI()->SelectTarget(SELECT_TARGET_RANDOM, 0, 100.0f, true))
                 {

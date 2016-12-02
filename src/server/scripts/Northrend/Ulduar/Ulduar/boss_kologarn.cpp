@@ -353,7 +353,7 @@ public:
             events.RescheduleEvent(EVENT_GRIP, 15000);
             events.RescheduleEvent(EVENT_FOCUSED_EYEBEAM, 25000);
             //events.ScheduleEvent(EVENT_ENRAGE, x); no info
-            
+
             Talk(SAY_AGGRO);
             me->setActive(true);
         }
@@ -387,7 +387,7 @@ public:
                         me->CastSpell(me->GetVictim(), SPELL_OVERHEAD_SMASH, false);
                     else if (_left || _right)
                         me->CastSpell(me->GetVictim(), SPELL_ONEARMED_OVERHEAD_SMASH, false);
-                    
+
                     events.DelayEvents(1000);
                     events.RepeatEvent(14000);
                     return;
@@ -572,7 +572,7 @@ public:
             if (me->GetInstanceScript())
                 if (Creature* cr = ObjectAccessor::GetCreature(*me, me->GetInstanceScript()->GetData64(TYPE_KOLOGARN)))
                     cr->AI()->DoAction(DATA_KOLOGARN_RUBBLE_ACHIEV);
-            
+
             me->ExitVehicle();
         }
     };
@@ -806,7 +806,7 @@ class achievement_kologarn_looks_could_kill : public AchievementCriteriaScript
                 if (InstanceScript* instance = target->GetInstanceScript())
                     if (Creature* cr = ObjectAccessor::GetCreature(*target, instance->GetData64(TYPE_KOLOGARN)))
                         return cr->AI()->GetData(DATA_KOLOGARN_LOOKS_ACHIEV);
-                        
+
             return false;
         }
 };
@@ -822,7 +822,7 @@ class achievement_kologarn_rubble_and_roll : public AchievementCriteriaScript
                 if (InstanceScript* instance = target->GetInstanceScript())
                     if (Creature* cr = ObjectAccessor::GetCreature(*target, instance->GetData64(TYPE_KOLOGARN)))
                         return cr->AI()->GetData(DATA_KOLOGARN_RUBBLE_ACHIEV);
-                        
+
             return false;
         }
 };
@@ -838,7 +838,7 @@ class achievement_kologarn_with_open_arms : public AchievementCriteriaScript
                 if (InstanceScript* instance = target->GetInstanceScript())
                     if (Creature* cr = ObjectAccessor::GetCreature(*target, instance->GetData64(TYPE_KOLOGARN)))
                         return cr->AI()->GetData(DATA_KOLOGARN_ARMS_ACHIEV);
-                        
+
             return false;
         }
 };

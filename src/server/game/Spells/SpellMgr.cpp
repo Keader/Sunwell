@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -754,7 +754,7 @@ bool SpellMgr::IsSpellProcEventCanTriggeredBy(SpellInfo const* spellProto, Spell
     }
 
     if (procFlags & PROC_FLAG_TAKEN_PERIODIC)
-    {            
+    {
         if (procExtra & PROC_EX_INTERNAL_HOT)
         {
             /// No aura that only has PROC_FLAG_TAKEN_PERIODIC can proc from a HOT.
@@ -1144,7 +1144,7 @@ bool SpellArea::IsFitToRequirements(Player const* player, uint32 newZone, uint32
 
             // team that controls the workshop in the specified area
             uint32 team = bf->GetData(newArea);
-            
+
             if (team == TEAM_HORDE)
                 return spellId == 56618;
             else if (team == TEAM_ALLIANCE)
@@ -3242,7 +3242,7 @@ void SpellMgr::LoadDbcDataCorrections()
             case 63137: // Force Cast (HACK: Target shouldn't be changed; summon position should be untied from spell destination)
                 spellInfo->EffectImplicitTargetA[EFFECT_0] = TARGET_DEST_DB;
                 break;
-            case 53096: // Quetz'lun's Judgment            
+            case 53096: // Quetz'lun's Judgment
             case 70743: // AoD Special
             case 70614: // AoD Special - Vegard
                 spellInfo->MaxAffectedTargets = 1;
@@ -3681,7 +3681,7 @@ void SpellMgr::LoadDbcDataCorrections()
             spellInfo->AttributesEx3 |= SPELL_ATTR3_IGNORE_HIT_RESULT;
             break;
         // Cobra Strikes
-        case 53257: 
+        case 53257:
             spellInfo->procCharges = 2;
             spellInfo->StackAmount = 0;
             break;
@@ -4502,7 +4502,7 @@ void SpellMgr::LoadDbcDataCorrections()
         //////////////////////////////////////////
         ////////// Gundrak
         //////////////////////////////////////////
-        // Moorabi - Transformation 
+        // Moorabi - Transformation
         case 55098:
             spellInfo->InterruptFlags |= SPELL_INTERRUPT_FLAG_INTERRUPT;
             break;
@@ -4517,7 +4517,7 @@ void SpellMgr::LoadDbcDataCorrections()
 
         //////////////////////////////////////////
         ////////// AHN'KAHET: THE OLD KINGDOM
-        ////////////////////////////////////////// 
+        //////////////////////////////////////////
         // Vanish
         case 55964:
             spellInfo->Effect[1] = 0;
@@ -4526,7 +4526,7 @@ void SpellMgr::LoadDbcDataCorrections()
 
         //////////////////////////////////////////
         ////////// DRAK'THARON KEEP
-        ////////////////////////////////////////// 
+        //////////////////////////////////////////
         // Trollgore - Summon Drakkari Invader
         case 49456:
         case 49457:
@@ -4536,7 +4536,7 @@ void SpellMgr::LoadDbcDataCorrections()
 
         //////////////////////////////////////////
         ////////// UTGARDE PINNACLE
-        ////////////////////////////////////////// 
+        //////////////////////////////////////////
         // Paralyse
         case 48278:
         // Awaken subboss
@@ -4551,7 +4551,7 @@ void SpellMgr::LoadDbcDataCorrections()
 
         //////////////////////////////////////////
         ////////// UTGARDE KEEP
-        ////////////////////////////////////////// 
+        //////////////////////////////////////////
         // Skarvald, Charge
         case 43651:
             spellInfo->rangeIndex = 13; // 0-50000yd
@@ -4588,7 +4588,7 @@ void SpellMgr::LoadDbcDataCorrections()
 
         //////////////////////////////////////////
         ////////// AZJOL'NERUB
-        ////////////////////////////////////////// 
+        //////////////////////////////////////////
 
         // Krik'thir - Mind Flay
         case 52586:
@@ -4615,7 +4615,7 @@ void SpellMgr::LoadDbcDataCorrections()
         ////////// OBSIDIAN SANCTUM
         //////////////////////////////////////////
         // Lava Strike damage
-        case 57697: 
+        case 57697:
             spellInfo->EffectImplicitTargetA[0] = TARGET_DEST_DEST;
             break;
         // Lava Strike trigger
@@ -4845,7 +4845,7 @@ void SpellMgr::LoadDbcDataCorrections()
             break;
         // Cosmic Smash (Algalon the Observer)
         case 62311:
-        case 64596: 
+        case 64596:
             spellInfo->AttributesEx2 |= SPELL_ATTR2_CAN_TARGET_NOT_IN_LOS;
             spellInfo->EffectRadiusIndex[0] = 12; // 100yd
             spellInfo->rangeIndex = 13;  // 50000yd

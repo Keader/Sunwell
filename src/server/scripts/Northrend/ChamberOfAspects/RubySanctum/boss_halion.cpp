@@ -1182,7 +1182,7 @@ class spell_halion_twilight_realm : public SpellScriptLoader
                 if (!target)
                     return;
 
-                target->RemoveAurasDueToSpell(SPELL_FIERY_COMBUSTION, 0, 0, AURA_REMOVE_BY_ENEMY_SPELL);                
+                target->RemoveAurasDueToSpell(SPELL_FIERY_COMBUSTION, 0, 0, AURA_REMOVE_BY_ENEMY_SPELL);
                 if (GetTarget()->GetTypeId() != TYPEID_PLAYER)
                     return;
                 GetTarget()->m_Events.AddEvent(new SendEncounterUnit(GetTarget()->ToPlayer()), GetTarget()->m_Events.CalculateTime(500));
@@ -1383,7 +1383,7 @@ class spell_halion_twilight_division : public SpellScriptLoader
                 halion->RemoveAurasDueToSpell(SPELL_TWILIGHT_PHASING);
                 if (GameObject* gobject = halion->FindNearestGameObject(GO_HALION_PORTAL_1, 100.0f))
                     gobject->Delete();
-                
+
                 instance->DoUpdateWorldState(WORLDSTATE_CORPOREALITY_TOGGLE, 1);
                 instance->DoUpdateWorldState(WORLDSTATE_CORPOREALITY_MATERIAL, 50);
                 instance->DoUpdateWorldState(WORLDSTATE_CORPOREALITY_TWILIGHT, 50);

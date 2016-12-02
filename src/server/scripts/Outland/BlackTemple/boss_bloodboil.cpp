@@ -177,7 +177,7 @@ class boss_gurtogg_bloodboil : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetHomePosition().GetExactDist2d(me) > 105.0f;

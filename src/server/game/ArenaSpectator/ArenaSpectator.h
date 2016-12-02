@@ -87,7 +87,7 @@ namespace ArenaSpectator
         bg->SpectatorsSendPacket(data);
     }
 
-    template<class T> 
+    template<class T>
     void SendCommand_String(T* o, uint64 targetGUID, const char* prefix, const char* c)
     {
         if (!IS_PLAYER_GUID(targetGUID))
@@ -205,7 +205,7 @@ namespace ArenaSpectator
             if (effMask & (1<<i))
             {
                 AuraType at = aura->GetEffect(i)->GetAuraType();
-                if (aura->GetEffect(i)->GetAmount() && (aura->GetSpellInfo()->IsPositive() || targetGUID != aura->GetCasterGUID()) || 
+                if (aura->GetEffect(i)->GetAmount() && (aura->GetSpellInfo()->IsPositive() || targetGUID != aura->GetCasterGUID()) ||
                     at == SPELL_AURA_MECHANIC_IMMUNITY || at == SPELL_AURA_EFFECT_IMMUNITY || at == SPELL_AURA_STATE_IMMUNITY || at == SPELL_AURA_SCHOOL_IMMUNITY || at == SPELL_AURA_DISPEL_IMMUNITY)
                     return true;
             }

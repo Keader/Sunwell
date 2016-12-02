@@ -241,7 +241,7 @@ public:
                     else
                         timer -= diff;
                 }
-            
+
         }
     };
 

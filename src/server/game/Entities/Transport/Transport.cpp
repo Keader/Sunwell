@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -45,7 +45,7 @@ MotionTransport::~MotionTransport()
 }
 
 bool MotionTransport::CreateMoTrans(uint32 guidlow, uint32 entry, uint32 mapid, float x, float y, float z, float ang, uint32 animprogress)
-{ 
+{
     Relocate(x, y, z, ang);
 
     if (!IsPositionValid())
@@ -104,7 +104,7 @@ bool MotionTransport::CreateMoTrans(uint32 guidlow, uint32 entry, uint32 mapid, 
 }
 
 void MotionTransport::CleanupsBeforeDelete(bool finalCleanup /*= true*/)
-{ 
+{
     UnloadStaticPassengers();
     while (!_passengers.empty())
     {
@@ -119,7 +119,7 @@ void MotionTransport::CleanupsBeforeDelete(bool finalCleanup /*= true*/)
 }
 
 void MotionTransport::BuildUpdate(UpdateDataMapType& data_map, UpdatePlayerSet&)
-{ 
+{
     Map::PlayerList const& players = GetMap()->GetPlayers();
     if (players.isEmpty())
         return;
@@ -131,7 +131,7 @@ void MotionTransport::BuildUpdate(UpdateDataMapType& data_map, UpdatePlayerSet&)
 }
 
 void MotionTransport::Update(uint32 diff)
-{ 
+{
     uint32 const positionUpdateDelay = 1;
 
     if (AI())
@@ -231,7 +231,7 @@ void MotionTransport::Update(uint32 diff)
 
     sScriptMgr->OnTransportUpdate(this, diff);
 }
- 
+
 void MotionTransport::DelayedUpdate(uint32 diff)
 {
     if (GetKeyFrames().size() <= 1)
@@ -241,7 +241,7 @@ void MotionTransport::DelayedUpdate(uint32 diff)
 }
 
 void MotionTransport::UpdatePosition(float x, float y, float z, float o)
-{ 
+{
     if (!GetMap()->IsGridLoaded(x, y)) // pussywizard: should not happen, but just in case
         GetMap()->LoadGrid(x, y);
 
@@ -282,7 +282,7 @@ void MotionTransport::AddPassenger(WorldObject* passenger, bool withAll)
 }
 
 void MotionTransport::RemovePassenger(WorldObject* passenger, bool withAll)
-{ 
+{
     TRINITY_GUARD(ACE_Thread_Mutex, Lock);
     if (_passengers.erase(passenger) || _staticPassengers.erase(passenger))
     {
@@ -303,7 +303,7 @@ void MotionTransport::RemovePassenger(WorldObject* passenger, bool withAll)
 }
 
 Creature* MotionTransport::CreateNPCPassenger(uint32 guid, CreatureData const* data)
-{ 
+{
     Map* map = GetMap();
     Creature* creature = new Creature();
 
@@ -350,7 +350,7 @@ Creature* MotionTransport::CreateNPCPassenger(uint32 guid, CreatureData const* d
 }
 
 GameObject* MotionTransport::CreateGOPassenger(uint32 guid, GameObjectData const* data)
-{ 
+{
     Map* map = GetMap();
     GameObject* go = new GameObject();
     ASSERT(!sObjectMgr->IsGameObjectStaticTransport(data->id));
@@ -390,7 +390,7 @@ GameObject* MotionTransport::CreateGOPassenger(uint32 guid, GameObjectData const
 }
 
 void MotionTransport::LoadStaticPassengers()
-{ 
+{
     if (PassengersLoaded())
         return;
     SetPassengersLoaded(true);
@@ -414,7 +414,7 @@ void MotionTransport::LoadStaticPassengers()
 }
 
 void MotionTransport::UnloadStaticPassengers()
-{ 
+{
     SetPassengersLoaded(false);
     while (!_staticPassengers.empty())
     {
@@ -424,7 +424,7 @@ void MotionTransport::UnloadStaticPassengers()
 }
 
 void MotionTransport::UnloadNonStaticPassengers()
-{ 
+{
     for (PassengerSet::iterator itr = _passengers.begin(); itr != _passengers.end(); )
     {
         if ((*itr)->GetTypeId() == TYPEID_PLAYER)
@@ -438,7 +438,7 @@ void MotionTransport::UnloadNonStaticPassengers()
 }
 
 void MotionTransport::EnableMovement(bool enabled)
-{ 
+{
     if (!GetGOInfo()->moTransport.canBeStopped)
         return;
 
@@ -446,7 +446,7 @@ void MotionTransport::EnableMovement(bool enabled)
 }
 
 void MotionTransport::MoveToNextWaypoint()
-{ 
+{
     // Clear events flagging
     _triggeredArrivalEvent = false;
     _triggeredDepartureEvent = false;
@@ -458,7 +458,7 @@ void MotionTransport::MoveToNextWaypoint()
 }
 
 float MotionTransport::CalculateSegmentPos(float now)
-{ 
+{
     KeyFrame const& frame = *_currentFrame;
     const float speed = float(m_goInfo->moTransport.moveSpeed);
     const float accel = float(m_goInfo->moTransport.accelRate);
@@ -489,7 +489,7 @@ float MotionTransport::CalculateSegmentPos(float now)
 }
 
 bool MotionTransport::TeleportTransport(uint32 newMapid, float x, float y, float z, float o)
-{ 
+{
     Map const* oldMap = GetMap();
 
     if (oldMap->GetId() != newMapid)
@@ -588,7 +588,7 @@ void MotionTransport::DelayedTeleportTransport()
 }
 
 void MotionTransport::UpdatePassengerPositions(PassengerSet& passengers)
-{ 
+{
     for (PassengerSet::iterator itr = passengers.begin(); itr != passengers.end(); ++itr)
     {
         WorldObject* passenger = *itr;
@@ -639,7 +639,7 @@ void MotionTransport::UpdatePassengerPositions(PassengerSet& passengers)
 }
 
 void MotionTransport::DoEventIfAny(KeyFrame const& node, bool departure)
-{ 
+{
     if (uint32 eventid = departure ? node.Node->departureEventID : node.Node->arrivalEventID)
     {
         //TC_LOG_DEBUG("maps.script", "Taxi %s event %u of node %u of %s path", departure ? "departure" : "arrival", eventid, node.Node->index, GetName().c_str());
@@ -768,7 +768,7 @@ void StaticTransport::CleanupsBeforeDelete(bool finalCleanup /*= true*/)
 }
 
 void StaticTransport::BuildUpdate(UpdateDataMapType& data_map, UpdatePlayerSet&)
-{ 
+{
     Map::PlayerList const& players = GetMap()->GetPlayers();
     if (players.isEmpty())
         return;
@@ -850,7 +850,7 @@ void StaticTransport::RelocateToProgress(uint32 progress)
         float sign = GetFloatValue(GAMEOBJECT_PARENTROTATION + 2) >= 0.0f ? 1.0f : -1.0f;
         float pathRotAngle = sign * 2.0f * acos(GetFloatValue(GAMEOBJECT_PARENTROTATION + 3));
         float cs = cos(pathRotAngle), sn = sin(pathRotAngle);
-        float nx = pos.x * cs - pos.y * sn; 
+        float nx = pos.x * cs - pos.y * sn;
         float ny = pos.x * sn + pos.y * cs;
         pos.x = nx;
         pos.y = ny;
@@ -880,7 +880,7 @@ void StaticTransport::RelocateToProgress(uint32 progress)
 }
 
 void StaticTransport::UpdatePosition(float x, float y, float z, float o)
-{ 
+{
     if (!GetMap()->IsGridLoaded(x, y)) // pussywizard: should not happen, but just in case
         GetMap()->LoadGrid(x, y);
 
@@ -889,7 +889,7 @@ void StaticTransport::UpdatePosition(float x, float y, float z, float o)
 }
 
 void StaticTransport::UpdatePassengerPositions()
-{ 
+{
     for (PassengerSet::iterator itr = _passengers.begin(); itr != _passengers.end(); ++itr)
     {
         WorldObject* passenger = *itr;

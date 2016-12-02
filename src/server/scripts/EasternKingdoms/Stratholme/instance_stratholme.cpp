@@ -8,14 +8,14 @@ REWRITTEN BY XINEF
 #include "stratholme.h"
 #include "Player.h"
 
-const Position BlackGuardPos[10] = 
+const Position BlackGuardPos[10] =
 {
     {4032.73f+0.0f, -3378.26f+0.0f, 119.76f, 4.67f},
     {4032.73f+2.0f, -3378.26f+2.0f, 119.76f, 4.67f},
     {4032.73f+2.0f, -3378.26f-2.0f, 119.76f, 4.67f},
     {4032.73f-2.0f, -3378.26f+2.0f, 119.76f, 4.67f},
     {4032.73f-2.0f, -3378.26f-2.0f, 119.76f, 4.67f},
-    
+
     {4032.73f+0.0f, -3407.38f+0.0f, 115.56f, 0.0f},
     {4032.73f+2.0f, -3407.38f+2.0f, 115.56f, 0.0f},
     {4032.73f+2.0f, -3407.38f-2.0f, 115.56f, 0.0f},
@@ -244,7 +244,7 @@ class instance_stratholme : public InstanceMapScript
                                 ziggurat->SetGoState(GO_STATE_ACTIVE);
 
                         CheckZiggurats();
-                        break;                        
+                        break;
                     }
                     case TYPE_ZIGGURAT3:
                     {
@@ -392,7 +392,7 @@ class instance_stratholme : public InstanceMapScript
                                         ProcessSlaughterEvent();
                                         return;
                                     }
-                            
+
                         events.ScheduleEvent(EVENT_FORCE_SLAUGHTER_EVENT, 3000);
                         break;
                     }

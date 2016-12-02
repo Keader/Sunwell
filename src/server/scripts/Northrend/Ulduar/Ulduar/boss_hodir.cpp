@@ -28,7 +28,7 @@ enum HodirSpellData
     SPELL_FLASH_FREEZE_VISUAL            = 62148,
     SPELL_SAFE_AREA                        = 65705,
     SPELL_SAFE_AREA_TRIGGERED            = 62464,
-    
+
     SPELL_ICICLE_BOSS_AURA                = 62227,
     SPELL_ICICLE_TBBA                    = 63545,
 
@@ -328,7 +328,7 @@ public:
                     uint32 chestId = me->GetMap()->Is25ManRaid() ? GO_HODIR_CHEST_NORMAL_HERO : GO_HODIR_CHEST_NORMAL;
                     if( GameObject *go = me->SummonGameObject(chestId, 1969.115f, -212.94f, 432.687f, 3*M_PI/2, 0, 0, 0, 0, 0) )
                         go->SetUInt32Value(GAMEOBJECT_FLAGS, 0);
-                    
+
                     if( hardmode )
                     {
                         uint32 chestId2 = me->GetMap()->Is25ManRaid() ? GO_HODIR_CHEST_HARD_HERO : GO_HODIR_CHEST_HARD;
@@ -371,7 +371,7 @@ public:
 
             if( me->HasUnitState(UNIT_STATE_CASTING) )
                 return;
-            
+
             switch( events.GetEvent() )
             {
                 case 0:
@@ -1164,7 +1164,7 @@ public:
 
         void HandleEffectPeriodic(AuraEffect const * aurEff)
         {
-            
+
             if (Unit* target = GetTarget())
             {
                 if (target->GetMapId() == 603)

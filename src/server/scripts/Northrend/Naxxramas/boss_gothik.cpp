@@ -118,7 +118,7 @@ struct NotOnSameSide : public std::unary_function<Unit *, bool>
 {
     bool m_inLiveSide;
     NotOnSameSide(Unit *pSource) : m_inLiveSide(IN_LIVE_SIDE(pSource)) {}
-    
+
     bool operator() (const Unit *pTarget)
     {
         return (m_inLiveSide != IN_LIVE_SIDE(pTarget));
@@ -188,10 +188,10 @@ public:
             Talk(SAY_SPEECH);
             me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE|UNIT_FLAG_DISABLE_MOVE);
             me->NearTeleportTo(PosPlatform.GetPositionX(), PosPlatform.GetPositionY(), PosPlatform.GetPositionZ(), PosPlatform.GetOrientation());
-            
+
             events.ScheduleEvent(EVENT_SUMMON_ADDS, 30000);
             events.ScheduleEvent(EVENT_CHECK_PLAYERS, 120000);
-            
+
             if (pInstance)
             {
                 pInstance->SetData(EVENT_GOTHIK, IN_PROGRESS);
@@ -206,7 +206,7 @@ public:
         {
             if (gateOpened)
                 summon->AI()->DoAction(ACTION_GATE_OPEN);
-                
+
             summons.Summon(summon);
             summon->SetInCombatWithZone();
         }
@@ -381,7 +381,7 @@ public:
                         me->NearTeleportTo(PosGroundLivingSide.GetPositionX(), PosGroundLivingSide.GetPositionY(), PosGroundLivingSide.GetPositionZ(), PosGroundLivingSide.GetOrientation());
                         me->SetReactState(REACT_AGGRESSIVE);
                         me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE|UNIT_FLAG_IMMUNE_TO_PC|UNIT_FLAG_DISABLE_MOVE);
-                        
+
                         summons.DoAction(ACTION_GATE_OPEN);
                         summons.DoZoneInCombat();
                         events.ScheduleEvent(EVENT_SPELL_SHADOW_BOLT, 1000);

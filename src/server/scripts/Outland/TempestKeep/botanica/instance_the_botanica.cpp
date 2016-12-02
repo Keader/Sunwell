@@ -90,7 +90,7 @@ public:
             _falconSet.clear();
             return true;
         }
-        
+
         void HandleEffectApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
         {
             std::list<Creature*> creatureList;

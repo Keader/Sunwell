@@ -20,7 +20,7 @@ enum Spells
     SPELL_LEECH_POISON_HEAL                    = 53800,
     SPELL_WEB_GRAB                            = 57731,
     SPELL_PIERCE_ARMOR                        = 53418,
-   
+
     SPELL_SMASH                                = 53318,
     SPELL_FRENZY                            = 53801
 };
@@ -53,7 +53,7 @@ enum Misc
     ACTION_START_EVENT            = 2
 };
 
-const Position hadronoxSteps[4] = 
+const Position hadronoxSteps[4] =
 {
     {607.9f, 512.8f, 695.3f, 0.0f},
     {611.67f, 564.11f, 720.0f, 0.0f},
@@ -75,7 +75,7 @@ class boss_hadronox : public CreatureScript
             void Reset()
             {
                 summons.DoAction(ACTION_DESPAWN_ADDS);
-                BossAI::Reset();                
+                BossAI::Reset();
                 me->SummonCreature(NPC_ANUB_AR_CRUSHER, 542.9f, 519.5f, 741.24f, 2.14f);
             }
 
@@ -185,7 +185,7 @@ class boss_hadronox : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->isActiveObject() && !AnyPlayerValid();
@@ -356,7 +356,7 @@ class spell_hadronox_leech_poison : public SpellScriptLoader
             PrepareAuraScript(spell_hadronox_leech_poison_AuraScript)
 
             void HandleEffectRemove(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
-            {                
+            {
                 if (GetTargetApplication()->GetRemoveMode() == AURA_REMOVE_BY_DEATH)
                     if (Unit* caster = GetCaster())
                         caster->CastSpell(caster, SPELL_LEECH_POISON_HEAL, true);

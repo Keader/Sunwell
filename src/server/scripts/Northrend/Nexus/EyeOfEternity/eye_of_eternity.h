@@ -102,7 +102,7 @@ enum sounds
     SOUND_SLAY_3_1                             = 14534,
     SOUND_SLAY_3_2                             = 14535,
     SOUND_SLAY_3_3                             = 14536,
-    
+
     SOUND_AGGRO_1                             = 14517,
     SOUND_AGGRO_2                             = 14523,
     SOUND_DEEP_BREATH                        = 14518,

@@ -934,7 +934,7 @@ public:
                         destZ = Locs[LOC_CENTER].GetPositionZ()+1.0f;
                         me->StopMoving();
                         me->GetMotionMaster()->MoveJump(Locs[LOC_CENTER].GetPositionX()+cos(jumpangle)*35.0f, Locs[LOC_CENTER].GetPositionY()+sin(jumpangle)*35.0f, Locs[LOC_CENTER].GetPositionZ()+1.0f, 40.0f, 12.0f);
-                        
+
                         events.PopEvent();
                         events.RescheduleEvent(EVENT_TRAMPLE, 1500);
 

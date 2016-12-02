@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -220,7 +220,7 @@ public:
     class spell_mage_mirror_image_AuraScript : public AuraScript
     {
         PrepareAuraScript(spell_mage_mirror_image_AuraScript)
-        
+
         void HandleEffectApply(AuraEffect const* aurEff, AuraEffectHandleModes /*mode*/)
         {
             GetTarget()->CastSpell((Unit*)NULL, GetSpellInfo()->Effects[aurEff->GetEffIndex()].TriggerSpell, true);
@@ -388,7 +388,7 @@ class spell_mage_pet_scaling : public SpellScriptLoader
                 isPeriodic = true;
                 amplitude = 2*IN_MILLISECONDS;
             }
-            
+
             void HandlePeriodic(AuraEffect const* aurEff)
             {
                 PreventDefaultAction();

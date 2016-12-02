@@ -82,11 +82,11 @@ public:
 
         void InitializeAI()
         {
-            ScriptedAI::InitializeAI();    
+            ScriptedAI::InitializeAI();
 
             Movement::PointsArray path;
             path.push_back(G3D::Vector3(me->GetPositionX(), me->GetPositionY(), me->GetPositionZ()));
-            for (uint8 i = 0; i < WAYPOINTS_COUNT; ++i)    
+            for (uint8 i = 0; i < WAYPOINTS_COUNT; ++i)
                 path.push_back(G3D::Vector3(startPath[i].GetPositionX(), startPath[i].GetPositionY(), startPath[i].GetPositionZ()));
 
             me->GetMotionMaster()->MoveSplinePath(&path);

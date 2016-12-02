@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -72,7 +72,7 @@ void ConfusedMovementGenerator<T>::DoInitialize(T* unit)
                 i_waypoints[idx][2] = idx > 0 ? i_waypoints[idx-1][2] : z;
                 continue;
             }
-            
+
         }
         else
         {

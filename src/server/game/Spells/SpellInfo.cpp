@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -1644,8 +1644,8 @@ bool SpellInfo::IsStrongerAuraActive(Unit const* caster, Unit const* target) con
                     basePoints = player->m_spellModTakingSpell->GetSpellValue()->EffectBasePoints[i];
 
             int32 curValue = abs(Effects[i].CalcValue(caster, &basePoints));
-            int32 auraValue = (sFlag & SPELL_GROUP_SPECIAL_FLAG_BASE_AMOUNT_CHECK) ? 
-                abs((*iter)->GetSpellInfo()->Effects[(*iter)->GetEffIndex()].CalcValue((*iter)->GetCaster())) : 
+            int32 auraValue = (sFlag & SPELL_GROUP_SPECIAL_FLAG_BASE_AMOUNT_CHECK) ?
+                abs((*iter)->GetSpellInfo()->Effects[(*iter)->GetEffIndex()].CalcValue((*iter)->GetCaster())) :
                 abs((*iter)->GetAmount());
 
             // xinef: for same spells, divide amount by stack amount
@@ -1685,7 +1685,7 @@ bool SpellInfo::IsAuraEffectEqual(SpellInfo const* otherSpellInfo) const
         {
             if (!otherSpellInfo->Effects[j].IsAura())
                 continue;
-            
+
             if (Effects[i].ApplyAuraName != otherSpellInfo->Effects[j].ApplyAuraName || Effects[i].MiscValue != otherSpellInfo->Effects[j].MiscValue)
                 continue;
 
@@ -1708,7 +1708,7 @@ bool SpellInfo::IsAuraEffectEqual(SpellInfo const* otherSpellInfo) const
 
     return matchCount*2 == auraCount;
 }
-    
+
 bool SpellInfo::ValidateAttribute6SpellDamageMods(const Unit* caster, const AuraEffect* auraEffect, bool isDot) const
 {
     // Xinef: no attribute
@@ -1720,7 +1720,7 @@ bool SpellInfo::ValidateAttribute6SpellDamageMods(const Unit* caster, const Aura
     if (Id == 70890 && auraEffect)
     {
         const SpellInfo* auraInfo = auraEffect->GetSpellInfo();
-        return auraInfo->SpellIconID == 3086 || 
+        return auraInfo->SpellIconID == 3086 ||
             (auraInfo->SpellFamilyName == SPELLFAMILY_DEATHKNIGHT && (auraInfo->SpellFamilyFlags & flag96(8388608, 64, 16) || auraInfo->SpellIconID == 235 || auraInfo->SpellIconID == 154));
     }
     // Xinef: Necrosis, no profits for done and taken

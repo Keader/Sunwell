@@ -149,7 +149,7 @@ void BattlegroundEY::UpdatePointsState()
             pointOwnerTeamId = TEAM_HORDE;
         else if (_capturePointInfo[point]._barStatus >= BG_EY_PROGRESS_BAR_NEUTRAL_HIGH)
             pointOwnerTeamId = TEAM_ALLIANCE;
-        
+
         if (pointOwnerTeamId != _capturePointInfo[point]._ownerTeamId)
         {
             if (_capturePointInfo[point].IsUncontrolled())

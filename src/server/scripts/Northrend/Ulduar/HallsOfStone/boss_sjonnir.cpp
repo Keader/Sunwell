@@ -17,7 +17,7 @@ enum Spells
     SPELL_LIGHTNING_SHIELD_H                = 59845,
     SPELL_STATIC_CHARGE                        = 50834,
     SPELL_STATIC_CHARGE_H                    = 59846,
-    SPELL_LIGHTNING_RING                    = 50840, 
+    SPELL_LIGHTNING_RING                    = 50840,
     SPELL_LIGHTNING_RING_H                    = 59848,
 
     // IRON SLUDGE
@@ -115,7 +115,7 @@ public:
         uint8 SummonPhase;
         uint8 SlugeCount;
 
-        void Reset() 
+        void Reset()
         {
             events.Reset();
             summons.DespawnAll();
@@ -123,11 +123,11 @@ public:
             SlugeCount = 0;
             SummonPhase = PHASE_SUMMON_UNFRIENDLY_DWARFES;
 
-            if (pInstance) 
+            if (pInstance)
             {
                 pInstance->SetData(BOSS_SJONNIR, NOT_STARTED);
                 pInstance->SetData(DATA_SJONNIR_ACHIEVEMENT, false);
-                
+
                 me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
                 if (pInstance->GetData(BOSS_TRIBUNAL_OF_AGES) == DONE)
                 {
@@ -151,7 +151,7 @@ public:
         void EnterCombat(Unit* who)
         {
             Talk(SAY_AGGRO);
-            
+
             events.ScheduleEvent(EVENT_CHECK_HEALTH, 1000);
             events.ScheduleEvent(EVENT_SHIELD, 14000 + rand()%5000);
             events.ScheduleEvent(EVENT_CHAIN_LIGHTNING, 6000 + rand()%6000);
@@ -167,7 +167,7 @@ public:
 
                 if (GameObject *doors = me->GetMap()->GetGameObject(pInstance->GetData64(GO_SJONNIR_DOOR)))
                     doors->SetGoState(GO_STATE_READY);
-                    
+
                 if (pInstance->GetData(BOSS_TRIBUNAL_OF_AGES) == DONE)
                     if (Creature *brann = ObjectAccessor::GetCreature(*me, pInstance->GetData64(NPC_BRANN)))
                         brann->AI()->DoAction(3);
@@ -197,7 +197,7 @@ public:
             {
                 case EVENT_CHECK_HEALTH:
                 {
-                    if (SummonPhase == PHASE_SUMMON_UNFRIENDLY_DWARFES && HealthBelowPct(50)) 
+                    if (SummonPhase == PHASE_SUMMON_UNFRIENDLY_DWARFES && HealthBelowPct(50))
                     {
                         SummonPhase = PHASE_SUMMON_OOZE;
                         events.CancelEvent(EVENT_SUMMON);
@@ -305,7 +305,7 @@ public:
                     break;
                 }
             }
-            
+
             DoMeleeAttackIfReady();
         }
 
@@ -392,7 +392,7 @@ public:
         void UpdateAI(uint32 diff)
         {
             if (!UpdateVictim())
-                return;                
+                return;
 
             DoSpellAttackIfReady((me->GetEntry() == NPC_FORGED_IRON_DWARF) ? DUNGEON_MODE(SPELL_LIGHTNING_TETHER, SPELL_LIGHTNING_TETHER_H) : DUNGEON_MODE(SPELL_LIGHTNING_SHOCK, SPELL_LIGHTNING_SHOCK_H));
         }
@@ -412,9 +412,9 @@ public:
     struct boss_sjonnir_iron_sludgeAI : public ScriptedAI
     {
         boss_sjonnir_iron_sludgeAI(Creature *c) : ScriptedAI(c) { }
-        
+
         EventMap events;
-        void Reset() 
+        void Reset()
         {
             events.Reset();
         }
@@ -432,7 +432,7 @@ public:
         void UpdateAI(uint32 diff)
         {
             if (!UpdateVictim())
-                return;                
+                return;
 
             events.Update(diff);
             if (me->HasUnitState(UNIT_STATE_CASTING))

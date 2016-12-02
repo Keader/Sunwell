@@ -42,11 +42,11 @@ class boss_commander_stoutbeard : public CreatureScript
 
         struct boss_commander_stoutbeardAI : public BossAI
         {
-            boss_commander_stoutbeardAI(Creature* creature) : BossAI(creature, DATA_COMMANDER_EVENT) 
+            boss_commander_stoutbeardAI(Creature* creature) : BossAI(creature, DATA_COMMANDER_EVENT)
             {
             }
 
-            void Reset() 
+            void Reset()
             {
                 BossAI::Reset();
             }
@@ -55,7 +55,7 @@ class boss_commander_stoutbeard : public CreatureScript
             {
                 BossAI::EnterCombat(who);
                 Talk(SAY_AGGRO);
-                
+
                 events.ScheduleEvent(EVENT_BATTLE_SHOUT, 0);
                 events.ScheduleEvent(EVENT_FRIGHTENING_SHOUT, 10000);
                 events.ScheduleEvent(EVENT_WHIRLWIND, 15000);
@@ -77,7 +77,7 @@ class boss_commander_stoutbeard : public CreatureScript
                 BossAI::JustDied(killer);
                 Talk(SAY_DEATH);
             }
-            
+
             void UpdateAI(uint32 diff)
             {
                 if (!UpdateVictim())

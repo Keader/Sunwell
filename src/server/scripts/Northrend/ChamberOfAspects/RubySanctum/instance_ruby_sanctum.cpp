@@ -160,7 +160,7 @@ class instance_ruby_sanctum : public InstanceMapScript
                         return TwilightHalionGUID;
                     case NPC_ORB_CARRIER:
                         return OrbCarrierGUID;
-                    
+
                     case GO_FLAME_RING:
                         return FlameRingGUID;
                 }

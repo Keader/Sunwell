@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -812,7 +812,7 @@ namespace Trinity
             AnyUnfriendlyUnitInObjectRangeCheck(WorldObject const* obj, Unit const* funit, float range) : i_obj(obj), i_funit(funit), i_range(range) {}
             bool operator()(Unit* u)
             {
-                if (u->IsAlive() && i_obj->IsWithinDistInMap(u, i_range) && !i_funit->IsFriendlyTo(u) && 
+                if (u->IsAlive() && i_obj->IsWithinDistInMap(u, i_range) && !i_funit->IsFriendlyTo(u) &&
                     (i_funit->GetTypeId() != TYPEID_UNIT || !i_funit->ToCreature()->IsAvoidingAOE())) // pussywizard
                     return true;
                 else
@@ -1461,7 +1461,7 @@ namespace Trinity
         private:
             uint8 const _chance;
     };
-    
+
     class PowerCheck
     {
         public:

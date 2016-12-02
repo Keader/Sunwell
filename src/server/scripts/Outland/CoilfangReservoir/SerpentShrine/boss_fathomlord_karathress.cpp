@@ -41,7 +41,7 @@ enum Misc
     EVENT_KILL_TALK                    = 5
 };
 
-const Position advisorsPosition[MAX_ADVISORS+2] = 
+const Position advisorsPosition[MAX_ADVISORS+2] =
 {
     {459.61f, -534.81f, -7.54f, 3.82f},
     {463.83f, -540.23f, -7.54f, 3.15f},

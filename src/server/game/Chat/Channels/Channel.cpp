@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -148,7 +148,7 @@ void Channel::CleanOldChannelsInDB()
 
         stmt = CharacterDatabase.GetPreparedStatement(CHAR_DEL_OLD_CHANNELS_BANS);
         trans->Append(stmt);
-        
+
         CharacterDatabase.CommitTransaction(trans);
     }
 }

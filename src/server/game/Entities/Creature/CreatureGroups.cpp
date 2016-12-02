@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -198,7 +198,7 @@ void CreatureGroup::FormationReset(bool dismiss)
 {
     if (m_members.size() && m_members.begin()->second->groupAI == 5)
         return;
-    
+
     for (CreatureGroupMemberType::iterator itr = m_members.begin(); itr != m_members.end(); ++itr)
     {
         if (itr->first != m_leader && itr->first->IsAlive())

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -106,7 +106,7 @@ public:
     class spell_q10563_q10596_to_legion_hold_AuraScript : public AuraScript
     {
         PrepareAuraScript(spell_q10563_q10596_to_legion_hold_AuraScript)
-        
+
         void HandleEffectRemove(AuraEffect const * /*aurEff*/, AuraEffectHandleModes /*mode*/)
         {
             if (Player* player = GetTarget()->ToPlayer())

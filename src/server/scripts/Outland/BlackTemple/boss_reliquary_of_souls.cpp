@@ -241,7 +241,7 @@ class boss_reliquary_of_souls : public CreatureScript
 
                 EnterEvadeIfOutOfCombatArea();
             }
-    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return !SelectTargetFromPlayerList(80.0f);
@@ -431,7 +431,7 @@ class boss_essence_of_desire : public CreatureScript
             {
                 Talk(DESI_SAY_FREED);
                 me->CastSpell(me, SPELL_AURA_OF_DESIRE, true);
-                    
+
                 events.ScheduleEvent(EVENT_DESI_DEADEN, 28000);
                 events.ScheduleEvent(EVENT_DESI_SPIRIT_SHOCK, 20000);
                 events.ScheduleEvent(EVENT_DESI_RUNE_SHIELD, 13000);
@@ -523,7 +523,7 @@ class boss_essence_of_anger : public CreatureScript
             {
                 Talk(ANGER_SAY_FREED);
                 me->CastSpell(me, SPELL_AURA_OF_ANGER, true);
-                    
+
                 events.ScheduleEvent(EVENT_ANGER_SPITE, 15000);
                 events.ScheduleEvent(EVENT_ANGER_SOUL_SCREAM, 10000);
                 events.ScheduleEvent(EVENT_ANGER_SEETHE, 1000);
@@ -678,7 +678,7 @@ class spell_reliquary_of_souls_aura_of_desire : public SpellScriptLoader
             }
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 if (AuraEffect* effect = GetAura()->GetEffect(EFFECT_1))
                     effect->RecalculateAmount();

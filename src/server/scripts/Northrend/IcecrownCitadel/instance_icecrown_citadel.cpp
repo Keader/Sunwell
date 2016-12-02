@@ -1179,7 +1179,7 @@ class instance_icecrown_citadel : public InstanceMapScript
 
                  return true;
             }
-  
+
             void SpawnGunship()
             {
                 if (!GunshipGUID && instance->HavePlayers())
@@ -1547,7 +1547,7 @@ class instance_icecrown_citadel : public InstanceMapScript
 
                 std::ostringstream saveStream;
                 saveStream << "I C " << GetBossSaveData() << HeroicAttempts << ' '
-                    << ColdflameJetsState << ' ' << BloodQuickeningState << ' ' << BloodQuickeningMinutes << ' ' << WeeklyQuestId10 << ' ' << PutricideEventProgress << ' ' 
+                    << ColdflameJetsState << ' ' << BloodQuickeningState << ' ' << BloodQuickeningMinutes << ' ' << WeeklyQuestId10 << ' ' << PutricideEventProgress << ' '
                     << uint32(LichKingHeroicAvailable ? 1 : 0) << ' ' << BloodPrinceTrashCount;
 
                 OUT_SAVE_INST_DATA_COMPLETE;

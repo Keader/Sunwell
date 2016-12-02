@@ -106,13 +106,13 @@ class boss_archavon : public CreatureScript
                     case EVENT_ROCK_SHARDS:
                         if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 0))
                             me->CastSpell(target, SPELL_ROCK_SHARDS, false);
-                        
+
                         events.RepeatEvent(15000);
                         break;
                     case EVENT_CHOKING_CLOUD:
                         if (Unit* target = SelectTarget(SELECT_TARGET_RANDOM, 1))
                             me->CastSpell(target, RAID_MODE(SPELL_CRUSHING_LEAP_10, SPELL_CRUSHING_LEAP_25), true); //10y~80y, ignore range
-                        
+
                         events.RepeatEvent(30000);
                         break;
                     case EVENT_STOMP:
@@ -170,7 +170,7 @@ class spell_archavon_rock_shards : public SpellScriptLoader
                         caster->CastSpell(target, 58692, true);
                     }
 
-                    caster->CastSpell(target, caster->GetMap()->Is25ManRaid() ? 60883 : 58695, true); 
+                    caster->CastSpell(target, caster->GetMap()->Is25ManRaid() ? 60883 : 58695, true);
                 }
             }
 

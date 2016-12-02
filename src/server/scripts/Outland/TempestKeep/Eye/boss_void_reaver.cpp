@@ -105,7 +105,7 @@ class boss_void_reaver : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetDistance2d(432.59f, 371.93f) > 105.0f;

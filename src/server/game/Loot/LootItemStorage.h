@@ -10,7 +10,7 @@ Xinef
 
 struct StoredLootItem
 {
-    StoredLootItem(uint32 i, uint32 c, int32 ri, uint32 rs) : 
+    StoredLootItem(uint32 i, uint32 c, int32 ri, uint32 rs) :
         itemid(i), count(c), randomPropertyId(ri), randomSuffix(rs) { }
 
     // If itemid == 0 - money amount is stored in count value

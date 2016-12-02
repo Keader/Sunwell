@@ -52,7 +52,7 @@ public:
 
     struct boss_krystallusAI : public ScriptedAI
     {
-        boss_krystallusAI(Creature *c) : ScriptedAI(c) 
+        boss_krystallusAI(Creature *c) : ScriptedAI(c)
         {
             pInstance = me->GetInstanceScript();
         }
@@ -60,7 +60,7 @@ public:
         EventMap events;
         InstanceScript* pInstance;
 
-        void Reset() 
+        void Reset()
         {
             events.Reset();
             if (pInstance)
@@ -108,7 +108,7 @@ public:
             {
                 case EVENT_BOULDER:
                 {
-                    if (Unit *target = SelectTarget(SELECT_TARGET_RANDOM, 0, 50.0f, true, 0)) 
+                    if (Unit *target = SelectTarget(SELECT_TARGET_RANDOM, 0, 50.0f, true, 0))
                         me->CastSpell(target, DUNGEON_MODE(BOULDER_TOSS, BOULDER_TOSS_H), false);
 
                     events.RepeatEvent(5000 + rand()%2000);

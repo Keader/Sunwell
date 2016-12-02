@@ -75,7 +75,7 @@ public:
 
             Talk(YELL_AGGRO);
             BossAI::EnterCombat(who);
-            
+
             events.ScheduleEvent(EVENT_SPELL_SLASH, 11000);
             events.ScheduleEvent(EVENT_SPELL_STOMP, 30000);
             events.ScheduleEvent(EVENT_SPELL_BURN, 45000);

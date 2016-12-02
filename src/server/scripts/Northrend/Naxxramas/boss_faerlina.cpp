@@ -161,7 +161,7 @@ public:
 
             DoMeleeAttackIfReady();
         }
-        
+
         void SpellHit(Unit* caster, const SpellInfo *spell)
         {
             if (spell->Id == SPELL_WIDOWS_EMBRACE)

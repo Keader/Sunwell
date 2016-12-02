@@ -805,7 +805,7 @@ class boss_the_lich_king : public CreatureScript
                             tirion->PlayDirectSound(17389);
                         }
                     }
-                    
+
                 }
                 else if (damage >= me->GetHealth())
                     damage = me->GetHealth()-1;
@@ -1452,7 +1452,7 @@ class npc_tirion_fordring_tft : public CreatureScript
                         {
                             theLichKing->GetMotionMaster()->MovePoint(0, CenterPosition);
                             uint32 travelTime = 1000*theLichKing->GetExactDist(&CenterPosition)/theLichKing->GetSpeed(MOVE_WALK) + 1000;
-                            
+
                             _events.ScheduleEvent(EVENT_OUTRO_LK_TALK_4, 1+travelTime);
                             _events.ScheduleEvent(EVENT_OUTRO_LK_RAISE_DEAD, 1000+travelTime);
                             _events.ScheduleEvent(EVENT_OUTRO_LK_TALK_5, 29000+travelTime);
@@ -1514,7 +1514,7 @@ class npc_tirion_fordring_tft : public CreatureScript
                             theLichKing->SetDisableGravity(true);
                             theLichKing->SetByteFlag(UNIT_FIELD_BYTES_1, 3, UNIT_BYTE1_FLAG_ALWAYS_STAND | UNIT_BYTE1_FLAG_HOVER);
                             theLichKing->GetMotionMaster()->MovePoint(0, OutroFlying);
-                            
+
                             _events.ScheduleEvent(EVENT_OUTRO_AFTER_SOUL_BARRAGE, 3000);
                         }
                         break;

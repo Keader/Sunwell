@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -385,18 +385,18 @@ class ByteBuffer
             return *this;
         }
 
-        uint8 * contents() 
-        { 
+        uint8 * contents()
+        {
             if (_storage.empty())
                 throw ByteBufferException();
-            return &_storage[0]; 
+            return &_storage[0];
         }
 
-        const uint8 *contents() const 
-        { 
+        const uint8 *contents() const
+        {
             if (_storage.empty())
                 throw ByteBufferException();
-            return &_storage[0]; 
+            return &_storage[0];
         }
 
         size_t size() const { return _storage.size(); }

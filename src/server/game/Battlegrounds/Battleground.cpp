@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -379,7 +379,7 @@ TeamId Battleground::GetPrematureWinner()
         return TEAM_ALLIANCE;
     else if (GetPlayersCountByTeam(TEAM_HORDE) >= GetMinPlayersPerTeam())
         return TEAM_HORDE;
-        
+
     return TEAM_NEUTRAL;
 }
 

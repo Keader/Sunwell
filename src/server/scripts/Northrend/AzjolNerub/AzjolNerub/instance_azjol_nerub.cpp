@@ -53,7 +53,7 @@ class instance_azjol_nerub : public InstanceMapScript
                         break;
 
                 }
-            }                    
+            }
 
             void OnGameObjectCreate(GameObject* go)
             {
@@ -67,7 +67,7 @@ class instance_azjol_nerub : public InstanceMapScript
                         break;
                 }
             }
-            
+
             void OnGameObjectRemove(GameObject* go)
             {
                 switch (go->GetEntry())

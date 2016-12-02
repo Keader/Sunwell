@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -222,7 +222,7 @@ void WorldSession::HandleAuctionSellItem(WorldPacket & recvData)
         SendAuctionCommandResult(0, AUCTION_SELL_ITEM, ERR_AUCTION_DATABASE_ERROR);
         return;
     }
- 
+
     // check if there are 2 identical guids, in this case user is most likely cheating
     for (uint32 i = 0; i < itemsCount - 1; ++i)
     {

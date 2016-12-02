@@ -184,7 +184,7 @@ class boss_the_lurker_below : public CreatureScript
                             }
                 }
 
-                if (target)            
+                if (target)
                     me->AttackerStateUpdate(target);
                 else if (target = SelectTarget(SELECT_TARGET_RANDOM, 0))
                     me->CastSpell(target, SPELL_WATER_BOLT, false);

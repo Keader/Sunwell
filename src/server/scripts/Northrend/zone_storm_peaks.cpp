@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -133,7 +133,7 @@ public:
         uint32 hpTimer;
         bool charging;
 
-        void Reset() 
+        void Reset()
         {
             spellTimer = 0;
             hpTimer = 0;
@@ -255,12 +255,12 @@ public:
         {
             events.Reset();
             if (me->GetEntry() == NPC_TIME_LOST_PROTO_DRAKE)
-            {    
+            {
                 events.ScheduleEvent(SPELL_TIME_SHIFT, 10000);
                 events.ScheduleEvent(SPELL_TIME_LAPSE, 5000);
             }
             else
-            {    
+            {
                 events.ScheduleEvent(SPELL_FROST_BREATH, 8000);
                 events.ScheduleEvent(SPELL_FROST_CLEAVE, 5000);
             }
@@ -355,7 +355,7 @@ public:
             ScriptedAI::EnterEvadeMode();
         }
 
-        void Reset() 
+        void Reset()
         {
             me->SetRegeneratingHealth(true);
             me->SetSpeed(MOVE_RUN, 1.14f, true); // ZOMG!
@@ -481,7 +481,7 @@ public:
             if (setCharm)
             {
                 setCharm = false;
-                
+
                 if (Player* charmer = GetValidPlayer())
                 {
                     me->setFaction(16);

@@ -69,7 +69,7 @@ public:
                 me->SummonCreature(NPC_CRYPT_GUARD, 3308.590f, -3486.29f, 287.16f, M_PI, TEMPSUMMON_CORPSE_TIMED_DESPAWN, 60000);
         }
 
-        void Reset() 
+        void Reset()
         {
             events.Reset();
             summons.DespawnAll();
@@ -144,7 +144,7 @@ public:
             events.ScheduleEvent(EVENT_SPELL_IMPALE, 15000);
             events.ScheduleEvent(EVENT_SPELL_LOCUST_SWARM, 70000+urand(0,50000));
             events.ScheduleEvent(EVENT_SPELL_BERSERK, 600000);
-            
+
             if (!summons.HasEntry(NPC_CRYPT_GUARD))
                 SummonCryptGuards();
         }

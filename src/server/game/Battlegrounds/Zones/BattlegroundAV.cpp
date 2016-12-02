@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -1354,7 +1354,7 @@ bool BattlegroundAV::SetupBattleground()
         SpawnBGObject(i, RESPAWN_IMMEDIATELY);
 
     SpawnBGObject(BG_AV_OBJECT_AURA_N_SNOWFALL_GRAVE, RESPAWN_IMMEDIATELY);
-    
+
     // Handpacked snowdrift, only during holiday
     if (IsHolidayActive(HOLIDAY_FEAST_OF_WINTER_VEIL))
         for (i = BG_AV_OBJECT_HANDPACKED_SNOWDRIFT_MIN ; i <= BG_AV_OBJECT_HANDPACKED_SNOWDRIFT_MAX; i++)

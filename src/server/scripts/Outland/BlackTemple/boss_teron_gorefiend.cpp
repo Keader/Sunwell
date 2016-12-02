@@ -167,7 +167,7 @@ class boss_teron_gorefiend : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetDistance(me->GetHomePosition()) > 100.0f;
@@ -233,7 +233,7 @@ class spell_teron_gorefiend_spirit_lance : public SpellScriptLoader
             }
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 if (AuraEffect* effect = GetAura()->GetEffect(EFFECT_1))
                     effect->RecalculateAmount();

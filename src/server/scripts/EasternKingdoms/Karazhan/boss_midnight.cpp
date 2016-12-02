@@ -172,7 +172,7 @@ class boss_midnight : public CreatureScript
                     DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetHomePosition().GetExactDist2d(me) > 50.0f || me->GetPositionZ() > 60.0f;
@@ -383,7 +383,7 @@ class boss_attumen_midnight : public CreatureScript
                         _events.ScheduleEvent(EVENT_RANDOM_YELL, urand(30000, 70000));
                         break;
                     case EVENT_SPELL_CHARGE:
-                        if (Unit* target = SelectTarget(SELECT_TARGET_FARTHEST, 0, 24.0f, true)) 
+                        if (Unit* target = SelectTarget(SELECT_TARGET_FARTHEST, 0, 24.0f, true))
                             me->CastSpell(target, SPELL_CHARGE_MIDNIGHT, false);
                         _events.ScheduleEvent(EVENT_SPELL_CHARGE, 20000);
                         break;

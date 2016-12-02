@@ -30,7 +30,7 @@ void LootItemStorage::LoadStorageFromDB()
     do
     {
         Field* fields = result->Fetch();
-        
+
         StoredLootItemList& itemList = lootItemStore[fields[0].GetUInt32()];
         itemList.push_back(StoredLootItem(fields[1].GetUInt32(), fields[2].GetUInt32(), fields[3].GetInt32(), fields[4].GetUInt32()));
 

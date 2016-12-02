@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -681,7 +681,7 @@ void BattlegroundQueue::BattlegroundQueueUpdate(BattlegroundBracketId bracket_id
         for (BattlegroundContainer::const_iterator itr = bgList.begin(); itr != bgList.end(); ++itr)
         {
             Battleground* bg = itr->second;
-            if (!BattlegroundMgr::IsArenaType(bg->GetBgTypeID()) && (bg->GetBgTypeID() == m_bgTypeId || m_bgTypeId == BATTLEGROUND_RB) && 
+            if (!BattlegroundMgr::IsArenaType(bg->GetBgTypeID()) && (bg->GetBgTypeID() == m_bgTypeId || m_bgTypeId == BATTLEGROUND_RB) &&
                 bg->HasFreeSlots() && bg->GetMinLevel() <= bracketEntry->minLevel && bg->GetMaxLevel() >= bracketEntry->maxLevel)
                 bgsToCheck.insert(bg);
         }

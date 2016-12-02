@@ -87,7 +87,7 @@ class boss_saviana_ragefire : public CreatureScript
                     case POINT_FLIGHT:
                         me->SetFacingTo(4.69f);
                         events.ScheduleEvent(EVENT_CONFLAGRATION, 1000);
-                        events.ScheduleEvent(EVENT_LAND_BACK, 7000);        
+                        events.ScheduleEvent(EVENT_LAND_BACK, 7000);
                         Talk(SAY_CONFLAGRATION);
                         break;
                     case POINT_LAND:

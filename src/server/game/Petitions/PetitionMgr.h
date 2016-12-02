@@ -35,7 +35,7 @@ class PetitionMgr
     public:
         void LoadPetitions();
         void LoadSignatures();
-        
+
         // Petitions
         void AddPetition(uint32 petitionId, uint32 ownerGuid, std::string const& name, uint8 type);
         void RemovePetition(uint32 petitionId);

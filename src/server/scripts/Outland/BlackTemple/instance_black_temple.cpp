@@ -289,7 +289,7 @@ class spell_black_template_harpooners_mark : public SpellScriptLoader
                 _turtleSet.clear();
                 return true;
             }
-            
+
             void HandleEffectApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
             {
                 std::list<Creature*> creatureList;
@@ -380,7 +380,7 @@ class spell_black_temple_curse_of_the_bleakheart : public SpellScriptLoader
             }
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 if (roll_chance_i(20))
                     GetUnitOwner()->CastSpell(GetUnitOwner(), SPELL_CHEST_PAINS, true);
@@ -463,7 +463,7 @@ class spell_black_temple_charge_rage : public SpellScriptLoader
             PrepareAuraScript(spell_black_temple_charge_rage_AuraScript);
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 if (Unit* target = GetUnitOwner()->SelectNearbyNoTotemTarget((Unit*)NULL, 50.0f))
                     GetUnitOwner()->CastSpell(target, GetSpellInfo()->Effects[effect->GetEffIndex()].TriggerSpell, true);
@@ -491,7 +491,7 @@ class spell_black_temple_shadow_inferno : public SpellScriptLoader
             PrepareAuraScript(spell_black_temple_shadow_inferno_AuraScript);
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 GetUnitOwner()->CastCustomSpell(SPELL_SHADOW_INFERNO_DAMAGE, SPELLVALUE_BASE_POINT0, effect->GetAmount(), GetUnitOwner(), TRIGGERED_FULL_MASK);
                 GetAura()->GetEffect(effect->GetEffIndex())->SetAmount(effect->GetAmount()+500);
@@ -530,7 +530,7 @@ class spell_black_temple_spell_absorption : public SpellScriptLoader
             }
 
             void Update(AuraEffect const* effect)
-            {                
+            {
                 PreventDefaultAction();
                 uint32 count = GetUnitOwner()->GetAuraCount(SPELL_CHAOTIC_CHARGE);
                 if (count == 0)

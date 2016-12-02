@@ -66,7 +66,7 @@ class boss_trollgore : public CreatureScript
                 events.ScheduleEvent(EVENT_SPELL_CONSUME, 15000);
                 events.ScheduleEvent(EVENT_SPELL_CORPSE_EXPLODE, 35000);
                 events.ScheduleEvent(EVENT_SPAWN_INVADERS, 20000, 30000);
-                
+
                 me->setActive(true);
                 instance->SetBossState(DATA_TROLLGORE, IN_PROGRESS);
                 if (who->GetTypeId() == TYPEID_PLAYER)
@@ -141,7 +141,7 @@ class boss_trollgore : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetHomePosition().GetExactDist2d(me) > 60.0f;

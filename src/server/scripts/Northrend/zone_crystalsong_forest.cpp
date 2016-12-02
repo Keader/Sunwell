@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -74,7 +74,7 @@ class npc_preparations_for_war_vehicle : public CreatureScript
                 }
 
                 me->GetMotionMaster()->MoveSplinePath(&pathPoints);
-                
+
                 NullCreatureAI::InitializeAI();
                 pointId = 0;
                 searchForShipTimer = 0;

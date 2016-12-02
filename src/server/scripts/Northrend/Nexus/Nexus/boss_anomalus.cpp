@@ -134,7 +134,7 @@ class boss_anomalus : public CreatureScript
                         {
                             Talk(SAY_RIFT);
                             Talk(EMOTE_RIFT);
-                            
+
                             me->CastSpell(me, SPELL_CREATE_RIFT, false);
                             me->CastSpell(me, SPELL_RIFT_SHIELD, true);
                             me->m_Events.AddEvent(new ChargeRifts(me), me->m_Events.CalculateTime(1000));
@@ -157,7 +157,7 @@ class boss_anomalus : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetHomePosition().GetExactDist2d(me) > 60.0f;

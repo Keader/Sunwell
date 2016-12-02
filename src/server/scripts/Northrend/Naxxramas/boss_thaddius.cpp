@@ -139,7 +139,7 @@ public:
             }
         }
 
-        void Reset() 
+        void Reset()
         {
             events.Reset();
             summons.DespawnAll();
@@ -149,7 +149,7 @@ public:
             resetTimer = 1;
             me->SetPosition(me->GetHomePosition());
 
-            if (pInstance) 
+            if (pInstance)
                 pInstance->SetData(EVENT_THADDIUS, NOT_STARTED);
 
             me->SummonCreature(NPC_STALAGG, 3450.45f, -2931.42f, 312.091f, 5.49779f);
@@ -259,7 +259,7 @@ public:
                     me->SetControlled(false, UNIT_STATE_STUNNED);
                     me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
                     me->setAttackTimer(BASE_ATTACK, 4000);
-                    
+
                     events.ScheduleEvent(EVENT_THADDIUS_SPELL_CHAIN_LIGHTNING, 14000);
                     events.ScheduleEvent(EVENT_THADDIUS_SPELL_BERSERK, 360000);
                     events.ScheduleEvent(EVENT_THADDIUS_POLARITY_SHIFT, 30000);
@@ -301,7 +301,7 @@ public:
 
     struct boss_thaddius_summonAI : public ScriptedAI
     {
-        boss_thaddius_summonAI(Creature *c) : ScriptedAI(c) 
+        boss_thaddius_summonAI(Creature *c) : ScriptedAI(c)
         {
            pInstance = me->GetInstanceScript();
         }
@@ -315,7 +315,7 @@ public:
         {
             pullTimer = 0;
             visualTimer = 1;
-            
+
             events.Reset();
             me->SetControlled(false, UNIT_STATE_STUNNED);
             if (Creature* cr = me->FindNearestCreature(NPC_TESLA_COIL, 150.0f))
@@ -342,7 +342,7 @@ public:
                 events.ScheduleEvent(EVENT_MINION_SPELL_STATIC_FIELD, 5000);
                 Talk(SAY_FEUG_AGGRO);
             }
-            
+
             events.ScheduleEvent(EVENT_MINION_CHECK_DISTANCE, 5000);
 
             // This event needs synchronisation, called for stalagg only
@@ -461,7 +461,7 @@ public:
                             me->CastSpell(tankFeugen, SPELL_MAGNETIC_PULL, true);
                             DoAction(ACTION_MAGNETIC_PULL);
                         }
-                    
+
                     break;
                 case EVENT_MINION_CHECK_DISTANCE:
                     if (Creature* cr = me->FindNearestCreature(NPC_TESLA_COIL, 150.0f))

@@ -1,4 +1,4 @@
-/* Copyright (C) 
+/* Copyright (C)
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -564,7 +564,7 @@ class npc_wg_quest_giver : public CreatureScript
         }
 
         uint32 GetDialogStatus(Player* player, Creature* creature)
-        { 
+        {
             QuestRelationBounds qr = sObjectMgr->GetCreatureQuestRelationBounds(creature->GetEntry());
             QuestRelationBounds qir = sObjectMgr->GetCreatureQuestInvolvedRelationBounds(creature->GetEntry());
             QuestGiverStatus result = DIALOG_STATUS_NONE;
@@ -761,7 +761,7 @@ class go_wg_vehicle_teleporter : public GameObjectScript
                             if (IsFriendly(passenger))
                                 if (Creature* teleportTrigger = passenger->SummonTrigger(go->GetPositionX()-60.0f, go->GetPositionY(), go->GetPositionZ()+1.0f, cVeh->GetOrientation(), 1000))
                                     return teleportTrigger;
-                    
+
                 return NULL;
             }
 

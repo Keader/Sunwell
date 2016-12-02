@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -708,7 +708,7 @@ InstancePlayerBind* InstanceSaveManager::PlayerGetBoundInstance(uint32 guidLow, 
 }
 
 bool InstanceSaveManager::PlayerIsPermBoundToInstance(uint32 guidLow, uint32 mapid, Difficulty difficulty)
-{ 
+{
     if (InstancePlayerBind* bind = PlayerGetBoundInstance(guidLow, mapid, difficulty))
         if (bind->perm)
             return true;

@@ -122,7 +122,7 @@ enum Events
     EVENT_SET_FACING            = 9,
     EVENT_KILL_ARMORER            = 10,
     EVENT_TALK_KILL_ARMORER        = 11,
-    
+
     EVENT_DRESSING_KNEEL        = 20,
     EVENT_DRESSING_ARMOR        = 21,
     EVENT_DRESSING_STAND        = 22,
@@ -458,7 +458,7 @@ public:
 
             me->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP|UNIT_NPC_FLAG_QUESTGIVER);
             instance->SetData(DATA_THRALL_REPOSITION, 1);
-                
+
             uint32 data = instance->GetData(DATA_ESCORT_PROGRESS);
             if (data >= ENCOUNTER_PROGRESS_THRALL_ARMORED)
                 ReorderInstance(data);
@@ -794,7 +794,7 @@ public:
             Start(true, true);
             SetEscortPaused(true);
             SetDespawnAtEnd(false);
-            
+
             me->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP|UNIT_NPC_FLAG_QUESTGIVER);
 
             if (data < ENCOUNTER_PROGRESS_THRALL_ARMORED)
@@ -826,7 +826,7 @@ public:
                     SetNextWaypoint(61, false);
                     break;
                 case ENCOUNTER_PROGRESS_TARETHA_MEET:
-                    SetNextWaypoint(95, false);                    
+                    SetNextWaypoint(95, false);
                     if (Creature* Taretha = ObjectAccessor::GetCreature(*me, instance->GetData64(DATA_TARETHA_GUID)))
                         Taretha->SetStandState(UNIT_STAND_STATE_STAND);
                     break;

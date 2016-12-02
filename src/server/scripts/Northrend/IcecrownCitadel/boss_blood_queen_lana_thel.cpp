@@ -551,7 +551,7 @@ class boss_blood_queen_lana_thel : public CreatureScript
                     if (Player* p = itr->GetSource())
                         if (p->IsAlive() && p->HasAura(SPELL_UNCONTROLLABLE_FRENZY))
                             Unit::Kill(me, p);
-                
+
                 if (_killMinchar)
                 {
                     if (!me->IsAlive())

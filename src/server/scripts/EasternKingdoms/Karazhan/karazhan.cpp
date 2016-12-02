@@ -1,6 +1,6 @@
  /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -560,7 +560,7 @@ public:
                     arca->DespawnOrUnsummon(100);
 
                 return 5000;
-            default: 
+            default:
                 return 2000;
             }
 

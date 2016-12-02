@@ -133,7 +133,7 @@ public:
             {
                 if (me->GetPositionX() > 1330)
                     x = 1355;
-                else 
+                else
                     x = 1308;
 
                 y = -178;
@@ -143,7 +143,7 @@ public:
             {
                 if (me->GetPositionX() > 1330)
                     x = 1355;
-                else 
+                else
                     x = 1308;
 
                 y = -137;
@@ -153,7 +153,7 @@ public:
             {
                 if (me->GetPositionX() > 1330)
                     x = 1343;
-                else 
+                else
                     x = 1320;
 
                 y = -123;
@@ -298,10 +298,10 @@ public:
                         EnterEvadeMode();
                     else
                         events.RepeatEvent(4000);
-                
+
                     return;
             }
-            
+
             DoMeleeAttackIfReady();
         }
     };

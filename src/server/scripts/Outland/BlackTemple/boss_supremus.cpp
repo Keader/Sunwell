@@ -84,7 +84,7 @@ class boss_supremus : public CreatureScript
                     me->ApplySpellImmune(0, IMMUNITY_STATE, SPELL_AURA_MOD_TAUNT, true);
                     me->ApplySpellImmune(0, IMMUNITY_EFFECT, SPELL_EFFECT_ATTACK_ME, true);
                     me->CastSpell(me, SPELL_SNARE_SELF, true);
-                }                
+                }
             }
 
             void JustDied(Unit* killer)
@@ -183,7 +183,7 @@ class boss_supremus : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-                        
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetPositionX() < 565 || me->GetPositionX() > 865 || me->GetPositionY() < 545 || me->GetPositionY() > 1000;

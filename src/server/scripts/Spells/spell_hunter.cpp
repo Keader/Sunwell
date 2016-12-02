@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -229,7 +229,7 @@ class spell_hun_generic_scaling : public SpellScriptLoader
                 {
                     // xinef: by default 22% of RAP
                     int32 modifier = 22;
-                    
+
                     // xinef: Wild Hunt bonus for AP
                     if (AuraEffect* wildHuntEff = GetUnitOwner()->GetDummyAuraEffect(SPELLFAMILY_PET, 3748, EFFECT_1))
                         AddPct(modifier, wildHuntEff->GetAmount());
@@ -250,7 +250,7 @@ class spell_hun_generic_scaling : public SpellScriptLoader
                 {
                     // xinef: by default 12.87% of RAP
                     float modifier = 12.87f;
-                    
+
                     // xinef: Wild Hunt bonus for AP
                     if (AuraEffect* wildHuntEff = GetUnitOwner()->GetDummyAuraEffect(SPELLFAMILY_PET, 3748, EFFECT_1))
                         AddPct(modifier, wildHuntEff->GetAmount());
@@ -268,7 +268,7 @@ class spell_hun_generic_scaling : public SpellScriptLoader
                 isPeriodic = true;
                 amplitude = 2*IN_MILLISECONDS;
             }
-            
+
             void HandlePeriodic(AuraEffect const* aurEff)
             {
                 PreventDefaultAction();

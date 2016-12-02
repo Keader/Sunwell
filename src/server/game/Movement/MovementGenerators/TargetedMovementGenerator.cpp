@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -35,7 +35,7 @@
 template<class T, typename D>
 void TargetedMovementGeneratorMedium<T,D>::_setTargetLocation(T* owner, bool initial)
 {
-    if (!i_target.isValid() || !i_target->IsInWorld() || !owner->IsInMap(i_target.getTarget())) 
+    if (!i_target.isValid() || !i_target->IsInWorld() || !owner->IsInMap(i_target.getTarget()))
         return;
 
     if (owner->HasUnitState(UNIT_STATE_NOT_MOVE))

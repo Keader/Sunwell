@@ -179,7 +179,7 @@ class boss_kaelthas : public CreatureScript
 
             uint8 phase;
             EventMap events2;
-            
+
             void PrepareAdvisors()
             {
                 for (uint8 i = DATA_KAEL_ADVISOR1; i <= DATA_KAEL_ADVISOR4; ++i)
@@ -659,7 +659,7 @@ class boss_kaelthas : public CreatureScript
                             events.Reset();
                             me->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
                             me->SetReactState(REACT_PASSIVE);
-                            me->GetMotionMaster()->MovePoint(POINT_MIDDLE, me->GetHomePosition(), true, true); 
+                            me->GetMotionMaster()->MovePoint(POINT_MIDDLE, me->GetHomePosition(), true, true);
                             me->ClearUnitState(UNIT_STATE_MELEE_ATTACKING);
                             me->SendMeleeAttackStop();
                             break;
@@ -782,7 +782,7 @@ class spell_kaelthas_summon_weapons : public SpellScriptLoader
             {
                 PreventHitEffect(effIndex);
                 for (uint32 i = SPELL_SUMMON_WEAPONA; i <= SPELL_SUMMON_WEAPONG; ++i)
-                    GetCaster()->CastSpell(GetCaster(), i, true);                
+                    GetCaster()->CastSpell(GetCaster(), i, true);
             }
 
             void Register()
@@ -985,7 +985,7 @@ class spell_kaelthas_nether_beam : public SpellScriptLoader
             void HandleScriptEffect(SpellEffIndex effIndex)
             {
                 PreventHitEffect(effIndex);
-                                   
+
                 ThreatContainer::StorageType const & ThreatList = GetCaster()-> getThreatManager().getThreatList();
                 std::list<Unit*> targetList;
                 for (ThreatContainer::StorageType::const_iterator itr = ThreatList.begin(); itr != ThreatList.end(); ++itr)

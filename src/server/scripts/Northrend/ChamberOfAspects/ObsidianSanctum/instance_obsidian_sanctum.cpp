@@ -141,7 +141,7 @@ public:
                         if (cr->AI()->GetData(DATA_ACHIEVEMENT_DRAGONS_COUNT) >= 3)
                             return true;
                     break;
-                
+
             }
             return false;
         }
@@ -198,7 +198,7 @@ public:
             OUT_SAVE_INST_DATA_COMPLETE;
             return saveStream.str();
         }
-            
+
         void Load(const char* strIn)
         {
             if (!strIn)

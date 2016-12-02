@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -669,7 +669,7 @@ public:
 
         if (!object)
         {
-            
+
             handler->PSendSysMessage(LANG_COMMAND_OBJNOTFOUND, abs(guidLow));
             handler->SetSentErrorMessage(true);
             return false;

@@ -121,23 +121,23 @@ public:
                     break;
 
                 // Grand Champion Minions:
-                case NPC_ORGRIMMAR_MINION: 
+                case NPC_ORGRIMMAR_MINION:
                     if( TeamIdInInstance == TEAM_HORDE )
                         creature->UpdateEntry(NPC_STORMWIND_MINION);
                     break;
-                case NPC_SILVERMOON_MINION: 
+                case NPC_SILVERMOON_MINION:
                     if( TeamIdInInstance == TEAM_HORDE )
                         creature->UpdateEntry(NPC_GNOMEREGAN_MINION);
                     break;
-                case NPC_THUNDER_BLUFF_MINION: 
+                case NPC_THUNDER_BLUFF_MINION:
                     if( TeamIdInInstance == TEAM_HORDE )
                         creature->UpdateEntry(NPC_EXODAR_MINION);
                     break;
-                case NPC_SENJIN_MINION: 
+                case NPC_SENJIN_MINION:
                     if( TeamIdInInstance == TEAM_HORDE )
                         creature->UpdateEntry(NPC_DARNASSUS_MINION);
                     break;
-                case NPC_UNDERCITY_MINION: 
+                case NPC_UNDERCITY_MINION:
                     if( TeamIdInInstance == TEAM_HORDE )
                         creature->UpdateEntry(NPC_IRONFORGE_MINION);
                     break;
@@ -725,7 +725,7 @@ public:
                     }
 
             }
-            
+
             if (!shortver)
                 if( Creature* announcer = instance->GetCreature(NPC_AnnouncerGUID) )
                 {
@@ -981,7 +981,7 @@ public:
                                 announcer->AI()->Talk(TEXT_CHEER_PALETRESS_2);
                             }
                         }
-                            
+
                         for( int8 i = 0; i < 3; ++i )
                         {
                             Position pos(SpawnPosition);
@@ -1219,7 +1219,7 @@ public:
                         events.PopEvent();
                     }
                     break;
-            }            
+            }
         }
 
         bool CheckAchievementCriteriaMeet(uint32 criteria_id, Player const* source, Unit const* target = NULL, uint32 miscvalue1 = 0)

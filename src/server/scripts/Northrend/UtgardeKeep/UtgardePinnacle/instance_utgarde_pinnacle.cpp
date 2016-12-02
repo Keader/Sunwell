@@ -66,7 +66,7 @@ public:
            svalaAchievement = false;
            skadiAchievement = false;
            ymironAchievement = false;
-           
+
            for(uint8 i = 0; i < MAX_ENCOUNTERS; ++i)
                Encounters[i] = NOT_STARTED;
         }
@@ -74,7 +74,7 @@ public:
         bool IsEncounterInProgress() const
         {
             for(uint8 i = 0; i < MAX_ENCOUNTERS; ++i)
-                if(Encounters[i] == IN_PROGRESS) 
+                if(Encounters[i] == IN_PROGRESS)
                     return true;
 
             return false;
@@ -106,10 +106,10 @@ public:
                     break;
                 case GO_KING_YMIRON_DOOR:
                     YmironDoor = pGo->GetGUID();
-                    if (Encounters[DATA_KING_YMIRON] == DONE) 
+                    if (Encounters[DATA_KING_YMIRON] == DONE)
                         HandleGameObject(0,true,pGo);
                     break;
-                case GO_GORK_PALEHOOF_SPHERE: 
+                case GO_GORK_PALEHOOF_SPHERE:
                     StatisGenerator = pGo->GetGUID();
                     break;
                 case GO_SVALA_MIRROR:

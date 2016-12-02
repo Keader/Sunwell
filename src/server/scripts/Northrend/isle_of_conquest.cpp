@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -227,8 +227,8 @@ class boss_isle_of_conquest : public CreatureScript
 
             EventMap events;
             bool rage;
-            void Reset() 
-            { 
+            void Reset()
+            {
                 events.Reset();
                 rage = false;
             }
@@ -287,7 +287,7 @@ class boss_isle_of_conquest : public CreatureScript
                     case EVENT_DAGGER_THROW:
                         if (Unit* tgt = SelectTarget(SELECT_TARGET_RANDOM))
                             me->CastSpell(tgt, SPELL_IOCBOSS_DAGGER_THROW, false);
-                        
+
                         events.RepeatEvent(10000);
                         break;
                 }
@@ -396,7 +396,7 @@ class spell_ioc_gunship_portal : public SpellScriptLoader
                  * Tranpsort Guid: Full: xxxx Type: MOTransport Low: xxx
                  * Transport Position X: 0 Y: 0 Z: 0 O: 0
                  * Position: X: 7.305609 Y: -0.095246 Z: 34.51022 O: 0
-                 
+
                 caster->TeleportTo(GetHitCreature()->GetWorldLocation(), TELE_TO_NOT_LEAVE_TRANSPORT);*/
             }
 

@@ -94,7 +94,7 @@ class boss_shade_of_akama : public CreatureScript
             EventMap events2;
 
             void ChannelersAction(int32 action)
-            {   
+            {
                 for (SummonList::const_iterator i = summonsChanneler.begin(); i != summonsChanneler.end(); ++i)
                     if (Creature* summon = ObjectAccessor::GetCreature(*me, *i))
                     {
@@ -128,7 +128,7 @@ class boss_shade_of_akama : public CreatureScript
                 summonsGenerator.DoAction(ACTION_DESPAWN_ALL);
                 events2.ScheduleEvent(EVENT_SHADE_RESET_ENCOUNTER, 20000);
                 me->SetVisible(false);
-                ChannelersAction(ACTION_KILL_CHANNELERS);                    
+                ChannelersAction(ACTION_KILL_CHANNELERS);
             }
 
             void JustDied(Unit* killer)
@@ -183,7 +183,7 @@ class boss_shade_of_akama : public CreatureScript
                         summonsChanneler.Respawn();
                         summonsGenerator.Respawn();
                         ChannelersAction(ACTION_CHANNELERS_START_CHANNEL);
-                        
+
                         if (Creature* akama = ObjectAccessor::GetCreature(*me, instance->GetData64(NPC_AKAMA_SHADE)))
                             akama->Respawn(true);
                         break;
@@ -247,7 +247,7 @@ class boss_shade_of_akama : public CreatureScript
                 DoMeleeAttackIfReady();
                 EnterEvadeIfOutOfCombatArea();
             }
-    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return !SelectTargetFromPlayerList(120.0f);
@@ -552,7 +552,7 @@ class spell_shade_of_akama_shade_soul_channel : public SpellScriptLoader
         class spell_shade_of_akama_shade_soul_channel_AuraScript : public AuraScript
         {
             PrepareAuraScript(spell_shade_of_akama_shade_soul_channel_AuraScript)
-            
+
             void HandleEffectApply(AuraEffect const* aurEff, AuraEffectHandleModes /*mode*/)
             {
                 if (Unit* caster = GetCaster())

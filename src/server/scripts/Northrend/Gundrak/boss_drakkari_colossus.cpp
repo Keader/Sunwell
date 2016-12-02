@@ -126,7 +126,7 @@ class boss_drakkari_colossus : public CreatureScript
                 BossAI::JustReachedHome();
                 me->CastSpell(me, SPELL_FREEZE_ANIM, true);
             }
-            
+
             void EnterCombat(Unit* who)
             {
                 BossAI::EnterCombat(who);
@@ -135,7 +135,7 @@ class boss_drakkari_colossus : public CreatureScript
                 events.ScheduleEvent(EVENT_COLOSSUS_HEALTH_2, 1000);
             }
 
-            void JustSummoned(Creature* summon) 
+            void JustSummoned(Creature* summon)
             {
                 if (summon->GetEntry() == NPC_DRAKKARI_ELEMENTAL)
                 {
@@ -221,7 +221,7 @@ class boss_drakkari_colossus : public CreatureScript
                         break;
                 }
 
-                DoMeleeAttackIfReady(); 
+                DoMeleeAttackIfReady();
             }
         };
 };
@@ -367,7 +367,7 @@ class npc_living_mojo : public CreatureScript
             {
                 if (me->ToTempSummon() || !UpdateVictim())
                     return;
-                
+
                 events.Update(diff);
                 if (me->HasUnitState(UNIT_STATE_CASTING))
                     return;

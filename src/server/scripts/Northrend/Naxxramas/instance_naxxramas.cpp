@@ -303,22 +303,22 @@ public:
                     if (Encounters[EVENT_SAPPHIRON] == DONE)
                         pGo->SetGoState(GO_STATE_ACTIVE);
                     break;
-                case GO_DEATHKNIGHT_WING: 
+                case GO_DEATHKNIGHT_WING:
                     _loathebPortalGUID = pGo->GetGUID();
                     if (Encounters[EVENT_LOATHEB] == DONE)
                          pGo->SetPhaseMask(1, true);
                     break;
-                case GO_THADDIUS_PORTAL: 
+                case GO_THADDIUS_PORTAL:
                     _thaddiusPortalGUID = pGo->GetGUID();
                     if (Encounters[EVENT_THADDIUS] == DONE)
                          pGo->SetPhaseMask(1, true);
                     break;
-                case GO_MAEXXNA_PORTAL: 
+                case GO_MAEXXNA_PORTAL:
                     _maexxnaPortalGUID = pGo->GetGUID();
                     if (Encounters[EVENT_MAEXXNA] == DONE)
                          pGo->SetPhaseMask(1, true);
                     break;
-                case GO_HORSEMAN_PORTAL: 
+                case GO_HORSEMAN_PORTAL:
                     _horsemanPortalGUID = pGo->GetGUID();
                     if (Encounters[EVENT_HORSEMAN] == DONE)
                          pGo->SetPhaseMask(1, true);
@@ -702,7 +702,7 @@ public:
 
             std::ostringstream saveStream;
             saveStream << "N X X " << Encounters[0] << ' ' << Encounters[1] << ' ' << Encounters[2] << ' ' << Encounters[3]
-                 << ' ' << Encounters[4] << ' ' << Encounters[5] << ' ' << Encounters[6] << ' ' << Encounters[7] 
+                 << ' ' << Encounters[4] << ' ' << Encounters[5] << ' ' << Encounters[6] << ' ' << Encounters[7]
                  << ' ' << Encounters[8] << ' ' << Encounters[9] << ' ' << Encounters[10] << ' ' << Encounters[11]
                  << ' ' << Encounters[12] << ' ' << Encounters[13] << ' ' << Encounters[14] << ' ' << immortalAchievement;
 
@@ -739,7 +739,7 @@ public:
             else
                 OUT_LOAD_INST_DATA_FAIL;
         }
-            
+
     };
 };
 class boss_naxxramas_misc : public CreatureScript

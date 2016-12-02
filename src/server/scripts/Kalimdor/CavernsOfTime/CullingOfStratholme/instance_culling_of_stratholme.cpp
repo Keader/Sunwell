@@ -31,7 +31,7 @@ class instance_culling_of_stratholme : public InstanceMapScript
             // GOs
             _shkafGateGUID = 0;
             _exitGateGUID = 0;
-            
+
             // Instance
             _crateCount = 0;
             _showCrateTimer = 0;
@@ -246,7 +246,7 @@ class instance_culling_of_stratholme : public InstanceMapScript
                 uint32 div = uint32(_guardianTimer / (MINUTE*IN_MILLISECONDS));
                 _guardianTimer -= diff;
                 uint32 divAfter = uint32(_guardianTimer / (MINUTE*IN_MILLISECONDS));
-                
+
                 if (divAfter == 0)
                 {
                     _guardianTimer = 0;

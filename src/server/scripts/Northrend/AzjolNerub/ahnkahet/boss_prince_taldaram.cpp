@@ -113,7 +113,7 @@ public:
         {
             if (pInstance)
                 pInstance->SetData(DATA_PRINCE_TALDARAM_EVENT, IN_PROGRESS);
-           
+
             Talk(SAY_AGGRO);
             ScheduleEvents();
 
@@ -253,7 +253,7 @@ public:
 
             if (vanishTarget && victim->GetGUID() == vanishTarget)
                 ScheduleEvents();
-            
+
             Talk(SAY_SLAY);
         }
     };

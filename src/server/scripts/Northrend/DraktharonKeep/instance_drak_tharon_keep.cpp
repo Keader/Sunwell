@@ -27,7 +27,7 @@ class instance_drak_tharon_keep : public InstanceMapScript
                 SetBossNumber(MAX_ENCOUNTERS);
                 LoadDoorData(doorData);
             }
-            
+
             void OnGameObjectCreate(GameObject* go)
             {
                 switch (go->GetEntry())
@@ -40,7 +40,7 @@ class instance_drak_tharon_keep : public InstanceMapScript
                         break;
                 }
             }
-            
+
             void OnGameObjectRemove(GameObject* go)
             {
                 switch (go->GetEntry())

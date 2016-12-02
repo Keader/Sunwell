@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -255,15 +255,15 @@ class SmartScript
             mEventPhase = std::min<uint32>(SMART_EVENT_PHASE_12, mEventPhase + p);
         }
 
-        void DecPhase(uint32 p) 
+        void DecPhase(uint32 p)
         {
             if (p >= mEventPhase)
                 mEventPhase = 0;
             else
                 mEventPhase -= p;
         }
-        bool IsInPhase(uint32 p) const 
-        { 
+        bool IsInPhase(uint32 p) const
+        {
             if (mEventPhase == 0)
                 return false;
             return (1 << (mEventPhase - 1)) & p;

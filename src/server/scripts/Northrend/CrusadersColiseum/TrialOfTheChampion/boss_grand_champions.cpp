@@ -114,7 +114,7 @@ enum ChampionEvents
 
     EVENT_ROGUE_SPELL_EVISCERATE,
     EVENT_ROGUE_SPELL_FAN_OF_KNIVES,
-    EVENT_ROGUE_SPELL_POISON_BOTTLE,        
+    EVENT_ROGUE_SPELL_POISON_BOTTLE,
 
     EVENT_WARRIOR_SPELL_MORTAL_STRIKE,
     EVENT_WARRIOR_SPELL_BLADESTORM,
@@ -279,7 +279,7 @@ public:
                                 }
                             }
                         if( !LIST.empty() )
-                        {                        
+                        {
                             uint8 rnd = LIST.size()>1 ? urand(0,LIST.size()-1) : 0;
                             if( Unit* target = ObjectAccessor::GetUnit(*me, LIST.at(rnd)) )
                             {
@@ -306,7 +306,7 @@ public:
                                         LIST.push_back(mount->GetGUID());
                             }
                         if( !LIST.empty() )
-                        {                        
+                        {
                             uint8 rnd = LIST.size()>1 ? urand(0,LIST.size()-1) : 0;
                             if( Unit* target = ObjectAccessor::GetCreature(*me, LIST.at(rnd)) )
                                 me->CastSpell(target, SPELL_NPC_SHIELD_BREAKER, false);
@@ -505,7 +505,7 @@ public:
                 case 1:
                     if (uiData == 0) // 1 == short version
                     {
-                        AddWaypoint(0,747.35f,634.07f,411.57f); 
+                        AddWaypoint(0,747.35f,634.07f,411.57f);
                         AddWaypoint(1,768.72f,581.01f,411.92f);
                     }
                     AddWaypoint(2,763.55f,590.52f,411.71f);
@@ -649,7 +649,7 @@ public:
 
             if ( !UpdateVictim() && !NewMountGUID )
                 return;
-            
+
             events.Update(diff);
 
             if( me->HasUnitState(UNIT_STATE_CASTING) || ((me->GetEntry()==NPC_JACOB || me->GetEntry()==NPC_MOKRA) && me->HasAura(SPELL_BLADESTORM)) )
@@ -666,7 +666,7 @@ public:
                             events.RepeatEvent(200);
                             break;
                         }
-                        
+
                         // hackfix, trample won't hit grand champions because of UNIT_FLAG_NON_ATTACKABLE
                         if( pInstance )
                         {

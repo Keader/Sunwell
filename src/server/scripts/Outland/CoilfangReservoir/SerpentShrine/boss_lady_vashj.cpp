@@ -274,7 +274,7 @@ class boss_lady_vashj : public CreatureScript
                     DoMeleeAttackIfReady();
                 }
             }
-                    
+
             bool CheckEvadeIfOutOfCombatArea() const
             {
                 return me->GetHomePosition().GetExactDist2d(me) > 80.0f || !SelectTargetFromPlayerList(100.0f);

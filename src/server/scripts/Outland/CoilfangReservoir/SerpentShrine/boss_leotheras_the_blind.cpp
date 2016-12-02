@@ -60,7 +60,7 @@ enum Misc
     EVENT_SPELL_SHADOW_BOLT                = 20
 };
 
-const Position channelersPos[MAX_CHANNELERS] = 
+const Position channelersPos[MAX_CHANNELERS] =
 {
     {367.11f, -421.48f, 29.52f, 5.0f},
     {380.11f, -435.48f, 29.52f, 2.5f},
@@ -95,7 +95,7 @@ class boss_leotheras_the_blind : public CreatureScript
 
             void InitializeAI()
             {
-                BossAI::InitializeAI();    
+                BossAI::InitializeAI();
                 SummonChannelers();
             }
 

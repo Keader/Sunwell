@@ -40,7 +40,7 @@ enum Events
     EVENT_THREAT_YELL_L_3        = 6,
 
     EVENT_THREAT_YELL_R_1        = 7,
-    
+
     EVENT_KILL_YELL_LEFT        = 8,
     EVENT_KILL_YELL_RIGHT        = 9,
     EVENT_DEATH_YELL            = 10,
@@ -139,7 +139,7 @@ class boss_warbringer_omrogg : public CreatureScript
                 RightHead->AI()->SetData(SETDATA_DATA, SETDATA_YELL);
 
                 instance->SetBossState(DATA_OMROGG, DONE);
-            }       
+            }
 
             void UpdateAI(uint32 diff)
             {

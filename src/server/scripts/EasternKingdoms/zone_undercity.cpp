@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -50,7 +50,7 @@ enum Sylvanas
     SAY_SUNSORROW_WHISPER           = 0,
 
     SOUND_CREDIT                    = 10896,
-    
+
     NPC_HIGHBORNE_LAMENTER          = 21628,
     NPC_HIGHBORNE_BUNNY             = 21641,
     NPC_AMBASSADOR_SUNSORROW        = 16287,

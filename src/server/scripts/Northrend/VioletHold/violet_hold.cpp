@@ -390,7 +390,7 @@ struct violet_hold_trashAI : public npc_escortAI
 ***********/
 
 enum AzureInvaderSpells
-{    
+{
     SPELL_CLEAVE = 15496,
     SPELL_IMPALE_N = 58459,
     SPELL_IMPALE_H = 59256,

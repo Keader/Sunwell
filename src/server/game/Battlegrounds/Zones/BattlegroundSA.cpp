@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -354,7 +354,7 @@ void BattlegroundSA::PostUpdateImpl(uint32 diff)
             DemolisherStartState(false);
             Status = BG_SA_ROUND_TWO;
             StartTimedAchievement(ACHIEVEMENT_TIMED_TYPE_EVENT, (Attackers == TEAM_ALLIANCE)?23748:21702);
-            
+
             // status was set to STATUS_WAIT_JOIN manually for Preparation, set it back now
             SetStatus(STATUS_IN_PROGRESS);
             for (BattlegroundPlayerMap::const_iterator itr = GetPlayers().begin(); itr != GetPlayers().end(); ++itr)
@@ -581,7 +581,7 @@ void BattlegroundSA::TeleportToEntrancePosition(Player* player)
 
 void BattlegroundSA::DefendersPortalTeleport(GameObject* portal, Player* plr)
 {
-    if (plr->GetTeamId() == Attackers) 
+    if (plr->GetTeamId() == Attackers)
         return;
 
     uint32 portal_num = 0;
@@ -715,7 +715,7 @@ void BattlegroundSA::DemolisherStartState(bool start)
 
     // xinef: enable first gates damaging at start
     if (!start)
-    {    
+    {
         if (GameObject* go = GetBGObject(BG_SA_GREEN_GATE))
             go->SetDestructibleBuildingModifyState(true);
         if (GameObject* go = GetBGObject(BG_SA_BLUE_GATE))
@@ -788,7 +788,7 @@ WorldSafeLocsEntry const* BattlegroundSA::GetClosestGraveyard(Player* player)
             continue;
 
         WorldSafeLocsEntry const* ret = sWorldSafeLocsStore.LookupEntry(BG_SA_GYEntries[i]);
-        
+
         // if on beach
         if (i == BG_SA_BEACH_GY)
         {
@@ -914,7 +914,7 @@ void BattlegroundSA::CaptureGraveyard(BG_SA_Graveyards i, Player *Source)
     }
 
     DelCreature(BG_SA_MAXNPC + i);
-    
+
     WorldSafeLocsEntry const* sg = sWorldSafeLocsStore.LookupEntry(BG_SA_GYEntries[i]);
     if (!sg)
     {

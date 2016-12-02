@@ -240,7 +240,7 @@ class BattlegroundAB : public Battleground
 
         bool AllNodesConrolledByTeam(TeamId teamId) const;
         bool IsTeamScores500Disadvantage(TeamId teamId) const { return _teamScores500Disadvantage[teamId]; }
-        
+
         TeamId GetPrematureWinner();
     private:
         void PostUpdateImpl(uint32 diff);

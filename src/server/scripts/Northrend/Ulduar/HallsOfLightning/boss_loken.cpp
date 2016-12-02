@@ -177,7 +177,7 @@ public:
 
                     me->SetControlled(false, UNIT_STATE_STUNNED);
                     me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE);
-                    
+
                     if (Player* target = SelectTargetFromPlayerList(80))
                         AttackStart(target);
                 }

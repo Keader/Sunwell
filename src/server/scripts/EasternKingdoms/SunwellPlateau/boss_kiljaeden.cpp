@@ -486,7 +486,7 @@ public:
             events.Update(diff);
             if (me->HasUnitState(UNIT_STATE_CASTING))
                 return;
-            
+
             switch (events.ExecuteEvent())
             {
                 case EVENT_CHECK_HEALTH85:
@@ -498,7 +498,7 @@ public:
                         events2.ScheduleEvent(EVENT_TEXT_SPEACH22, 22000, EVENT_GROUP_SPEACH);
                         events2.ScheduleEvent(EVENT_TEXT_SPEACH23, 28000, EVENT_GROUP_SPEACH);
                         events2.RescheduleEvent(EVENT_EMPOWER_ORBS1, 35000);
-                        
+
                         events.DelayEvents(2000);
                         events.ScheduleEvent(EVENT_SPELL_SINISTER_REFLECTION, 500);
                         events.ScheduleEvent(EVENT_SPELL_SHADOW_SPIKE, 1200);
@@ -508,7 +508,7 @@ public:
                     }
                     events.ScheduleEvent(EVENT_CHECK_HEALTH85, 0);
                     break;
-                
+
                 case EVENT_CHECK_HEALTH55:
                     if (me->HealthBelowPct(55))
                     {
@@ -518,7 +518,7 @@ public:
                         events2.ScheduleEvent(EVENT_TEXT_SPEACH32, 22000, EVENT_GROUP_SPEACH);
                         events2.ScheduleEvent(EVENT_TEXT_SPEACH33, 28000, EVENT_GROUP_SPEACH);
                         events2.RescheduleEvent(EVENT_EMPOWER_ORBS2, 35000);
-                        
+
                         events.DelayEvents(2000);
                         events.ScheduleEvent(EVENT_SPELL_SINISTER_REFLECTION, 500);
                         events.ScheduleEvent(EVENT_SPELL_SHADOW_SPIKE, 1200);
@@ -528,7 +528,7 @@ public:
                     }
                     events.ScheduleEvent(EVENT_CHECK_HEALTH55, 0);
                     break;
-                
+
                 case EVENT_CHECK_HEALTH25:
                     if (me->HealthBelowPct(25))
                     {
@@ -585,7 +585,7 @@ public:
                                 y = me->GetPositionY() + 18.0f*sin(((i*2.0f-1.0f)*M_PI/3.0f) + (j/20.0f*2*M_PI));
                                 movementArray.push_back(G3D::Vector3(x, y, 40.0f));
                             }
-                            
+
                             Movement::MoveSplineInit init(orb);
                             init.MovebyPath(movementArray);
                             init.SetCyclic();
@@ -1092,13 +1092,13 @@ class spell_kiljaeden_sinister_reflection_clone : public SpellScriptLoader
             {
                 targets.sort(Trinity::ObjectDistanceOrderPred(GetCaster()));
                 WorldObject* target = targets.front();
-                
+
                 targets.clear();
                 if (target && target->GetTypeId() == TYPEID_UNIT)
                 {
                     target->ToCreature()->AI()->SetData(1, GetCaster()->getClass());
                     targets.push_back(target);
-                }                
+                }
             }
 
             void Register()

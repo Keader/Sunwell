@@ -94,7 +94,7 @@ class boss_magtheridon : public CreatureScript
             boss_magtheridonAI(Creature* creature) : BossAI(creature, TYPE_MAGTHERIDON) { }
 
             EventMap events2;
- 
+
 
             void Reset()
             {
@@ -289,12 +289,12 @@ public:
     class spell_magtheridon_shadow_grasp_AuraScript : public AuraScript
     {
         PrepareAuraScript(spell_magtheridon_shadow_grasp_AuraScript)
-        
+
         void HandleDummyApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
         {
             GetUnitOwner()->CastSpell((Unit*)NULL, SPELL_SHADOW_GRASP_VISUAL, false);
         }
-        
+
         void HandleDummyRemove(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
         {
             GetUnitOwner()->InterruptNonMeleeSpells(true);

@@ -1453,7 +1453,7 @@ public:
                 me->SetHealth(me->GetMaxHealth()*3/4);
 
             events.Update(diff);
-            
+
             if (me->IsNonMeleeSpellCast(false, true, true))
                 return;
 

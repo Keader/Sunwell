@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -1907,7 +1907,7 @@ void World::Update(uint32 diff)
     // so we don't have to do it in every packet that modifies auctions
     AsyncAuctionListingMgr::SetAuctionListingAllowed(false);
     {
-        TRINITY_GUARD(ACE_Thread_Mutex, AsyncAuctionListingMgr::GetLock()); 
+        TRINITY_GUARD(ACE_Thread_Mutex, AsyncAuctionListingMgr::GetLock());
 
         // pussywizard: handle auctions when the timer has passed
         if (m_timers[WUPDATE_AUCTIONS].Passed())
@@ -1927,7 +1927,7 @@ void World::Update(uint32 diff)
         }
 
         UpdateSessions(diff);
-    } 
+    }
     // end of section with mutex
     AsyncAuctionListingMgr::SetAuctionListingAllowed(true);
 

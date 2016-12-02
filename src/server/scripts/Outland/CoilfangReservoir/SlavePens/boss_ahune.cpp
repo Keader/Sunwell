@@ -302,7 +302,7 @@ public:
                     if (Player* player = i->GetSource())
                     {
                         player->UpdateAchievementCriteria(ACHIEVEMENT_CRITERIA_TYPE_KILL_CREATURE, 25740, 1, me);
-                        
+
                         if (player->GetGroup() && !finished)
                         {
                             finished = true;
@@ -314,9 +314,9 @@ public:
 };
 
 class go_ahune_ice_stone : public GameObjectScript
-{ 
-public: 
-    go_ahune_ice_stone() : GameObjectScript("go_ahune_ice_stone") { } 
+{
+public:
+    go_ahune_ice_stone() : GameObjectScript("go_ahune_ice_stone") { }
 
     bool OnGossipHello(Player *pPlayer, GameObject *pGO)
     {

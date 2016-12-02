@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -267,7 +267,7 @@ class spell_pal_sacred_shield_base : public SpellScriptLoader
 
                     return;
                 }
-                
+
                 uint32 triggered_spell_id = GetSpellInfo()->Effects[aurEff->GetEffIndex()].TriggerSpell;
                 if (eventInfo.GetActionTarget()->HasSpellCooldown(triggered_spell_id))
                     return;
