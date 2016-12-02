@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -67,8 +67,8 @@ enum LogTypes
     LOG_TYPE_GM     = 8,
     LOG_TYPE_CRASH  = 9,
     LOG_TYPE_CHAT   = 10,
-	LOG_TYPE_PERF   = 11,
-	LOG_TYPE_MULTITH= 12,
+    LOG_TYPE_PERF   = 11,
+    LOG_TYPE_MULTITH= 12,
     MAX_LOG_TYPES
 };
 

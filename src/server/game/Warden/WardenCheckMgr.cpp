@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -151,13 +151,13 @@ void WardenCheckMgr::LoadWardenChecks()
 
 void WardenCheckMgr::LoadWardenOverrides()
 {
-	// Check if Warden is enabled by config before loading anything
-	if (!sWorld->getBoolConfig(CONFIG_WARDEN_ENABLED))
-	{
-		sLog->outString(">> Warden disabled, loading check overrides skipped.");
-		sLog->outString();
-		return;
-	}
+    // Check if Warden is enabled by config before loading anything
+    if (!sWorld->getBoolConfig(CONFIG_WARDEN_ENABLED))
+    {
+        sLog->outString(">> Warden disabled, loading check overrides skipped.");
+        sLog->outString();
+        return;
+    }
 
     //                                                      0        1
     QueryResult result = CharacterDatabase.Query("SELECT wardenId, action FROM warden_action");

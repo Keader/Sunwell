@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -99,5 +99,5 @@ uint64 EventProcessor::CalculateTime(uint64 t_offset) const
 
 uint64 EventProcessor::CalculateQueueTime(uint64 delay) const
 {
-	return CalculateTime(delay - (m_time % delay));
+    return CalculateTime(delay - (m_time % delay));
 }

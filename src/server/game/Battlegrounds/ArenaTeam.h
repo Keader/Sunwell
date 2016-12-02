@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -97,7 +97,7 @@ struct ArenaTeamMember
     uint16 SeasonWins;
     uint16 PersonalRating;
     uint16 MatchMakerRating;
-	uint16 MaxMMR;
+    uint16 MaxMMR;
 
     void ModifyPersonalRating(Player* player, int32 mod, uint32 type);
     void ModifyMatchmakerRating(int32 mod, uint32 slot);

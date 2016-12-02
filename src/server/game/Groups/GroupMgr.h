@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -32,7 +32,7 @@ public:
 
     Group* GetGroupByGUID(uint32 guid) const;
 
-	void InitGroupIds();
+    void InitGroupIds();
     void RegisterGroupId(uint32 groupId);
     uint32 GenerateGroupId();
 
@@ -42,8 +42,8 @@ public:
 
 
 protected:
-	typedef std::vector<bool> GroupIds;
-	GroupIds         _groupIds;
+    typedef std::vector<bool> GroupIds;
+    GroupIds         _groupIds;
     uint32           _nextGroupId;
     GroupContainer   GroupStore;
 };

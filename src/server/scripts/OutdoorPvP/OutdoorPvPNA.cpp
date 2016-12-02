@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -35,7 +35,7 @@ void OutdoorPvPNA::HandleKillImpl(Player* player, Unit* killed)
     if (killed->GetTypeId() == TYPEID_PLAYER && player->GetTeamId() != killed->ToPlayer()->GetTeamId())
     {
         player->KilledMonsterCredit(NA_CREDIT_MARKER, 0); // 0 guid, btw it isn't even used in killedmonster function :S
-		player->CastSpell(player, player->GetTeamId() == TEAM_ALLIANCE ? NA_KILL_TOKEN_ALLIANCE : NA_KILL_TOKEN_HORDE, true);
+        player->CastSpell(player, player->GetTeamId() == TEAM_ALLIANCE ? NA_KILL_TOKEN_ALLIANCE : NA_KILL_TOKEN_HORDE, true);
     }
 }
 

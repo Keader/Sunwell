@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -92,13 +92,13 @@ void AuctionHouseMgr::SendAuctionWonMail(AuctionEntry* auction, SQLTransaction& 
     if (!pItem)
         return;
 
-	uint64 bidder_guid = MAKE_NEW_GUID(auction->bidder, 0, HIGHGUID_PLAYER);
-	uint32 bidder_accId = 0;
-	Player* bidder = ObjectAccessor::FindPlayerInOrOutOfWorld(bidder_guid);
-	if (bidder)
-		bidder_accId = bidder->GetSession()->GetAccountId();
-	else
-		bidder_accId = sObjectMgr->GetPlayerAccountIdByGUID(bidder_guid);
+    uint64 bidder_guid = MAKE_NEW_GUID(auction->bidder, 0, HIGHGUID_PLAYER);
+    uint32 bidder_accId = 0;
+    Player* bidder = ObjectAccessor::FindPlayerInOrOutOfWorld(bidder_guid);
+    if (bidder)
+        bidder_accId = bidder->GetSession()->GetAccountId();
+    else
+        bidder_accId = sObjectMgr->GetPlayerAccountIdByGUID(bidder_guid);
 
     // receiver exist
     if (bidder || bidder_accId)
@@ -122,7 +122,7 @@ void AuctionHouseMgr::SendAuctionWonMail(AuctionEntry* auction, SQLTransaction& 
             .SendMailTo(trans, MailReceiver(bidder, auction->bidder), auction, MAIL_CHECK_MASK_COPIED);
     }
     else
-		sAuctionMgr->RemoveAItem(auction->item_guidlow, true);
+        sAuctionMgr->RemoveAItem(auction->item_guidlow, true);
 }
 
 void AuctionHouseMgr::SendAuctionSalePendingMail(AuctionEntry* auction, SQLTransaction& trans)
@@ -158,20 +158,20 @@ void AuctionHouseMgr::SendAuctionSuccessfulMail(AuctionEntry* auction, SQLTransa
             .AddMoney(profit)
             .SendMailTo(trans, MailReceiver(owner, auction->owner), auction, MAIL_CHECK_MASK_COPIED, sWorld->getIntConfig(CONFIG_MAIL_DELIVERY_DELAY));
 
-		if (auction->bid >= 500*GOLD)
-			if (const GlobalPlayerData* gpd = sWorld->GetGlobalPlayerData(auction->bidder))
-			{
-				uint64 bidder_guid = MAKE_NEW_GUID(auction->bidder, 0, HIGHGUID_PLAYER);
-				Player* bidder = ObjectAccessor::FindPlayerInOrOutOfWorld(bidder_guid);
-				std::string owner_name = "";
-				uint8 owner_level = 0;
-				if (const GlobalPlayerData* gpd_owner = sWorld->GetGlobalPlayerData(auction->owner))
-				{
-					owner_name = gpd_owner->name;
-					owner_level = gpd_owner->level;
-				}
-				CharacterDatabase.PExecute("INSERT INTO log_money VALUES(%u, %u, \"%s\", \"%s\", %u, \"%s\", %u, \"<AH> profit: %ug, bidder: %s %u lvl (guid: %u), seller: %s %u lvl (guid: %u), item %u (%u)\", NOW())", gpd->accountId, auction->bidder, gpd->name.c_str(), bidder ? bidder->GetSession()->GetRemoteAddress().c_str() : "", owner_accId, owner_name.c_str(), auction->bid, (profit/GOLD), gpd->name.c_str(), gpd->level, auction->bidder, owner_name.c_str(), owner_level, auction->owner, auction->item_template, auction->itemCount);
-			}
+        if (auction->bid >= 500*GOLD)
+            if (const GlobalPlayerData* gpd = sWorld->GetGlobalPlayerData(auction->bidder))
+            {
+                uint64 bidder_guid = MAKE_NEW_GUID(auction->bidder, 0, HIGHGUID_PLAYER);
+                Player* bidder = ObjectAccessor::FindPlayerInOrOutOfWorld(bidder_guid);
+                std::string owner_name = "";
+                uint8 owner_level = 0;
+                if (const GlobalPlayerData* gpd_owner = sWorld->GetGlobalPlayerData(auction->owner))
+                {
+                    owner_name = gpd_owner->name;
+                    owner_level = gpd_owner->level;
+                }
+                CharacterDatabase.PExecute("INSERT INTO log_money VALUES(%u, %u, \"%s\", \"%s\", %u, \"%s\", %u, \"<AH> profit: %ug, bidder: %s %u lvl (guid: %u), seller: %s %u lvl (guid: %u), item %u (%u)\", NOW())", gpd->accountId, auction->bidder, gpd->name.c_str(), bidder ? bidder->GetSession()->GetRemoteAddress().c_str() : "", owner_accId, owner_name.c_str(), auction->bid, (profit/GOLD), gpd->name.c_str(), gpd->level, auction->bidder, owner_name.c_str(), owner_level, auction->owner, auction->item_template, auction->itemCount);
+            }
     }
 }
 
@@ -197,8 +197,8 @@ void AuctionHouseMgr::SendAuctionExpiredMail(AuctionEntry* auction, SQLTransacti
             .AddItem(pItem)
             .SendMailTo(trans, MailReceiver(owner, auction->owner), auction, MAIL_CHECK_MASK_COPIED, 0);
     }
-	else
-		sAuctionMgr->RemoveAItem(auction->item_guidlow, true);
+    else
+        sAuctionMgr->RemoveAItem(auction->item_guidlow, true);
 }
 
 //this function sends mail to old bidder
@@ -349,13 +349,13 @@ bool AuctionHouseMgr::RemoveAItem(uint32 id, bool deleteFromDB)
     if (i == mAitems.end())
         return false;
 
-	if (deleteFromDB)
-	{
-		SQLTransaction trans = CharacterDatabase.BeginTransaction();
-		i->second->FSetState(ITEM_REMOVED);
-		i->second->SaveToDB(trans);
-		CharacterDatabase.CommitTransaction(trans);
-	}
+    if (deleteFromDB)
+    {
+        SQLTransaction trans = CharacterDatabase.BeginTransaction();
+        i->second->FSetState(ITEM_REMOVED);
+        i->second->SaveToDB(trans);
+        CharacterDatabase.CommitTransaction(trans);
+    }
 
     mAitems.erase(i);
     return true;
@@ -440,13 +440,13 @@ void AuctionHouseObject::Update()
 
     SQLTransaction trans = CharacterDatabase.BeginTransaction();
 
-	for (AuctionEntryMap::iterator itr, iter = AuctionsMap.begin(); iter != AuctionsMap.end(); )
-	{
-		itr = iter++;
-		AuctionEntry* auction = (*itr).second;
+    for (AuctionEntryMap::iterator itr, iter = AuctionsMap.begin(); iter != AuctionsMap.end(); )
+    {
+        itr = iter++;
+        AuctionEntry* auction = (*itr).second;
 
-		if (auction->expire_time > checkTime)
-			continue;
+        if (auction->expire_time > checkTime)
+            continue;
 
         ///- Either cancel the auction if there was no bidder
         if (auction->bidder == 0)
@@ -509,34 +509,34 @@ bool AuctionHouseObject::BuildListAuctionItems(WorldPacket& data, Player* player
     uint32 inventoryType, uint32 itemClass, uint32 itemSubClass, uint32 quality,
     uint32& count, uint32& totalcount, uint8 getAll)
 {
-	uint32 itrcounter = 0;
+    uint32 itrcounter = 0;
 
-	// pussywizard: optimization, this is a simplified case
-	if (itemClass == 0xffffffff && itemSubClass == 0xffffffff && inventoryType == 0xffffffff && quality == 0xffffffff && levelmin == 0x00 && levelmax == 0x00 && usable == 0x00 && wsearchedname.empty())
-	{
-		totalcount = Getcount();
-		if (listfrom < totalcount)
-		{
-			AuctionEntryMap::iterator itr = AuctionsMap.begin();
-			std::advance(itr, listfrom);
-			for (; itr != AuctionsMap.end(); ++itr)
-			{
-				itr->second->BuildAuctionInfo(data);
-				if ((++count) >= 50)
-					break;
-			}
-		}
-		return true;
-	}
+    // pussywizard: optimization, this is a simplified case
+    if (itemClass == 0xffffffff && itemSubClass == 0xffffffff && inventoryType == 0xffffffff && quality == 0xffffffff && levelmin == 0x00 && levelmax == 0x00 && usable == 0x00 && wsearchedname.empty())
+    {
+        totalcount = Getcount();
+        if (listfrom < totalcount)
+        {
+            AuctionEntryMap::iterator itr = AuctionsMap.begin();
+            std::advance(itr, listfrom);
+            for (; itr != AuctionsMap.end(); ++itr)
+            {
+                itr->second->BuildAuctionInfo(data);
+                if ((++count) >= 50)
+                    break;
+            }
+        }
+        return true;
+    }
 
     time_t curTime = sWorld->GetGameTime();
 
     for (AuctionEntryMap::const_iterator itr = AuctionsMap.begin(); itr != AuctionsMap.end(); ++itr)
     {
-		if (AsyncAuctionListingMgr::IsAuctionListingAllowed() == false) // pussywizard: World::Update is waiting for us...
-			if ((itrcounter++) % 100 == 0) // check condition every 100 iterations
-				if (avgDiffTracker.getAverage() >= 30 || getMSTimeDiff(World::GetGameTimeMS(), getMSTime()) >= 10) // pussywizard: stop immediately if diff is high or waiting too long
-					return false;
+        if (AsyncAuctionListingMgr::IsAuctionListingAllowed() == false) // pussywizard: World::Update is waiting for us...
+            if ((itrcounter++) % 100 == 0) // check condition every 100 iterations
+                if (avgDiffTracker.getAverage() >= 30 || getMSTimeDiff(World::GetGameTimeMS(), getMSTime()) >= 10) // pussywizard: stop immediately if diff is high or waiting too long
+                    return false;
 
         AuctionEntry* Aentry = itr->second;
         // Skip expired auctions
@@ -556,11 +556,11 @@ bool AuctionHouseObject::BuildListAuctionItems(WorldPacket& data, Player* player
             continue;
 
         if (inventoryType != 0xffffffff && proto->InventoryType != inventoryType)
-		{
-			// xinef: exception, robes are counted as chests
-			if (inventoryType != INVTYPE_CHEST || proto->InventoryType != INVTYPE_ROBE)
-				continue;
-		}
+        {
+            // xinef: exception, robes are counted as chests
+            if (inventoryType != INVTYPE_CHEST || proto->InventoryType != INVTYPE_ROBE)
+                continue;
+        }
 
         if (quality != 0xffffffff && proto->Quality != quality)
             continue;
@@ -569,14 +569,14 @@ bool AuctionHouseObject::BuildListAuctionItems(WorldPacket& data, Player* player
             continue;
 
         if (usable != 0x00)
-		{
-			if (player->CanUseItem(item) != EQUIP_ERR_OK)
-				continue;
+        {
+            if (player->CanUseItem(item) != EQUIP_ERR_OK)
+                continue;
 
-			// xinef: check already learded recipes and pets
-			if (proto->Spells[1].SpellTrigger == ITEM_SPELLTRIGGER_LEARN_SPELL_ID && player->HasSpell(proto->Spells[1].SpellId))
-				continue;
-		}
+            // xinef: check already learded recipes and pets
+            if (proto->Spells[1].SpellTrigger == ITEM_SPELLTRIGGER_LEARN_SPELL_ID && player->HasSpell(proto->Spells[1].SpellId))
+                continue;
+        }
 
         // Allow search by suffix (ie: of the Monkey) or partial name (ie: Monkey)
         // No need to do any of this if no search term was entered
@@ -636,7 +636,7 @@ bool AuctionHouseObject::BuildListAuctionItems(WorldPacket& data, Player* player
         ++totalcount;
     }
 
-	return true;
+    return true;
 }
 
 //this function inserts to WorldPacket auction's data

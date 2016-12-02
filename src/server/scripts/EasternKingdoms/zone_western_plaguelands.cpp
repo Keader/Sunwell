@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -114,7 +114,7 @@ public:
 
 enum Myranda
 {
-	QUEST_FIND_MYRANDA		= 5861,
+    QUEST_FIND_MYRANDA        = 5861,
     QUEST_SUBTERFUGE        = 5862,
     QUEST_IN_DREAMS         = 5944,
     SPELL_SCARLET_ILLUSION  = 17961

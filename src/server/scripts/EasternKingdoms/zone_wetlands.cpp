@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -86,7 +86,7 @@ public:
         {
             if (HasEscortState(STATE_ESCORT_ESCORTING) && !IsFriendSummoned && GetPlayerForEscort())
             {
-				me->CastSpell(me, SPELL_CALL_FRIENDS, true);
+                me->CastSpell(me, SPELL_CALL_FRIENDS, true);
                 IsFriendSummoned = true;
             }
         }

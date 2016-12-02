@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -208,7 +208,7 @@ class SpellScript : public _SpellScript
                 TargetHook(uint8 _effectIndex, uint16 _targetType, bool _area, bool _dest);
                 bool CheckEffect(SpellInfo const* spellInfo, uint8 effIndex);
                 std::string ToString();
-				uint16 GetTarget() const { return targetType; }
+                uint16 GetTarget() const { return targetType; }
             protected:
                 uint16 targetType;
                 bool area;
@@ -350,7 +350,7 @@ class SpellScript : public _SpellScript
         // -shadowstep - explicit target is the unit you want to go behind of
         // -chain heal - explicit target is the unit to be healed first
         // -holy nova/arcane explosion - explicit target = NULL because target you are selecting doesn't affect how spell targets are selected
-        // you can determine if spell requires explicit targets by dbc columns: 
+        // you can determine if spell requires explicit targets by dbc columns:
         // - Targets - mask of explicit target types
         // - ImplicitTargetXX set to TARGET_XXX_TARGET_YYY, _TARGET_ here means that explicit target is used by the effect, so spell needs one too
 
@@ -427,7 +427,7 @@ class SpellScript : public _SpellScript
         // finishes spellcast prematurely with selected error message
         void FinishCast(SpellCastResult result);
 
-		void Cancel(); // pussywizard
+        void Cancel(); // pussywizard
 
         void SetCustomCastResultMessage(SpellCustomErrors result);
 };

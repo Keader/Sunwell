@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -81,7 +81,7 @@ void WaypointMgr::Load()
         if (wp->move_type >= WAYPOINT_MOVE_TYPE_MAX)
         {
             //TC_LOG_ERROR("sql.sql", "Waypoint %u in waypoint_data has invalid move_type, ignoring", wp->id);
-			delete wp;
+            delete wp;
             continue;
         }
 
@@ -139,14 +139,14 @@ void WaypointMgr::ReloadPath(uint32 id)
         wp->z = z;
         wp->orientation = o;
         wp->move_type = fields[5].GetUInt32();
-        
+
         if (wp->move_type >= WAYPOINT_MOVE_TYPE_MAX)
         {
             //TC_LOG_ERROR("sql.sql", "Waypoint %u in waypoint_data has invalid move_type, ignoring", wp->id);
-			delete wp;
+            delete wp;
             continue;
         }
-        
+
         wp->delay = fields[6].GetUInt32();
         wp->event_id = fields[7].GetUInt32();
         wp->event_chance = fields[8].GetUInt8();

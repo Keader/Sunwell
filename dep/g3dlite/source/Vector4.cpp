@@ -1,8 +1,8 @@
 /**
  @file Vector4.cpp
- 
+
  @maintainer Morgan McGuire, http://graphics.cs.williams.edu
-  
+
  @created 2001-07-09
  @edited  2010-07-05
  */
@@ -51,20 +51,20 @@ Vector4::Vector4(const Vector4int8& v) : x(v.x / 127.0f), y(v.y / 127.0f), z(v.z
 }
 
 
-const Vector4& Vector4::inf() { 
-    static const Vector4 v((float)G3D::finf(), (float)G3D::finf(), (float)G3D::finf(), (float)G3D::finf()); 
-    return v; 
-}
-
-
-const Vector4& Vector4::zero() { 
-    static const Vector4 v(0,0,0,0); 
+const Vector4& Vector4::inf() {
+    static const Vector4 v((float)G3D::finf(), (float)G3D::finf(), (float)G3D::finf(), (float)G3D::finf());
     return v;
 }
 
-const Vector4& Vector4::nan() { 
-    static Vector4 v((float)G3D::fnan(), (float)G3D::fnan(), (float)G3D::fnan(), (float)G3D::fnan()); 
-    return v; 
+
+const Vector4& Vector4::zero() {
+    static const Vector4 v(0,0,0,0);
+    return v;
+}
+
+const Vector4& Vector4::nan() {
+    static Vector4 v((float)G3D::fnan(), (float)G3D::fnan(), (float)G3D::fnan(), (float)G3D::fnan());
+    return v;
 }
 
 
@@ -134,7 +134,7 @@ Vector4 Vector4::operator/ (float fScalar) const {
     Vector4 kQuot;
 
     if ( fScalar != 0.0 ) {
-		float fInvScalar = 1.0f / fScalar;
+        float fInvScalar = 1.0f / fScalar;
         kQuot.x = fInvScalar * x;
         kQuot.y = fInvScalar * y;
         kQuot.z = fInvScalar * z;
@@ -148,13 +148,13 @@ Vector4 Vector4::operator/ (float fScalar) const {
 //----------------------------------------------------------------------------
 Vector4& Vector4::operator/= (float fScalar) {
     if (fScalar != 0.0f) {
-		float fInvScalar = 1.0f / fScalar;
+        float fInvScalar = 1.0f / fScalar;
         x *= fInvScalar;
         y *= fInvScalar;
         z *= fInvScalar;
         w *= fInvScalar;
     } else {
-		*this = Vector4::inf();
+        *this = Vector4::inf();
     }
 
     return *this;

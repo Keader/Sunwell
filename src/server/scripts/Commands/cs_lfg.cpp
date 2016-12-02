@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -85,7 +85,7 @@ public:
             handler->PSendSysMessage(LANG_LFG_NOT_IN_GROUP, playerName.c_str());
             return true;
         }
-		/*
+        /*
         uint64 guid = grp->GetGUID();
         std::string const& state = lfg::GetStateString(sLFGMgr->GetState(guid));
         handler->PSendSysMessage(LANG_LFG_GROUP_INFO, grp->isLFGGroup(),
@@ -93,7 +93,7 @@ public:
 
         for (GroupReference* itr = grp->GetFirstMember(); itr != NULL; itr = itr->next())
             GetPlayerInfo(handler, itr->GetSource());
-		*/
+        */
         return true;
     }
 

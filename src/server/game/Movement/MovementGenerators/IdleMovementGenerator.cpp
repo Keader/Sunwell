@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -62,7 +62,7 @@ bool RotateMovementGenerator::Update(Unit* owner, uint32 diff)
         while (angle < 0) angle += static_cast<float>(M_PI * 2);
     }
 
-	owner->SetFacingTo(angle);
+    owner->SetFacingTo(angle);
 
     if (m_duration > diff)
         m_duration -= diff;

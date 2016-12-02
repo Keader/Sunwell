@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -186,12 +186,12 @@ uint32 GetExplicitDiscoverySpell(uint32 spellId, Player* player)
             continue;
 
         if (item_iter->chance > roll)
-		{
-			// Update skill, not Book of Glyph Mastery
-			if (spellId != 64323)
-				player->UpdateGatherSkill(SKILL_INSCRIPTION, player->GetPureSkillValue(SKILL_INSCRIPTION), item_iter->reqSkillValue);
+        {
+            // Update skill, not Book of Glyph Mastery
+            if (spellId != 64323)
+                player->UpdateGatherSkill(SKILL_INSCRIPTION, player->GetPureSkillValue(SKILL_INSCRIPTION), item_iter->reqSkillValue);
             return item_iter->spellId;
-		}
+        }
 
         roll -= item_iter->chance;
     }

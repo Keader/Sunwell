@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -96,10 +96,10 @@ namespace VMAP
             std::string mapFileName = getMapFileName(mapId);
             StaticMapTree* newTree = new StaticMapTree(mapId, basePath);
             if (!newTree->InitMap(mapFileName, this))
-			{
-				delete newTree;
+            {
+                delete newTree;
                 return false;
-			}
+            }
             instanceTree = iInstanceMapTrees.insert(InstanceTreeMap::value_type(mapId, newTree)).first;
         }
 

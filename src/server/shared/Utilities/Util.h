@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -596,10 +596,10 @@ class EventMap
             return _time;
         }
 
-		void SetTimer(uint32 time)
-		{
-			_time = time;
-		}
+        void SetTimer(uint32 time)
+        {
+            _time = time;
+        }
 
         /**
         * @name GetPhaseMask
@@ -773,20 +773,20 @@ class EventMap
             _time = delay < _time ? _time - delay : 0;
         }
 
-		void DelayEventsToMax(uint32 delay, uint32 group)
-		{
-			for (EventStore::iterator itr = _eventMap.begin(); itr != _eventMap.end();)
+        void DelayEventsToMax(uint32 delay, uint32 group)
+        {
+            for (EventStore::iterator itr = _eventMap.begin(); itr != _eventMap.end();)
             {
-				if (itr->first < _time+delay && (group == 0 || ((1 << (group + 15)) & itr->second)))
+                if (itr->first < _time+delay && (group == 0 || ((1 << (group + 15)) & itr->second)))
                 {
-					ScheduleEvent(itr->second, delay);
+                    ScheduleEvent(itr->second, delay);
                     _eventMap.erase(itr);
                     itr = _eventMap.begin();
                 }
                 else
                     ++itr;
             }
-		}
+        }
 
         /**
         * @name DelayEvents

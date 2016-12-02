@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -453,7 +453,7 @@ class GameObjectScript : public ScriptObject, public UpdatableScript<GameObject>
         // Called when the game object is damaged (destructible buildings only).
         virtual void OnDamaged(GameObject* /*go*/, Player* /*player*/) { }
 
-		// Called when the game object loot state is changed.
+        // Called when the game object loot state is changed.
         virtual void OnLootStateChanged(GameObject* /*go*/, uint32 /*state*/, Unit* /*unit*/) { }
 
         // Called when the game object state is changed.

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -343,7 +343,7 @@ public:
                         case 6:
                             Talk(SAY_LESCOVAR_4);
                             if (Player* player = GetPlayerForEscort())
-								player->GroupEventHappens(QUEST_THE_ATTACK, me);
+                                player->GroupEventHappens(QUEST_THE_ATTACK, me);
                             uiTimer = 2000;
                             uiPhase = 7;
                             break;

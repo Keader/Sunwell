@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -168,9 +168,9 @@ public:
 
         bool SetBossState(uint32 type, EncounterState state)
         {
-			// pussywizard:
-			if (GetBossState(type) == DONE && state != DONE) // prevent undoneing a boss xd
-				return false;
+            // pussywizard:
+            if (GetBossState(type) == DONE && state != DONE) // prevent undoneing a boss xd
+                return false;
 
             if (!InstanceScript::SetBossState(type, state))
                 return false;

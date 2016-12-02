@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -29,8 +29,8 @@ enum BattlegroundDSObjectTypes
     BG_DS_OBJECT_WATER_2        = 3,
     BG_DS_OBJECT_BUFF_1         = 4,
     BG_DS_OBJECT_BUFF_2         = 5,
-	BG_DS_OBJECT_READY_MARKER_1 = 6,
-	BG_DS_OBJECT_READY_MARKER_2 = 7,
+    BG_DS_OBJECT_READY_MARKER_1 = 6,
+    BG_DS_OBJECT_READY_MARKER_2 = 7,
     BG_DS_OBJECT_MAX            = 8
 };
 

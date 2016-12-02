@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -22,14 +22,14 @@
 
 enum OutdoorPvPGHenum
 {
-    GH_ALLIANCE_DEFENSE_EVENT			= 65,
-	GH_HORDE_DEFENSE_EVENT				= 66,
+    GH_ALLIANCE_DEFENSE_EVENT            = 65,
+    GH_HORDE_DEFENSE_EVENT                = 66,
 
-	GH_ZONE								= 394,
+    GH_ZONE                                = 394,
 
-    GH_UI_SLIDER_DISPLAY				= 3466,
-    GH_UI_SLIDER_POS					= 3467,
-    GH_UI_SLIDER_N						= 3468,
+    GH_UI_SLIDER_DISPLAY                = 3466,
+    GH_UI_SLIDER_POS                    = 3467,
+    GH_UI_SLIDER_N                        = 3468,
 };
 
 class Unit;

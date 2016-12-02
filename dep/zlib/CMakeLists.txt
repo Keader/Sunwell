@@ -1,4 +1,4 @@
-# Copyright (C) 
+# Copyright (C)
 #
 # This file is free software; as a special exception the author gives
 # unlimited permission to copy and/or distribute it, with or without
@@ -9,18 +9,18 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 SET(zlib_STAT_SRCS
-  adler32.c                                                                                                                                           
-  compress.c                                                                                                                                          
-  crc32.c                                                                                                                                             
-  deflate.c                                                                                                                                           
-  example.c                                                                                                                                           
-  infback.c                                                                                                                                           
-  inffast.c                                                                                                                                           
-  inflate.c                                                                                                                                           
-  inftrees.c                                                                                                                                          
-  trees.c                                                                                                                                             
-  uncompr.c                                                                                                                                           
-  zutil.c   
+  adler32.c
+  compress.c
+  crc32.c
+  deflate.c
+  example.c
+  infback.c
+  inffast.c
+  inflate.c
+  inftrees.c
+  trees.c
+  uncompr.c
+  zutil.c
 )
 
 include_directories(

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -244,9 +244,9 @@ void CreatureTextMgr::SendChatPacket(WorldObject* source, Builder const& builder
     }
 
     float dist = GetRangeForChatType(msgType);
-	// xinef: hack for boss emote
-	if (msgType == CHAT_MSG_RAID_BOSS_EMOTE && source->GetMap()->IsDungeon())
-		dist = 250.0f;
+    // xinef: hack for boss emote
+    if (msgType == CHAT_MSG_RAID_BOSS_EMOTE && source->GetMap()->IsDungeon())
+        dist = 250.0f;
 
     Trinity::PlayerDistWorker<CreatureTextLocalizer<Builder> > worker(source, dist, localizer);
     source->VisitNearbyWorldObject(dist, worker);

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -123,8 +123,8 @@ void LoadHelper(CellGuidSet const& guid_set, CellCoord &cell, GridRefManager<Gam
     for (CellGuidSet::const_iterator i_guid = guid_set.begin(); i_guid != guid_set.end(); ++i_guid)
     {
         uint32 guid = *i_guid;
-		GameObjectData const* data = sObjectMgr->GetGOData(guid);
-		GameObject* obj = data && sObjectMgr->IsGameObjectStaticTransport(data->id) ? new StaticTransport() : new GameObject();
+        GameObjectData const* data = sObjectMgr->GetGOData(guid);
+        GameObject* obj = data && sObjectMgr->IsGameObjectStaticTransport(data->id) ? new StaticTransport() : new GameObject();
         //sLog->outString("DEBUG: LoadHelper from table: %s for (guid: %u) Loading", table, guid);
         if (!obj->LoadFromDB(guid, map))
         {

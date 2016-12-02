@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,8 +26,8 @@ class Unit;
 
 namespace Movement
 {
-	// xinef: moved declaration here so it can be accessed out of MoveSplineInit.cpp
-	UnitMoveType SelectSpeedType(uint32 moveFlags);
+    // xinef: moved declaration here so it can be accessed out of MoveSplineInit.cpp
+    UnitMoveType SelectSpeedType(uint32 moveFlags);
 
     enum AnimType
     {
@@ -50,20 +50,20 @@ namespace Movement
         bool _transformForTransport;
     };
 
-	// Xinef: transforms z coordinate with hover offset
-	class HoverMovementTransform
-	{
-	public:
-		HoverMovementTransform(float z_offset) : _offset(z_offset) { }
-		Vector3 operator()(Vector3 input)
-		{
-			input.z += _offset;
-			return input;
-		}
+    // Xinef: transforms z coordinate with hover offset
+    class HoverMovementTransform
+    {
+    public:
+        HoverMovementTransform(float z_offset) : _offset(z_offset) { }
+        Vector3 operator()(Vector3 input)
+        {
+            input.z += _offset;
+            return input;
+        }
 
-	private:
-		float _offset;
-	};
+    private:
+        float _offset;
+    };
 
     /*  Initializes and launches spline movement
      */

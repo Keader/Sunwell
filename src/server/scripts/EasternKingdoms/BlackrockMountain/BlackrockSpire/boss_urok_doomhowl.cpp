@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -24,7 +24,7 @@ enum Spells
     SPELL_REND                      = 16509,
     SPELL_STRIKE                    = 15580,
     SPELL_INTIMIDATING_ROAR         = 16508,
-	SPELL_UROK_SPAWN				= 16473,
+    SPELL_UROK_SPAWN                = 16473,
 };
 
 enum Says
@@ -54,11 +54,11 @@ public:
             _Reset();
         }
 
-		void InitializeAI()
-		{
-			me->CastSpell(me, SPELL_UROK_SPAWN, true);
-			BossAI::InitializeAI();
-		}
+        void InitializeAI()
+        {
+            me->CastSpell(me, SPELL_UROK_SPAWN, true);
+            BossAI::InitializeAI();
+        }
 
         void EnterCombat(Unit* /*who*/)
         {

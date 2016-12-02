@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -239,22 +239,22 @@ class ByteBuffer
         ByteBuffer &operator>>(float &value)
         {
             value = read<float>();
-			if (!myisfinite(value))
-			{
-				value = 0.0f;
+            if (!myisfinite(value))
+            {
+                value = 0.0f;
                 //throw ByteBufferException();
-			}
+            }
             return *this;
         }
 
         ByteBuffer &operator>>(double &value)
         {
             value = read<double>();
-			if (!myisfinite(value))
-			{
-				value = 0.0f;
+            if (!myisfinite(value))
+            {
+                value = 0.0f;
                 //throw ByteBufferException();
-			}
+            }
             return *this;
         }
 
@@ -385,18 +385,18 @@ class ByteBuffer
             return *this;
         }
 
-        uint8 * contents() 
-        { 
+        uint8 * contents()
+        {
             if (_storage.empty())
                 throw ByteBufferException();
-            return &_storage[0]; 
+            return &_storage[0];
         }
 
-        const uint8 *contents() const 
-        { 
+        const uint8 *contents() const
+        {
             if (_storage.empty())
                 throw ByteBufferException();
-            return &_storage[0]; 
+            return &_storage[0];
         }
 
         size_t size() const { return _storage.size(); }
@@ -435,19 +435,19 @@ class ByteBuffer
 
             ASSERT(size() < 10000000);
 
-			size_t newsize = _wpos + cnt;
+            size_t newsize = _wpos + cnt;
 
-			if (_storage.capacity() < newsize) // pussywizard
-			{
-				if (newsize < 100)
-					_storage.reserve(300);
-				else if (newsize < 750)
-					_storage.reserve(2500);
-				else if (newsize < 6000)
-					_storage.reserve(10000);
-				else
-					_storage.reserve(400000);
-			}
+            if (_storage.capacity() < newsize) // pussywizard
+            {
+                if (newsize < 100)
+                    _storage.reserve(300);
+                else if (newsize < 750)
+                    _storage.reserve(2500);
+                else if (newsize < 6000)
+                    _storage.reserve(10000);
+                else
+                    _storage.reserve(400000);
+            }
 
             if (_storage.size() < newsize)
                 _storage.resize(newsize);

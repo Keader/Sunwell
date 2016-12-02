@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -284,7 +284,7 @@ public:
 
         if (!target)
         {
-			targetGuid = sWorld->GetGlobalPlayerGUID(name);
+            targetGuid = sWorld->GetGlobalPlayerGUID(name);
             if (!targetGuid)
             {
                 handler->PSendSysMessage(LANG_BANINFO_NOCHARACTER);

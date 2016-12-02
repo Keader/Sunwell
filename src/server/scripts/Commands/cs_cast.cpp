@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -36,7 +36,7 @@ public:
     ChatCommand* GetCommands() const
     {
         static ChatCommand castCommandTable[] =
-        {   
+        {
             { "back",           SEC_ADMINISTRATOR,  false, &HandleCastBackCommand,              "", NULL },
             { "dist",           SEC_ADMINISTRATOR,  false, &HandleCastDistCommand,              "", NULL },
             { "self",           SEC_ADMINISTRATOR,  false, &HandleCastSelfCommand,              "", NULL },
@@ -88,7 +88,7 @@ public:
 
         SpellScriptsBounds bounds = sObjectMgr->GetSpellScriptsBounds(spellId);
         uint32 spellDifficultyId = sSpellMgr->GetSpellDifficultyId(spellId);
-		if (handler->GetSession()->GetSecurity() < SEC_CONSOLE && (bounds.first != bounds.second || spellDifficultyId || spellInfo->HasEffect(SPELL_EFFECT_SKILL_STEP) || spellInfo->HasEffect(SPELL_EFFECT_TRADE_SKILL)))
+        if (handler->GetSession()->GetSecurity() < SEC_CONSOLE && (bounds.first != bounds.second || spellDifficultyId || spellInfo->HasEffect(SPELL_EFFECT_SKILL_STEP) || spellInfo->HasEffect(SPELL_EFFECT_TRADE_SKILL)))
         {
             handler->PSendSysMessage("Spell %u cannot be casted using a command!", spellId);
             handler->SetSentErrorMessage(true);

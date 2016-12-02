@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -449,8 +449,8 @@ public:
                 GUID_LOPART(aura->GetCasterGUID()));
         }
 
-		if (!args || std::string(args) != "all")
-			return true;
+        if (!args || std::string(args) != "all")
+            return true;
 
         for (uint16 i = 0; i < TOTAL_AURAS; ++i)
         {

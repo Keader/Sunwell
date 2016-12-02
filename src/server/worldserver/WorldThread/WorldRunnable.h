@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -32,8 +32,8 @@ class WorldRunnable : public ACE_Based::Runnable
 
 class AuctionListingRunnable : public ACE_Based::Runnable
 {
-	public:
-		void run();
+    public:
+        void run();
 };
 #endif
 /// @}

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -60,7 +60,7 @@ enum DataTypes
     DATA_SF_BRAZIER_S       = 26,
     DATA_MOIRA              = 27,
 
-	DATA_OPEN_COFFER_DOORS	= 30,
+    DATA_OPEN_COFFER_DOORS    = 30,
 };
 
 #endif

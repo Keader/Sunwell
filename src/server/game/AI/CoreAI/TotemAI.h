@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -46,16 +46,16 @@ class TotemAI : public CreatureAI
 
 class KillMagnetEvent : public BasicEvent
 {
-	public:
-		KillMagnetEvent(Unit& self) : _self(self) { }
-		bool Execute(uint64 e_time, uint32 p_time)
-		{
-			_self.setDeathState(JUST_DIED);
-			return true;
-		}
+    public:
+        KillMagnetEvent(Unit& self) : _self(self) { }
+        bool Execute(uint64 e_time, uint32 p_time)
+        {
+            _self.setDeathState(JUST_DIED);
+            return true;
+        }
 
-	protected:
-		Unit& _self;
+    protected:
+        Unit& _self;
 };
 
 #endif

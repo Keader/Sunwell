@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -123,12 +123,12 @@ void LoadDisables()
                         data.params[1].insert(atoi(tokens[i++]));
                 }
 
-				// xinef: if spell has disabled los, add flag
-				if (flags & SPELL_DISABLE_LOS)
-				{
-					SpellInfo* spellInfo = const_cast<SpellInfo*>(sSpellMgr->GetSpellInfo(entry));
-					spellInfo->AttributesEx2 |= SPELL_ATTR2_CAN_TARGET_NOT_IN_LOS;
-				}
+                // xinef: if spell has disabled los, add flag
+                if (flags & SPELL_DISABLE_LOS)
+                {
+                    SpellInfo* spellInfo = const_cast<SpellInfo*>(sSpellMgr->GetSpellInfo(entry));
+                    spellInfo->AttributesEx2 |= SPELL_ATTR2_CAN_TARGET_NOT_IN_LOS;
+                }
 
                 break;
             // checked later

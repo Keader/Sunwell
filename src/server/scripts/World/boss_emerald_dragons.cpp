@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -407,8 +407,8 @@ class npc_spirit_shade : public CreatureScript
 
             void IsSummonedBy(Unit* summoner)
             {
-				if (!summoner)
-					return;
+                if (!summoner)
+                    return;
 
                 _summonerGuid = summoner->GetGUID();
                 me->GetMotionMaster()->MoveFollow(summoner, 0.0f, 0.0f);
@@ -682,7 +682,7 @@ class spell_dream_fog_sleep : public SpellScriptLoader
 
             void FilterTargets(std::list<WorldObject*>& targets)
             {
-				targets.remove_if(Trinity::UnitAuraCheck(true, SPELL_SLEEP));
+                targets.remove_if(Trinity::UnitAuraCheck(true, SPELL_SLEEP));
             }
 
             void Register()

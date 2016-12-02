@@ -1,8 +1,8 @@
 /**
  @file Plane.cpp
- 
+
  @maintainer Morgan McGuire, http://graphics.cs.williams.edu
- 
+
  @created 2003-02-06
  @edited  2006-01-29
  */
@@ -16,19 +16,19 @@
 namespace G3D {
 
 Plane::Plane(class BinaryInput& b) {
-	deserialize(b);
+    deserialize(b);
 }
 
 
 void Plane::serialize(class BinaryOutput& b) const {
-	_normal.serialize(b);
-	b.writeFloat64(_distance);
+    _normal.serialize(b);
+    b.writeFloat64(_distance);
 }
 
 
 void Plane::deserialize(class BinaryInput& b) {
-	_normal.deserialize(b);
-	_distance = (float)b.readFloat64();
+    _normal.deserialize(b);
+    _distance = (float)b.readFloat64();
 }
 
 
@@ -38,14 +38,14 @@ Plane::Plane(
     Vector4      point2) {
 
     debugAssertM(
-        point0.w != 0 || 
-        point1.w != 0 || 
+        point0.w != 0 ||
+        point1.w != 0 ||
         point2.w != 0,
         "At least one point must be finite.");
 
     // Rotate the points around so that the finite points come first.
 
-    while ((point0.w == 0) && 
+    while ((point0.w == 0) &&
            ((point1.w == 0) || (point2.w != 0))) {
         Vector4 temp = point0;
         point0 = point1;

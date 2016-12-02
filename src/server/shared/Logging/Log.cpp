@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -964,7 +964,7 @@ void Log::outMisc(const char * str, ...)
     if (!str)
         return;
 
-	if (m_enableLogDB)
+    if (m_enableLogDB)
     {
         va_list ap2;
         va_start(ap2, str);

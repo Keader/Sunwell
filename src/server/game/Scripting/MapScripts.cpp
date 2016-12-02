@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -33,7 +33,7 @@
 
 /// Put scripts in the execution queue
 void Map::ScriptsStart(ScriptMapMap const& scripts, uint32 id, Object* source, Object* target)
-{ 
+{
     ///- Find the script map
     ScriptMapMap::const_iterator s = scripts.find(id);
     if (s == scripts.end())
@@ -71,7 +71,7 @@ void Map::ScriptsStart(ScriptMapMap const& scripts, uint32 id, Object* source, O
 }
 
 void Map::ScriptCommandStart(ScriptInfo const& script, uint32 delay, Object* source, Object* target)
-{ 
+{
     // NOTE: script record _must_ exist until command executed
 
     // prepare static data
@@ -100,7 +100,7 @@ void Map::ScriptCommandStart(ScriptInfo const& script, uint32 delay, Object* sou
 
 // Helpers for ScriptProcess method.
 inline Player* Map::_GetScriptPlayerSourceOrTarget(Object* source, Object* target, const ScriptInfo* scriptInfo) const
-{ 
+{
     Player* player = NULL;
     if (!source && !target)
         sLog->outError("%s source and target objects are NULL.", scriptInfo->GetDebugInfo().c_str());
@@ -122,7 +122,7 @@ inline Player* Map::_GetScriptPlayerSourceOrTarget(Object* source, Object* targe
 }
 
 inline Creature* Map::_GetScriptCreatureSourceOrTarget(Object* source, Object* target, const ScriptInfo* scriptInfo, bool bReverse) const
-{ 
+{
     Creature* creature = NULL;
     if (!source && !target)
         sLog->outError("%s source and target objects are NULL.", scriptInfo->GetDebugInfo().c_str());
@@ -155,7 +155,7 @@ inline Creature* Map::_GetScriptCreatureSourceOrTarget(Object* source, Object* t
 }
 
 inline Unit* Map::_GetScriptUnit(Object* obj, bool isSource, const ScriptInfo* scriptInfo) const
-{ 
+{
     Unit* unit = NULL;
     if (!obj)
         sLog->outError("%s %s object is NULL.", scriptInfo->GetDebugInfo().c_str(), isSource ? "source" : "target");
@@ -173,7 +173,7 @@ inline Unit* Map::_GetScriptUnit(Object* obj, bool isSource, const ScriptInfo* s
 }
 
 inline Player* Map::_GetScriptPlayer(Object* obj, bool isSource, const ScriptInfo* scriptInfo) const
-{ 
+{
     Player* player = NULL;
     if (!obj)
         sLog->outError("%s %s object is NULL.", scriptInfo->GetDebugInfo().c_str(), isSource ? "source" : "target");
@@ -188,7 +188,7 @@ inline Player* Map::_GetScriptPlayer(Object* obj, bool isSource, const ScriptInf
 }
 
 inline Creature* Map::_GetScriptCreature(Object* obj, bool isSource, const ScriptInfo* scriptInfo) const
-{ 
+{
     Creature* creature = NULL;
     if (!obj)
         sLog->outError("%s %s object is NULL.", scriptInfo->GetDebugInfo().c_str(), isSource ? "source" : "target");
@@ -203,7 +203,7 @@ inline Creature* Map::_GetScriptCreature(Object* obj, bool isSource, const Scrip
 }
 
 inline WorldObject* Map::_GetScriptWorldObject(Object* obj, bool isSource, const ScriptInfo* scriptInfo) const
-{ 
+{
     WorldObject* pWorldObject = NULL;
     if (!obj)
         sLog->outError("%s %s object is NULL.",
@@ -219,7 +219,7 @@ inline WorldObject* Map::_GetScriptWorldObject(Object* obj, bool isSource, const
 }
 
 inline void Map::_ScriptProcessDoor(Object* source, Object* target, const ScriptInfo* scriptInfo) const
-{ 
+{
     bool bOpen = false;
     uint32 guid = scriptInfo->ToggleDoor.GOGuid;
     int32 nTimeToToggle = std::max(15, int32(scriptInfo->ToggleDoor.ResetDelay));
@@ -268,7 +268,7 @@ inline void Map::_ScriptProcessDoor(Object* source, Object* target, const Script
 }
 
 inline GameObject* Map::_FindGameObject(WorldObject* searchObject, uint32 guid) const
-{ 
+{
     GameObject* gameobject = NULL;
 
     CellCoord p(Trinity::ComputeCellCoord(searchObject->GetPositionX(), searchObject->GetPositionY()));
@@ -285,7 +285,7 @@ inline GameObject* Map::_FindGameObject(WorldObject* searchObject, uint32 guid) 
 
 /// Process queued scripts
 void Map::ScriptsProcess()
-{ 
+{
     if (m_scriptSchedule.empty())
         return;
 
@@ -651,17 +651,17 @@ void Map::ScriptsProcess()
                         sLog->outError("%s creature entry (datalong) is not specified.", step.script->GetDebugInfo().c_str());
                     else
                     {
-						uint32 entry = step.script->TempSummonCreature.CreatureEntry;
+                        uint32 entry = step.script->TempSummonCreature.CreatureEntry;
 
                         float x = step.script->TempSummonCreature.PosX;
                         float y = step.script->TempSummonCreature.PosY;
                         float z = step.script->TempSummonCreature.PosZ;
                         float o = step.script->TempSummonCreature.Orientation;
 
-						if (step.script->TempSummonCreature.CheckIfExists)
-							if (Unit* trigger = pSummoner->SummonTrigger(x, y, z, o, 1))
-								if (trigger->FindNearestCreature(entry, 60.0f))
-									break;
+                        if (step.script->TempSummonCreature.CheckIfExists)
+                            if (Unit* trigger = pSummoner->SummonTrigger(x, y, z, o, 1))
+                                if (trigger->FindNearestCreature(entry, 60.0f))
+                                    break;
 
                         if (!pSummoner->SummonCreature(entry, x, y, z, o, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, step.script->TempSummonCreature.DespawnDelay))
                             sLog->outError("%s creature was not spawned (entry: %u).", step.script->GetDebugInfo().c_str(), step.script->TempSummonCreature.CreatureEntry);

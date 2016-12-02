@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -50,7 +50,7 @@ enum Sylvanas
     SAY_SUNSORROW_WHISPER           = 0,
 
     SOUND_CREDIT                    = 10896,
-    
+
     NPC_HIGHBORNE_LAMENTER          = 21628,
     NPC_HIGHBORNE_BUNNY             = 21641,
     NPC_AMBASSADOR_SUNSORROW        = 16287,
@@ -149,9 +149,9 @@ public:
         {
             if (summoned->GetEntry() == NPC_HIGHBORNE_BUNNY)
             {
-				summoned->SetDisableGravity(true);
-				float speed = summoned->GetDistance(summoned->GetPositionX(), summoned->GetPositionY(), me->GetPositionZ()+15.0f) / (1000.0f * 0.001f);
-				summoned->MonsterMoveWithSpeed(summoned->GetPositionX(), summoned->GetPositionY(), me->GetPositionZ()+15.0f, speed);
+                summoned->SetDisableGravity(true);
+                float speed = summoned->GetDistance(summoned->GetPositionX(), summoned->GetPositionY(), me->GetPositionZ()+15.0f) / (1000.0f * 0.001f);
+                summoned->MonsterMoveWithSpeed(summoned->GetPositionX(), summoned->GetPositionY(), me->GetPositionZ()+15.0f, speed);
                 summoned->CastSpell(summoned, SPELL_RIBBON_OF_SOULS, false);
             }
         }

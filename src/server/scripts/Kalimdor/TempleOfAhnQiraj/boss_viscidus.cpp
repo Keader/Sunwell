@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -272,7 +272,7 @@ class npc_glob_of_viscidus : public CreatureScript
                     if (Viscidus->IsAlive() && Viscidus->GetHealthPct() < 5.0f)
                     {
                         Viscidus->SetVisible(true);
-						Unit::Kill(Viscidus->GetVictim(), Viscidus);
+                        Unit::Kill(Viscidus->GetVictim(), Viscidus);
                     }
                     else
                     {

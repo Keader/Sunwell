@@ -1,13 +1,13 @@
 /**
  @file Vector2.cpp
- 
+
  2D vector class, used for texture coordinates primarily.
- 
+
  @maintainer Morgan McGuire, http://graphics.cs.williams.edu
- 
+
  @cite Portions based on Dave Eberly'x Magic Software Library
   at http://www.magic-software.com
- 
+
  @created 2001-06-02
  @edited  2009-11-16
  */
@@ -49,8 +49,8 @@ Vector2::operator Any() const {
 }
 
 
-const Vector2& Vector2::one() { 
-    static const Vector2 v(1, 1); return v; 
+const Vector2& Vector2::one() {
+    static const Vector2 v(1, 1); return v;
 }
 
 
@@ -69,27 +69,27 @@ const Vector2& Vector2::unitY() {
     return v;
 }
 
-const Vector2& Vector2::inf() { 
-	static Vector2 v((float)G3D::finf(), (float)G3D::finf());
-	return v; 
+const Vector2& Vector2::inf() {
+    static Vector2 v((float)G3D::finf(), (float)G3D::finf());
+    return v;
 }
 
 
-const Vector2& Vector2::nan() { 
-	static Vector2 v((float)G3D::fnan(), (float)G3D::fnan()); 
-	return v; 
+const Vector2& Vector2::nan() {
+    static Vector2 v((float)G3D::fnan(), (float)G3D::fnan());
+    return v;
 }
 
 
 const Vector2& Vector2::minFinite() {
-	static Vector2 v(-FLT_MAX, -FLT_MAX); 
-	return v; 
+    static Vector2 v(-FLT_MAX, -FLT_MAX);
+    return v;
 }
 
 
 const Vector2& Vector2::maxFinite() {
-	static Vector2 v(FLT_MAX, FLT_MAX); 
-	return v; 
+    static Vector2 v(FLT_MAX, FLT_MAX);
+    return v;
 }
 
 
@@ -163,10 +163,10 @@ Vector2& Vector2::operator/= (float k) {
 
 //----------------------------------------------------------------------------
 float Vector2::unitize (float fTolerance) {
-	float fLength = length();
+    float fLength = length();
 
     if (fLength > fTolerance) {
-		float fInvLength = 1.0f / fLength;
+        float fInvLength = 1.0f / fLength;
         x *= fInvLength;
         y *= fInvLength;
     } else {

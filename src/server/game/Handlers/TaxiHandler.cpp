@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -210,7 +210,7 @@ void WorldSession::HandleMoveSplineDoneOpcode(WorldPacket& recvData)
     recvData.readPackGUID(guid);
 
     MovementInfo movementInfo;                              // used only for proper packet read
-	movementInfo.guid = guid;
+    movementInfo.guid = guid;
     ReadMovementInfo(recvData, &movementInfo);
 
     recvData.read_skip<uint32>();                          // spline id

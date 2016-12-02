@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -69,7 +69,7 @@ void CalendarMgr::LoadFromDB()
             uint32 guildId = 0;
 
             if (flags & CALENDAR_FLAG_GUILD_EVENT || flags & CALENDAR_FLAG_WITHOUT_INVITES)
-				guildId = Player::GetGuildIdFromStorage(GUID_LOPART(creatorGUID));
+                guildId = Player::GetGuildIdFromStorage(GUID_LOPART(creatorGUID));
 
             CalendarEvent* calendarEvent = new CalendarEvent(eventId, creatorGUID, guildId, type, dungeonId, time_t(eventTime), flags, time_t(timezoneTime), title, description);
             _events.insert(calendarEvent);

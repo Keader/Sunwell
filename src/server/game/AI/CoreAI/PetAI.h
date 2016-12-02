@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -48,14 +48,14 @@ class PetAI : public CreatureAI
         void MoveInLineOfSight(Unit* /*who*/) {} // CreatureAI interferes with returning pets
         void MoveInLineOfSight_Safe(Unit* /*who*/) {} // CreatureAI interferes with returning pets
         void EnterEvadeMode() {} // For fleeing, pets don't use this type of Evade mechanic
-		void SpellHit(Unit* caster, const SpellInfo* spellInfo);
+        void SpellHit(Unit* caster, const SpellInfo* spellInfo);
 
     private:
         bool _isVisible(Unit*) const;
         bool _needToStop(void);
         void _stopAttack(void);
-		void _doMeleeAttack();
-		bool _canMeleeAttack() const;
+        void _doMeleeAttack();
+        bool _canMeleeAttack() const;
 
         void UpdateAllies();
 

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -97,11 +97,11 @@ class MotionMaster //: private std::stack<MovementGenerator *>
                 --_top;
         }
 
-        bool needInitTop() const 
-        { 
+        bool needInitTop() const
+        {
             if (empty())
                 return false;
-            return _needInit[_top]; 
+            return _needInit[_top];
         }
         void InitTop();
     public:
@@ -121,15 +121,15 @@ class MotionMaster //: private std::stack<MovementGenerator *>
 
         bool empty() const { return (_top < 0); }
         int size() const { return _top + 1; }
-        _Ty top() const 
-        { 
+        _Ty top() const
+        {
             ASSERT(!empty());
-            return Impl[_top]; 
+            return Impl[_top];
         }
-        _Ty GetMotionSlot(int slot) const 
-        { 
+        _Ty GetMotionSlot(int slot) const
+        {
             ASSERT(slot >= 0);
-            return Impl[slot]; 
+            return Impl[slot];
         }
 
         uint8 GetCleanFlags() const { return _cleanFlag; }
@@ -167,7 +167,7 @@ class MotionMaster //: private std::stack<MovementGenerator *>
 
         void MovementExpiredOnSlot(MovementSlot slot, bool reset = true)
         {
-			// xinef: cannot be used during motion update!
+            // xinef: cannot be used during motion update!
             if (!(_cleanFlag & MMCF_UPDATE))
                 DirectExpireSlot(slot, reset);
         }
@@ -207,7 +207,7 @@ class MotionMaster //: private std::stack<MovementGenerator *>
 
         MovementGeneratorType GetCurrentMovementGeneratorType() const;
         MovementGeneratorType GetMotionSlotType(int slot) const;
-		uint32 GetCurrentSplineId() const; // Xinef: Escort system
+        uint32 GetCurrentSplineId() const; // Xinef: Escort system
 
         void propagateSpeedChange();
         void ReinitializeMovement();

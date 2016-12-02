@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -91,7 +91,7 @@ private:
     uint32 _delayTime;
 
 public:
-	FreezeDetectorRunnable(uint32 freezeDelay) : _loops(0), _lastChange(0), _delayTime(freezeDelay) {}
+    FreezeDetectorRunnable(uint32 freezeDelay) : _loops(0), _lastChange(0), _delayTime(freezeDelay) {}
 
     void run()
     {
@@ -185,30 +185,30 @@ int Master::Run()
 
     ACE_Based::Thread rarThread(new RARunnable);
 
-	// pussywizard:
-	ACE_Based::Thread auctionLising_thread(new AuctionListingRunnable);
-	auctionLising_thread.setPriority(ACE_Based::High);
+    // pussywizard:
+    ACE_Based::Thread auctionLising_thread(new AuctionListingRunnable);
+    auctionLising_thread.setPriority(ACE_Based::High);
 
 #if defined(_WIN32) || defined(__linux__)
-    
+
 
     ///- Handle affinity for multiple processors and process priority
     uint32 affinity = sConfigMgr->GetIntDefault("UseProcessors", 0);
     bool highPriority = sConfigMgr->GetBoolDefault("ProcessPriority", false);
 
 #ifdef _WIN32 // Windows
-    
+
     HANDLE hProcess = GetCurrentProcess();
-    
+
     if (affinity > 0)
     {
         ULONG_PTR appAff;
         ULONG_PTR sysAff;
-        
+
         if (GetProcessAffinityMask(hProcess, &appAff, &sysAff))
         {
             ULONG_PTR currentAffinity = affinity & appAff;            // remove non accessible processors
-            
+
             if (!currentAffinity)
                 sLog->outError("Processors marked in UseProcessors bitmask (hex) %x are not accessible for the worldserver. Accessible processors bitmask (hex): %x", affinity, appAff);
             else if (SetProcessAffinityMask(hProcess, currentAffinity))
@@ -217,7 +217,7 @@ int Master::Run()
                 sLog->outError("Can't set used processors (hex): %x", currentAffinity);
         }
     }
-    
+
     if (highPriority)
     {
         if (SetPriorityClass(hProcess, HIGH_PRIORITY_CLASS))
@@ -225,9 +225,9 @@ int Master::Run()
         else
             sLog->outError("Can't set worldserver process priority class.");
     }
-    
+
 #else // Linux
-    
+
     if (affinity > 0)
     {
         cpu_set_t mask;
@@ -254,7 +254,7 @@ int Master::Run()
         else
             sLog->outString("worldserver process priority class set to %i", getpriority(PRIO_PROCESS, 0));
     }
-    
+
 #endif
 #endif
 
@@ -304,11 +304,11 @@ int Master::Run()
         delete soapThread;
     }
 
-	if (freezeThread)
-	{
-		freezeThread->wait();
-		delete freezeThread;
-	}
+    if (freezeThread)
+    {
+        freezeThread->wait();
+        delete freezeThread;
+    }
 
     // set server offline
     LoginDatabase.DirectPExecute("UPDATE realmlist SET flag = flag | %u WHERE id = '%d'", REALM_FLAG_OFFLINE, realmID);

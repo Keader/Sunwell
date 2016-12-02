@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -53,12 +53,12 @@ class Vehicle : public TransportBase
         void RemoveAllPassengers();
         void Dismiss();
         bool IsVehicleInUse();
-		void TeleportVehicle(float x, float y, float z, float ang);
+        void TeleportVehicle(float x, float y, float z, float ang);
 
         SeatMap Seats;
 
         VehicleSeatEntry const* GetSeatForPassenger(Unit const* passenger);
-		SeatMap::iterator GetSeatIteratorForPassenger(Unit* passenger);
+        SeatMap::iterator GetSeatIteratorForPassenger(Unit* passenger);
 
     protected:
         friend bool Unit::CreateVehicleKit(uint32 id, uint32 creatureEntry);

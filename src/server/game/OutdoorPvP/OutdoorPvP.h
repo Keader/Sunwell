@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -32,7 +32,7 @@ enum OutdoorPvPTypes
     OUTDOOR_PVP_ZM = 4,
     OUTDOOR_PVP_SI = 5,
     OUTDOOR_PVP_EP = 6,
-	OUTDOOR_PVP_GH = 7,
+    OUTDOOR_PVP_GH = 7,
 };
 
 #define MAX_OUTDOORPVP_TYPES 8

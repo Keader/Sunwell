@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -49,8 +49,8 @@ ByteBufferSourceException::ByteBufferSourceException(size_t pos, size_t size,
 
 void ByteBuffer::hexlike(bool outString) const
 {
-	if (!outString)
-		return;
+    if (!outString)
+        return;
 
     uint32 j = 1, k = 1;
 

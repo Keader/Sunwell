@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ namespace Movement
     struct MoveSplineInitArgs
     {
         MoveSplineInitArgs(size_t path_capacity = 16) : path_Idx_offset(0), velocity(0.f),
-			parabolic_amplitude(0.f), time_perc(0.f), splineId(0), initialOrientation(0.f),
+            parabolic_amplitude(0.f), time_perc(0.f), splineId(0), initialOrientation(0.f),
             HasVelocity(false), TransformForTransport(true)
         {
             path.reserve(path_capacity);

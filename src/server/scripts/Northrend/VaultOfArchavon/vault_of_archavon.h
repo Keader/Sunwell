@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -28,12 +28,12 @@ enum Creatures
 
 enum Data
 {
-    EVENT_ARCHAVON			= 0,
-    EVENT_EMALON			= 1,
-    EVENT_KORALON			= 2,
-    EVENT_TORAVON			= 3,
-	MAX_ENCOUNTER			= 4,
-	DATA_STONED				= 5,
+    EVENT_ARCHAVON            = 0,
+    EVENT_EMALON            = 1,
+    EVENT_KORALON            = 2,
+    EVENT_TORAVON            = 3,
+    MAX_ENCOUNTER            = 4,
+    DATA_STONED                = 5,
 };
 
 
@@ -46,7 +46,7 @@ enum AchievementCriteriaIds
 enum AchievementSpells
 {
     SPELL_EARTH_WIND_FIRE_ACHIEVEMENT_CHECK = 68308,
-	SPELL_STONED_AURA						= 63080,
+    SPELL_STONED_AURA                        = 63080,
 };
 
 #endif

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -42,8 +42,8 @@ enum BattlegroundRVObjectTypes
     BG_RV_OBJECT_ELEVATOR_1,
     BG_RV_OBJECT_ELEVATOR_2,
 
-	BG_RV_OBJECT_READY_MARKER_1,
-	BG_RV_OBJECT_READY_MARKER_2,
+    BG_RV_OBJECT_READY_MARKER_1,
+    BG_RV_OBJECT_READY_MARKER_2,
 
     BG_RV_OBJECT_MAX,
 };
@@ -99,7 +99,7 @@ class BattlegroundRV : public Battleground
         void StartingEventOpenDoors();
         void Init();
         void FillInitialWorldStates(WorldPacket &d);
-		void UpdateArenaWorldState();
+        void UpdateArenaWorldState();
         void HandleAreaTrigger(Player* player, uint32 trigger);
         bool SetupBattleground();
         void HandleKillPlayer(Player* player, Player* killer);

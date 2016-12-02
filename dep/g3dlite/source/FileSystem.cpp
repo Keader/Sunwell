@@ -1,8 +1,8 @@
 /**
  @file FileSystem.cpp
- 
+
  @author Morgan McGuire, http://graphics.cs.williams.edu
- 
+
  @author  2002-06-06
  @edited  2010-04-10
  */
@@ -71,7 +71,7 @@ FileSystem::FileSystem() : m_cacheLifetime(10) {}
 /////////////////////////////////////////////////////////////
 
 bool FileSystem::Dir::contains(const std::string& f) const {
-    
+
     for (int i = 0; i < nodeArray.size(); ++i) {
 #       ifdef G3D_WIN32
             if (stricmp(f.c_str(), nodeArray[i].name.c_str()) == 0) {
@@ -85,7 +85,7 @@ bool FileSystem::Dir::contains(const std::string& f) const {
     }
     return false;
 }
-    
+
 void FileSystem::Dir::computeZipListing(const std::string& zipfile, const std::string& pathInsideZipfile) {
 #if _HAVE_ZIP /* G3DFIX: Use ZIP-library only if defined */
     struct zip* z = zip_open( FilePath::removeTrailingSlash(zipfile).c_str(), ZIP_CHECKCONS, NULL );
@@ -97,16 +97,16 @@ void FileSystem::Dir::computeZipListing(const std::string& zipfile, const std::s
         struct zip_stat info;
         zip_stat_init( &info );    // TODO: Docs unclear if zip_stat_init is required.
         zip_stat_index( z, i, ZIP_FL_NOCASE, &info );
-        
+
         // Fully-qualified name of a file inside zipfile
         std::string name = info.name;
 
         if (beginsWith(name, pathInsideZipfile)) {
             // We found something inside the directory we were looking for,
-            // so the directory itself must exist                        
+            // so the directory itself must exist
             exists = true;
 
-            // For building the cached directory listing, extract only elements that do not contain 
+            // For building the cached directory listing, extract only elements that do not contain
             // additional subdirectories.
 
             int start = pathInsideZipfile.size();
@@ -133,7 +133,7 @@ void FileSystem::Dir::computeZipListing(const std::string& zipfile, const std::s
             }
         }
     }
-    
+
     zip_close(z);
     z = NULL;
 #endif
@@ -141,13 +141,13 @@ void FileSystem::Dir::computeZipListing(const std::string& zipfile, const std::s
 
 
 FileSystem::Dir& FileSystem::getContents(const std::string& path, bool forceUpdate) {
-    const std::string& key = 
+    const std::string& key =
 #   if defined(G3D_WIN32)
         FilePath::canonicalize(FilePath::removeTrailingSlash(toLower(FilePath::canonicalize(resolve(path)))));
 #   else
         FilePath::canonicalize(FilePath::removeTrailingSlash(FilePath::canonicalize(resolve(path))));
 #   endif
-    
+
     RealTime now = System::time();
     Dir& dir = m_cache.getCreate(key);
 
@@ -205,11 +205,11 @@ FileSystem::Dir& FileSystem::getContents(const std::string& path, bool forceUpda
                                 case DT_DIR:
                                     e.type = DIR_TYPE;
                                     break;
-                                    
+
                                 case DT_REG:
                                     e.type = FILE_TYPE;
                                     break;
-                                    
+
                                 case DT_UNKNOWN:
                                 default:
                                     e.type = UNKNOWN;
@@ -230,7 +230,7 @@ FileSystem::Dir& FileSystem::getContents(const std::string& path, bool forceUpda
 
             if (exists && isZipfile(path)) {
                 // This is a zipfile; get its root
-                dir.isZipfile = true;                
+                dir.isZipfile = true;
                 dir.computeZipListing(path, "");
 
             } else if (inZipfile(path, zip)) {
@@ -241,7 +241,7 @@ FileSystem::Dir& FileSystem::getContents(const std::string& path, bool forceUpda
 
                 dir.computeZipListing(zip, path.substr(zip.length() + 1));
             }
-        }        
+        }
     }
 
     return dir;
@@ -273,11 +273,11 @@ bool FileSystem::_inZipfile(const std::string& path, std::string& z) {
             return false;
         }
 
-        z = path.substr(0, s); 
+        z = path.substr(0, s);
         if (_isZipfile(z)) {
             return true;
         }
-        
+
         current = s + 1;
     }
 
@@ -290,14 +290,14 @@ bool FileSystem::_isZipfile(const std::string& filename) {
     if (FilePath::ext(filename).empty()) {
         return false;
     }
-    
+
     FILE* f = fopen(FilePath::removeTrailingSlash(filename).c_str(), "r");
     if (f == NULL) {
         return false;
     }
     uint8 header[4];
     fread(header, 4, 1, f);
-    
+
     const uint8 zipHeader[4] = {0x50, 0x4b, 0x03, 0x04};
     for (int i = 0; i < 4; ++i) {
         if (header[i] != zipHeader[i]) {
@@ -305,7 +305,7 @@ bool FileSystem::_isZipfile(const std::string& filename) {
             return false;
         }
     }
-    
+
     fclose(f);
     return true;
 }
@@ -330,7 +330,7 @@ void FileSystem::_clearCache(const std::string& path) {
         Array<std::string> keys;
         m_cache.getKeys(keys);
 
-        const std::string& prefix = 
+        const std::string& prefix =
 #           ifdef G3D_WIN32
                 toLower(FilePath::canonicalize(FilePath::removeTrailingSlash(_resolve(path))));
 #           else
@@ -354,13 +354,13 @@ void FileSystem::_setCacheLifetime(float t) {
 
 
 void FileSystem::_createDirectory(const std::string& dir) {
-    
+
     if (dir == "") {
         return;
     }
-    
+
     std::string d = _resolve(dir);
-    
+
     // Add a trailing / if there isn't one.
     switch (d[d.size() - 1]) {
     case '/':
@@ -418,7 +418,7 @@ void FileSystem::_copyFile(const std::string& source, const std::string& dest) {
         BinaryOutput out(dest, G3D_LITTLE_ENDIAN);
         out.writeBytes(in.getCArray(), in.size());
         out.commit(false);
-#   endif        
+#   endif
 }
 
 
@@ -442,7 +442,7 @@ bool FileSystem::_exists(const std::string& f, bool trustCache) {
         if (! entry.exists) {
             // The directory didn't exist, so neither do its contents
             return false;
-        } 
+        }
 
         const std::string& pattern = FilePath::baseExt(path);
 
@@ -531,13 +531,13 @@ bool FileSystem::_isNewer(const std::string& src, const std::string& dst) {
 int64 FileSystem::_size(const std::string& filename) {
     struct stat64 st;
     int result = stat64(filename.c_str(), &st);
-    
+
     if (result == -1) {
 #if _HAVE_ZIP /* G3DFIX: Use ZIP-library only if defined */
         std::string zip, contents;
         if (zipfileExists(filename, zip, contents)) {
             int64 requiredMem;
-            
+
             struct zip *z = zip_open( zip.c_str(), ZIP_CHECKCONS, NULL );
             debugAssertM(z != NULL, zip + ": zip open failed.");
             {
@@ -556,7 +556,7 @@ int64 FileSystem::_size(const std::string& filename) {
         }
 #endif
     }
-    
+
     return st.st_size;
 }
 
@@ -577,11 +577,11 @@ void FileSystem::listHelper(const std::string& shortSpec, const std::string& par
                 // Update the type
                 entry.type = isDirectory(FilePath::concat(parentPath, entry.name)) ? DIR_TYPE : FILE_TYPE;
             }
-            
+
             if ((settings.files && settings.directories) ||
                 (settings.files && (entry.type == FILE_TYPE)) ||
                 (settings.directories && (entry.type == DIR_TYPE))) {
-                
+
                 if (settings.includeParentPath) {
                     result.append(FilePath::concat(parentPath, entry.name));
                 } else {
@@ -644,7 +644,7 @@ bool FilePath::isRoot(const std::string& f) {
             }
         }
 
-        if (isSlash(f[0]) && isSlash(f[1])) {        
+        if (isSlash(f[0]) && isSlash(f[1])) {
             // e.g., "\\foo\"
             return true;
         }
@@ -667,7 +667,7 @@ std::string FilePath::removeTrailingSlash(const std::string& f) {
 
 std::string FilePath::concat(const std::string& dirname, const std::string& file) {
     // Ensure that the directory ends in a slash
-    if (! dirname.empty() && 
+    if (! dirname.empty() &&
         ! isSlash(dirname[dirname.size() - 1]) &&
         (dirname[dirname.size() - 1] != ':')) {
         return dirname + '/' + file;
@@ -717,7 +717,7 @@ std::string FilePath::base(const std::string& path) {
 }
 
 
-std::string FilePath::parent(const std::string& path) {    
+std::string FilePath::parent(const std::string& path) {
     int i = findLastSlash(removeTrailingSlash(path));
 
 #   ifdef G3D_WIN32
@@ -781,15 +781,15 @@ void FilePath::parse
 
     // See if there is a root/drive spec.
     if ((f.size() >= 2) && (f[1] == ':')) {
-        
+
         if ((f.size() > 2) && isSlash(f[2])) {
-        
+
             // e.g.  c:\foo
             root = f.substr(0, 3);
             f = f.substr(3, f.size() - 3);
-        
+
         } else {
-        
+
             // e.g.  c:foo
             root = f.substr(2);
             f = f.substr(2, f.size() - 2);
@@ -797,13 +797,13 @@ void FilePath::parse
         }
 
     } else if ((f.size() >= 2) & isSlash(f[0]) && isSlash(f[1])) {
-        
+
         // e.g. //foo
         root = f.substr(0, 2);
         f = f.substr(2, f.size() - 2);
 
     } else if (isSlash(f[0])) {
-        
+
         root = f.substr(0, 1);
         f = f.substr(1, f.size() - 1);
 
@@ -828,15 +828,15 @@ void FilePath::parse
     {
         // Find the last slash
         size_t i = iMax(f.rfind('/'), f.rfind('\\'));
-        
+
         if (i == std::string::npos) {
-            
+
             // There is no slash; the basename is the whole thing
             base = f;
             f    = "";
 
         } else if ((i != std::string::npos) && (i < f.size() - 1)) {
-            
+
             base = f.substr(i + 1, f.size() - i - 1);
             f    = f.substr(0, i);
 
@@ -848,7 +848,7 @@ void FilePath::parse
 
     while (cur < f.size()) {
         prev = cur;
-        
+
         // Allow either slash
         size_t i = f.find('/', prev + 1);
         size_t j = f.find('\\', prev + 1);

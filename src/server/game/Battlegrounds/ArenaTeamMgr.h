@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -45,13 +45,13 @@ public:
     uint32 GenerateArenaTeamId();
     void SetNextArenaTeamId(uint32 Id) { NextArenaTeamId = Id; }
 
-	uint32 GetNextArenaLogId() { return ++LastArenaLogId; }
-	void SetLastArenaLogId(uint32 id) { LastArenaLogId = id; }
+    uint32 GetNextArenaLogId() { return ++LastArenaLogId; }
+    void SetLastArenaLogId(uint32 id) { LastArenaLogId = id; }
 
 protected:
     uint32 NextArenaTeamId;
     ArenaTeamContainer ArenaTeamStore;
-	uint32 LastArenaLogId;
+    uint32 LastArenaLogId;
 };
 
 #define sArenaTeamMgr ACE_Singleton<ArenaTeamMgr, ACE_Null_Mutex>::instance()

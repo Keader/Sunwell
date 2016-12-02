@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -61,7 +61,7 @@ class GameObjectAI
         virtual void OnGameEvent(bool /*start*/, uint16 /*eventId*/) {}
         virtual void OnStateChanged(uint32 /*state*/, Unit* /*unit*/) {}
         virtual void EventInform(uint32 /*eventId*/) {}
-		virtual void SpellHit(Unit* unit, const SpellInfo* spellInfo) {}
+        virtual void SpellHit(Unit* unit, const SpellInfo* spellInfo) {}
 };
 
 class NullGameObjectAI : public GameObjectAI

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -26,8 +26,8 @@ enum BattlegroundRLObjectTypes
     BG_RL_OBJECT_DOOR_2         = 1,
     BG_RL_OBJECT_BUFF_1         = 2,
     BG_RL_OBJECT_BUFF_2         = 3,
-	BG_RL_OBJECT_READY_MARKER_1 = 4,
-	BG_RL_OBJECT_READY_MARKER_2 = 5,
+    BG_RL_OBJECT_READY_MARKER_1 = 4,
+    BG_RL_OBJECT_READY_MARKER_2 = 5,
     BG_RL_OBJECT_MAX            = 6
 };
 

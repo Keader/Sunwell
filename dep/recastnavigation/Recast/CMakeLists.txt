@@ -1,4 +1,4 @@
-# Copyright (C) 
+# Copyright (C)
 #
 # This file is free software; as a special exception the author gives
 # unlimited permission to copy and/or distribute it, with or without
@@ -9,15 +9,15 @@
 # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 set(Recast_STAT_SRCS
-    Recast.cpp 
-    RecastAlloc.cpp 
-    RecastArea.cpp 
-    RecastContour.cpp 
-    RecastFilter.cpp 
-    RecastMesh.cpp 
-    RecastMeshDetail.cpp 
-    RecastRasterization.cpp 
-    RecastRegion.cpp 
+    Recast.cpp
+    RecastAlloc.cpp
+    RecastArea.cpp
+    RecastContour.cpp
+    RecastFilter.cpp
+    RecastMesh.cpp
+    RecastMeshDetail.cpp
+    RecastRasterization.cpp
+    RecastRegion.cpp
 )
 
 if(WIN32)

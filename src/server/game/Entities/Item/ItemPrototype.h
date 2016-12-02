@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -667,7 +667,7 @@ struct ItemTemplate
     uint32 FoodType;
     uint32 MinMoneyLoot;
     uint32 MaxMoneyLoot;
-	uint32 FlagsCu;
+    uint32 FlagsCu;
     WorldPacket queryData; // pussywizard
 
     // helpers

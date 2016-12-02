@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -48,12 +48,12 @@ void WorldSession::HandleJoinChannel(WorldPacket& recvPacket)
         return;
 
     if (isdigit(channelName[0]))
-		return;
+        return;
 
-	// pussywizard: restrict allowed characters in channel name to avoid |0 and possibly other exploits
-	//if (!ObjectMgr::IsValidChannelName(channelName))
-	if (channelName.find("|") != std::string::npos || channelName.size() >= 100)
-		return;
+    // pussywizard: restrict allowed characters in channel name to avoid |0 and possibly other exploits
+    //if (!ObjectMgr::IsValidChannelName(channelName))
+    if (channelName.find("|") != std::string::npos || channelName.size() >= 100)
+        return;
 
     if (ChannelMgr* cMgr = ChannelMgr::forTeam(GetPlayer()->GetTeamId()))
     {

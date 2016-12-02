@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -42,7 +42,7 @@ class MovementGenerator
 
         virtual MovementGeneratorType GetMovementGeneratorType() = 0;
 
-		virtual uint32 GetSplineId() const { return 0; }  // Xinef: Escort system
+        virtual uint32 GetSplineId() const { return 0; }  // Xinef: Escort system
 
         virtual void unitSpeedChanged() { }
 

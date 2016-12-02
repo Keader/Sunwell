@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  * Copyright (C) 2006-2007 ScriptDev2 <https://scriptdev2.svn.sourceforge.net/>
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -340,7 +340,7 @@ class boss_hexlord_malacrass : public CreatureScript
                 {
                     Unit* Temp = ObjectAccessor::GetUnit(*me, AddGUID[i]);
                     if (Temp && Temp->IsAlive())
-						Unit::DealDamage(Temp, Temp, Temp->GetHealth(), NULL, DIRECT_DAMAGE, SPELL_SCHOOL_MASK_NORMAL, NULL, false);
+                        Unit::DealDamage(Temp, Temp, Temp->GetHealth(), NULL, DIRECT_DAMAGE, SPELL_SCHOOL_MASK_NORMAL, NULL, false);
                 }
             }
 

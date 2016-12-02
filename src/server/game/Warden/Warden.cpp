@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 
- * Copyright (C) 
+ * Copyright (C)
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -32,7 +32,7 @@
 
 Warden::Warden() : _session(NULL), _inputCrypto(16), _outputCrypto(16), _checkTimer(10000/*10 sec*/), _clientResponseTimer(0),
                    _dataSent(false), _previousTimestamp(0), _module(NULL), _initialized(false)
-{ 
+{
     memset(_inputKey, 0, sizeof(_inputKey));
     memset(_outputKey, 0, sizeof(_outputKey));
     memset(_seed, 0, sizeof(_seed));
@@ -182,39 +182,39 @@ std::string Warden::Penalty(WardenCheck* check /*= NULL*/, uint16 checkFailed /*
     else
         action = WardenActions(sWorld->getIntConfig(CONFIG_WARDEN_CLIENT_FAIL_ACTION));
 
-	std::string banReason = "Anticheat violation";
-	bool longBan = false; // 14d = 1209600s
-	if (checkFailed)
-		switch (checkFailed)
-		{
-			case 47: banReason += " (FrameXML Signature Check)"; break;
-			case 51: banReason += " (Lua DoString)"; break;
-			case 59: banReason += " (Lua Protection Patch)"; break;
-			case 72: banReason += " (Movement State related)"; break;
-			case 118: banReason += " (Wall Climb)"; break;
-			case 121: banReason += " (No Fall Damage Patch)"; break;
-			case 193: banReason += " (Follow Unit Check)"; break;
-			case 209: banReason += " (WoWEmuHacker Injection)"; longBan = true; break;
-			case 237: banReason += " (AddChatMessage)"; break;
-			case 246: banReason += " (Language Patch)"; break;
-			case 260: banReason += " (Jump Momentum)"; break;
-			case 288: banReason += " (Language Patch)"; break;
-			case 308: banReason += " (SendChatMessage)"; break;
-			case 312: banReason += " (Jump Physics)"; break;
-			case 314: banReason += " (GetCharacterInfo)"; break;
-			case 329: banReason += " (Wall Climb)"; break;
-			case 343: banReason += " (Login Password Pointer)"; break;
-			case 349: banReason += " (Language Patch)"; break;
-			case 712: banReason += " (WS2_32.Send)"; break;
-			case 780: banReason += " (Lua Protection Remover)"; break;
-			case 781: banReason += " (Walk on Water Patch)"; break;
-			case 782: banReason += " (Collision M2 Special)"; longBan = true; break;
-			case 783: banReason += " (Collision M2 Regular)"; longBan = true; break;
-			case 784: banReason += " (Collision WMD)"; longBan = true; break;
-			case 785: banReason += " (Multi-Jump Patch)"; break;
-			case 786: banReason += " (WPE PRO)"; longBan = true; break;
-			case 787: banReason += " (rEdoX Packet Editor)"; break;
-		}
+    std::string banReason = "Anticheat violation";
+    bool longBan = false; // 14d = 1209600s
+    if (checkFailed)
+        switch (checkFailed)
+        {
+            case 47: banReason += " (FrameXML Signature Check)"; break;
+            case 51: banReason += " (Lua DoString)"; break;
+            case 59: banReason += " (Lua Protection Patch)"; break;
+            case 72: banReason += " (Movement State related)"; break;
+            case 118: banReason += " (Wall Climb)"; break;
+            case 121: banReason += " (No Fall Damage Patch)"; break;
+            case 193: banReason += " (Follow Unit Check)"; break;
+            case 209: banReason += " (WoWEmuHacker Injection)"; longBan = true; break;
+            case 237: banReason += " (AddChatMessage)"; break;
+            case 246: banReason += " (Language Patch)"; break;
+            case 260: banReason += " (Jump Momentum)"; break;
+            case 288: banReason += " (Language Patch)"; break;
+            case 308: banReason += " (SendChatMessage)"; break;
+            case 312: banReason += " (Jump Physics)"; break;
+            case 314: banReason += " (GetCharacterInfo)"; break;
+            case 329: banReason += " (Wall Climb)"; break;
+            case 343: banReason += " (Login Password Pointer)"; break;
+            case 349: banReason += " (Language Patch)"; break;
+            case 712: banReason += " (WS2_32.Send)"; break;
+            case 780: banReason += " (Lua Protection Remover)"; break;
+            case 781: banReason += " (Walk on Water Patch)"; break;
+            case 782: banReason += " (Collision M2 Special)"; longBan = true; break;
+            case 783: banReason += " (Collision M2 Regular)"; longBan = true; break;
+            case 784: banReason += " (Collision WMD)"; longBan = true; break;
+            case 785: banReason += " (Multi-Jump Patch)"; break;
+            case 786: banReason += " (WPE PRO)"; longBan = true; break;
+            case 787: banReason += " (rEdoX Packet Editor)"; break;
+        }
 
     switch (action)
     {

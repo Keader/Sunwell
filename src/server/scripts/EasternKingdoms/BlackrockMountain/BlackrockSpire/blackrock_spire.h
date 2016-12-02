@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 
+ * Copyright (C)
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -115,8 +115,8 @@ enum GameObjectsIds
     GO_DR_PORTCULLIS                = 175185,
     GO_PORTCULLIS_ACTIVE            = 164726,
     GO_PORTCULLIS_TOBOSSROOMS       = 175186,
-	// Urok Doomhowl
-	GO_UROK_PILE					= 175621,
+    // Urok Doomhowl
+    GO_UROK_PILE                    = 175621,
 };
 
 #endif
